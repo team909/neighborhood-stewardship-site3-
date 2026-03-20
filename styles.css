@@ -647,6 +647,86 @@ h3 {
   align-items: start;
 }
 
+.how-it-works {
+  padding-top: 4.8rem;
+  padding-bottom: 5.4rem;
+}
+
+.how-it-works-top {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1.15rem;
+  align-items: end;
+  margin-bottom: 1.8rem;
+}
+
+.how-it-works-heading {
+  margin-bottom: 0;
+}
+
+.how-it-works-note {
+  padding: 1.3rem 1.4rem;
+  border-radius: 0.98rem;
+  background: var(--glass-warm-strong);
+  border: 1px solid rgba(255, 251, 245, 0.22);
+  box-shadow: var(--glass-shadow-soft);
+  backdrop-filter: blur(22px) saturate(140%);
+}
+
+.how-it-works-note p:last-child {
+  margin-bottom: 0;
+}
+
+.how-it-works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.how-step {
+  padding: 1.45rem;
+  border-radius: 1rem;
+  background: var(--glass-warm);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(140%);
+}
+
+.how-step-number {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+  background: rgba(248, 244, 237, 0.34);
+  color: var(--green);
+  border: 1px solid rgba(255, 251, 245, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(14px) saturate(130%);
+  font-weight: 800;
+}
+
+.how-step h3 {
+  font-size: 2rem;
+  line-height: 0.97;
+  margin-bottom: 0.7rem;
+}
+
+.how-step p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.how-it-works-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.3rem;
+}
+
 .movement-bridge {
   margin-top: 1.4rem;
   padding-top: 1rem;
@@ -1501,10 +1581,12 @@ h3 {
   }
 
   .editorial-layout,
-  .stories-top {
+  .stories-top,
+  .how-it-works-top {
     grid-template-columns: 1fr;
   }
 
+  .how-it-works-grid,
   .flow-form-row-two,
   .flow-form-row-three {
     grid-template-columns: 1fr;
@@ -1572,6 +1654,7 @@ h3 {
   }
 
   .hero-actions,
+  .how-it-works-actions,
   .flow-actions,
   .footer-row {
     flex-direction: column;
