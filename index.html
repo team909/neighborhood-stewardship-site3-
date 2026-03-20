@@ -521,22 +521,51 @@
           <form class="flow-form" action="https://formspree.io/f/mzdjjqad" method="POST">
             <input type="hidden" name="recognition_path" value="Official Mailed Certificate" />
             <input type="hidden" name="submission_source" value="Website Flow Modal" />
+            <div class="flow-form-intro">
+              <p>Fill out the mailing details below, then continue to payment.</p>
+            </div>
+            <div class="flow-form-row flow-form-row-two">
+              <label>
+                <span>Name for certificate</span>
+                <input name="full_name" type="text" placeholder="Full name" autocomplete="name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input name="email" type="email" placeholder="Email" autocomplete="email" required />
+              </label>
+            </div>
             <label>
-              <span>Name for certificate</span>
-              <input name="full_name" type="text" placeholder="Full name" required />
+              <span>Street address</span>
+              <input name="address_line_1" type="text" placeholder="Street address" autocomplete="address-line1" required />
             </label>
             <label>
-              <span>Mailing address</span>
-              <textarea name="mailing_address" rows="4" placeholder="Mailing address" required></textarea>
+              <span>Apartment, suite, or unit</span>
+              <input name="address_line_2" type="text" placeholder="Optional" autocomplete="address-line2" />
             </label>
-            <label>
-              <span>Email</span>
-              <input name="email" type="email" placeholder="Email" required />
-            </label>
-            <label>
-              <span>Optional phone</span>
-              <input name="phone" type="text" placeholder="Optional phone number" />
-            </label>
+            <div class="flow-form-row flow-form-row-three">
+              <label>
+                <span>City</span>
+                <input name="city" type="text" placeholder="City" autocomplete="address-level2" required />
+              </label>
+              <label>
+                <span>State</span>
+                <input name="state" type="text" placeholder="State" autocomplete="address-level1" required />
+              </label>
+              <label>
+                <span>ZIP code</span>
+                <input name="postal_code" type="text" placeholder="ZIP" inputmode="numeric" autocomplete="postal-code" required />
+              </label>
+            </div>
+            <div class="flow-form-row flow-form-row-two">
+              <label>
+                <span>Optional phone</span>
+                <input name="phone" type="tel" placeholder="Optional phone number" autocomplete="tel" />
+              </label>
+              <label>
+                <span>Name of person or home being recognized</span>
+                <input name="recognized_name" type="text" placeholder="Optional" autocomplete="off" />
+              </label>
+            </div>
             <div class="flow-actions">
               <button class="button button-secondary" type="submit">Send Certificate Request</button>
               <a
@@ -559,30 +588,41 @@
           <form class="flow-form" action="https://formspree.io/f/maqpvadl" method="POST">
             <input type="hidden" name="recognition_path" value="Digital Recognition" />
             <input type="hidden" name="submission_source" value="Website Flow Modal" />
+            <div class="flow-form-intro">
+              <p>Keep it simple. Tell us who should be recognized and what stands out.</p>
+            </div>
+            <div class="flow-form-row flow-form-row-two">
+              <label>
+                <span>Nominee name</span>
+                <input name="nominee_name" type="text" placeholder="Nominee name" autocomplete="off" required />
+              </label>
+              <label>
+                <span>Your email</span>
+                <input name="submitter_email" type="email" placeholder="Your email" autocomplete="email" required />
+              </label>
+            </div>
             <label>
-              <span>Nominee name</span>
-              <input name="nominee_name" type="text" placeholder="Nominee name" required />
+              <span>Street or neighborhood</span>
+              <input name="nominee_address" type="text" placeholder="Street, block, or neighborhood" autocomplete="street-address" required />
             </label>
-            <label>
-              <span>Address or neighborhood</span>
-              <input name="nominee_address" type="text" placeholder="Street, block, or neighborhood" required />
-            </label>
-            <label>
-              <span>City and state</span>
-              <input name="city_state" type="text" placeholder="City and state" required />
-            </label>
+            <div class="flow-form-row flow-form-row-two">
+              <label>
+                <span>City</span>
+                <input name="city" type="text" placeholder="City" autocomplete="address-level2" required />
+              </label>
+              <label>
+                <span>State</span>
+                <input name="state" type="text" placeholder="State" autocomplete="address-level1" required />
+              </label>
+            </div>
             <label>
               <span>Why they stand out</span>
               <textarea
                 name="reason"
-                rows="5"
+                rows="4"
                 placeholder="Describe the care, pride, stewardship, or visible good that makes this recognition meaningful."
                 required
               ></textarea>
-            </label>
-            <label>
-              <span>Your email</span>
-              <input name="submitter_email" type="email" placeholder="Your email" required />
             </label>
             <button class="button button-primary form-button" type="submit">Send Digital Recognition</button>
           </form>
@@ -596,30 +636,41 @@
           <form class="flow-form" action="https://formspree.io/f/xpqyyell" method="POST">
             <input type="hidden" name="recognition_path" value="Nominate Someone" />
             <input type="hidden" name="submission_source" value="Website Flow Modal" />
-            <label>
-              <span>Nominee name</span>
-              <input name="nominee_name" type="text" placeholder="Nominee name" required />
-            </label>
+            <div class="flow-form-intro">
+              <p>Share the basics first, then tell us why this person, home, or place stands out.</p>
+            </div>
+            <div class="flow-form-row flow-form-row-two">
+              <label>
+                <span>Nominee name</span>
+                <input name="nominee_name" type="text" placeholder="Nominee name" autocomplete="off" required />
+              </label>
+              <label>
+                <span>Your email</span>
+                <input name="submitter_email" type="email" placeholder="Your email" autocomplete="email" required />
+              </label>
+            </div>
             <label>
               <span>Street or neighborhood</span>
-              <input name="nominee_address" type="text" placeholder="Street, block, or neighborhood" required />
+              <input name="nominee_address" type="text" placeholder="Street, block, or neighborhood" autocomplete="street-address" required />
             </label>
-            <label>
-              <span>City and state</span>
-              <input name="city_state" type="text" placeholder="City and state" required />
-            </label>
+            <div class="flow-form-row flow-form-row-two">
+              <label>
+                <span>City</span>
+                <input name="city" type="text" placeholder="City" autocomplete="address-level2" required />
+              </label>
+              <label>
+                <span>State</span>
+                <input name="state" type="text" placeholder="State" autocomplete="address-level1" required />
+              </label>
+            </div>
             <label>
               <span>Why they should be recognized</span>
               <textarea
                 name="reason"
-                rows="5"
+                rows="4"
                 placeholder="Tell us what makes this person, family, home, or local place worthy of recognition."
                 required
               ></textarea>
-            </label>
-            <label>
-              <span>Your email</span>
-              <input name="submitter_email" type="email" placeholder="Your email" required />
             </label>
             <button class="button button-primary form-button" type="submit">Send Nomination</button>
           </form>
