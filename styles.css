@@ -477,17 +477,6 @@ h3 {
   background: rgba(250, 246, 239, 0.2);
 }
 
-.town-extra-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 0.55rem;
-  margin-top: 0.75rem;
-}
-
-.town-extra-list-dark {
-  margin-top: 0.8rem;
-}
-
 .hero-panels {
   display: grid;
   gap: 1rem;
@@ -1025,7 +1014,8 @@ h3 {
 
 .story-modal,
 .flow-modal,
-.share-modal {
+.share-modal,
+.towns-modal {
   position: fixed;
   inset: 0;
   z-index: 40;
@@ -1037,13 +1027,15 @@ h3 {
 
 .story-modal.is-open,
 .flow-modal.is-open,
-.share-modal.is-open {
+.share-modal.is-open,
+.towns-modal.is-open {
   display: flex;
 }
 
 .story-modal-backdrop,
 .flow-modal-backdrop,
-.share-modal-backdrop {
+.share-modal-backdrop,
+.towns-modal-backdrop {
   position: absolute;
   inset: 0;
   background: rgba(15, 23, 18, 0.58);
@@ -1052,7 +1044,8 @@ h3 {
 
 .story-modal-card,
 .flow-modal-card,
-.share-modal-card {
+.share-modal-card,
+.towns-modal-card {
   position: relative;
   z-index: 1;
   width: min(44rem, 100%);
@@ -1070,9 +1063,14 @@ h3 {
   width: min(34rem, 100%);
 }
 
+.towns-modal-card {
+  width: min(38rem, 100%);
+}
+
 .story-modal-close,
 .flow-modal-close,
-.share-modal-close {
+.share-modal-close,
+.towns-modal-close {
   position: absolute;
   top: 0.9rem;
   right: 0.9rem;
@@ -1087,7 +1085,8 @@ h3 {
 
 .story-modal-card h2,
 .flow-modal-card h2,
-.share-modal-card h2 {
+.share-modal-card h2,
+.towns-modal-card h2 {
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   line-height: 0.95;
   margin-bottom: 0.8rem;
@@ -1224,6 +1223,13 @@ h3 {
   margin: 0.9rem 0 0;
   color: var(--green);
   font-weight: 600;
+}
+
+.towns-modal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
 }
 
 .reveal {
@@ -1384,6 +1390,7 @@ h3 {
   .story-modal-card,
   .flow-modal-card,
   .share-modal-card,
+  .towns-modal-card,
   .path-card,
   .floating-card,
   .editorial-copy-panel,
@@ -1396,7 +1403,8 @@ h3 {
 
   .story-modal-card,
   .flow-modal-card,
-  .share-modal-card {
+  .share-modal-card,
+  .towns-modal-card {
     width: 100%;
     max-height: 92vh;
     border-radius: 1.35rem 1.35rem 0 0;
@@ -1405,7 +1413,8 @@ h3 {
 
   .story-modal,
   .flow-modal,
-  .share-modal {
+  .share-modal,
+  .towns-modal {
     align-items: end;
     padding: 0.5rem 0.5rem 0;
   }

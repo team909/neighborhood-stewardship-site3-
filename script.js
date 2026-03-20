@@ -36,7 +36,8 @@ const shareStatus = document.getElementById("share-status");
 const copyLinkButton = document.querySelector(".js-copy-link");
 const shareTextLink = document.getElementById("share-text-link");
 const shareEmailLink = document.getElementById("share-email-link");
-const townToggleButtons = document.querySelectorAll("[data-town-toggle]");
+const townsModal = document.getElementById("towns-modal");
+const townsButtons = document.querySelectorAll("[data-open-towns]");
 
 const shareData = {
   title: "Neighborhood Stewardship Project",
@@ -171,6 +172,23 @@ function closeShareModal() {
   }
 }
 
+function closeTownsModal() {
+  if (!townsModal) {
+    return;
+  }
+
+  townsModal.classList.remove("is-open");
+  townsModal.setAttribute("aria-hidden", "true");
+
+  if (
+    !storyModal?.classList.contains("is-open") &&
+    !flowModal?.classList.contains("is-open") &&
+    !shareModal?.classList.contains("is-open")
+  ) {
+    setBodyLock(false);
+  }
+}
+
 function openShareModal() {
   if (!shareModal) {
     return;
@@ -182,6 +200,16 @@ function openShareModal() {
   }
   shareModal.classList.add("is-open");
   shareModal.setAttribute("aria-hidden", "false");
+  setBodyLock(true);
+}
+
+function openTownsModal() {
+  if (!townsModal) {
+    return;
+  }
+
+  townsModal.classList.add("is-open");
+  townsModal.setAttribute("aria-hidden", "false");
   setBodyLock(true);
 }
 
@@ -240,24 +268,9 @@ shareButtons.forEach((button) => {
   });
 });
 
-townToggleButtons.forEach((button) => {
+townsButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const controls = button.getAttribute("aria-controls");
-
-    if (!controls) {
-      return;
-    }
-
-    const list = document.getElementById(controls);
-
-    if (!list) {
-      return;
-    }
-
-    const isExpanded = button.getAttribute("aria-expanded") === "true";
-    button.setAttribute("aria-expanded", String(!isExpanded));
-    button.textContent = isExpanded ? "More" : "Less";
-    list.hidden = isExpanded;
+    openTownsModal();
   });
 });
 
@@ -293,6 +306,10 @@ document.addEventListener("click", (event) => {
   if (target.matches(".share-modal-close") || target.dataset.closeShare === "true") {
     closeShareModal();
   }
+
+  if (target.matches(".towns-modal-close") || target.dataset.closeTowns === "true") {
+    closeTownsModal();
+  }
 });
 
 document.addEventListener("keydown", (event) => {
@@ -303,6 +320,7 @@ document.addEventListener("keydown", (event) => {
   closeStoryModal();
   closeFlowModal();
   closeShareModal();
+  closeTownsModal();
 });
 
 updateShareLinks();
