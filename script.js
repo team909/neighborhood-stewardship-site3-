@@ -36,8 +36,7 @@ const shareStatus = document.getElementById("share-status");
 const copyLinkButton = document.querySelector(".js-copy-link");
 const shareTextLink = document.getElementById("share-text-link");
 const shareEmailLink = document.getElementById("share-email-link");
-const nearbyTownsToggle = document.getElementById("nearby-towns-toggle");
-const nearbyTownsList = document.getElementById("nearby-towns-list");
+const townToggleButtons = document.querySelectorAll("[data-town-toggle]");
 
 const shareData = {
   title: "Neighborhood Stewardship Project",
@@ -241,15 +240,25 @@ shareButtons.forEach((button) => {
   });
 });
 
-nearbyTownsToggle?.addEventListener("click", () => {
-  if (!nearbyTownsList) {
-    return;
-  }
+townToggleButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const controls = button.getAttribute("aria-controls");
 
-  const isExpanded = nearbyTownsToggle.getAttribute("aria-expanded") === "true";
-  nearbyTownsToggle.setAttribute("aria-expanded", String(!isExpanded));
-  nearbyTownsToggle.textContent = isExpanded ? "More" : "Less";
-  nearbyTownsList.hidden = isExpanded;
+    if (!controls) {
+      return;
+    }
+
+    const list = document.getElementById(controls);
+
+    if (!list) {
+      return;
+    }
+
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!isExpanded));
+    button.textContent = isExpanded ? "More" : "Less";
+    list.hidden = isExpanded;
+  });
 });
 
 copyLinkButton?.addEventListener("click", async () => {

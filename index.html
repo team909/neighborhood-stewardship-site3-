@@ -74,24 +74,38 @@
                 </div>
                 <div class="signal-chip">
                   <strong>Towns across the area</strong>
-                  <div class="signal-town-wrap">
-                    <span class="signal-town-list">
-                      Longmeadow, Wilbraham, Southwick, West Springfield, East Longmeadow, and Somers
-                    </span>
+                  <div class="town-inline-list town-inline-list-dark">
+                    <span class="town-pill town-pill-dark">Longmeadow</span>
+                    <span class="town-pill town-pill-dark">Wilbraham</span>
+                    <span class="town-pill town-pill-dark">Southwick</span>
+                    <span class="town-pill town-pill-dark">West Springfield</span>
+                    <span class="town-pill town-pill-dark">East Longmeadow</span>
+                    <span class="town-pill town-pill-dark">Somers</span>
                     <button
-                      class="signal-more-button"
-                      id="nearby-towns-toggle"
+                      class="town-more-button town-more-button-dark"
+                      data-town-toggle="hero"
                       type="button"
                       aria-expanded="false"
-                      aria-controls="nearby-towns-list"
+                      aria-controls="nearby-towns-list-hero"
                     >
                       More
                     </button>
                   </div>
-                  <p class="signal-nearby-towns" id="nearby-towns-list" hidden>
-                    Agawam, Chicopee, Enfield, Granby, Hampden, Holyoke, Ludlow, Monson, Springfield,
-                    Suffield, Westfield, Ellington, and Stafford.
-                  </p>
+                  <div class="town-extra-list town-extra-list-dark" id="nearby-towns-list-hero" hidden>
+                    <span class="town-pill town-pill-dark town-pill-soft">Agawam</span>
+                    <span class="town-pill town-pill-dark town-pill-soft">Chicopee</span>
+                    <span class="town-pill town-pill-dark town-pill-soft">Enfield</span>
+                    <span class="town-pill town-pill-dark town-pill-soft">Granby</span>
+                    <span class="town-pill town-pill-dark town-pill-soft">Hampden</span>
+                    <span class="town-pill town-pill-dark town-pill-soft">Holyoke</span>
+                    <span class="town-pill town-pill-dark town-pill-soft">Ludlow</span>
+                    <span class="town-pill town-pill-dark town-pill-soft">Monson</span>
+                    <span class="town-pill town-pill-dark town-pill-soft">Springfield</span>
+                    <span class="town-pill town-pill-dark town-pill-soft">Suffield</span>
+                    <span class="town-pill town-pill-dark town-pill-soft">Westfield</span>
+                    <span class="town-pill town-pill-dark town-pill-soft">Ellington</span>
+                    <span class="town-pill town-pill-dark town-pill-soft">Stafford</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -132,12 +146,38 @@
               </p>
             </div>
             <div class="activation-stats">
-              <span>Longmeadow</span>
-              <span>Wilbraham</span>
-              <span>Southwick</span>
-              <span>West Springfield</span>
-              <span>East Longmeadow</span>
-              <span>Somers</span>
+              <div class="town-inline-list">
+                <span class="town-pill">Longmeadow</span>
+                <span class="town-pill">Wilbraham</span>
+                <span class="town-pill">Southwick</span>
+                <span class="town-pill">West Springfield</span>
+                <span class="town-pill">East Longmeadow</span>
+                <span class="town-pill">Somers</span>
+                <button
+                  class="town-more-button"
+                  data-town-toggle="activation"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="nearby-towns-list-activation"
+                >
+                  More
+                </button>
+              </div>
+              <div class="town-extra-list" id="nearby-towns-list-activation" hidden>
+                <span class="town-pill town-pill-soft">Agawam</span>
+                <span class="town-pill town-pill-soft">Chicopee</span>
+                <span class="town-pill town-pill-soft">Enfield</span>
+                <span class="town-pill town-pill-soft">Granby</span>
+                <span class="town-pill town-pill-soft">Hampden</span>
+                <span class="town-pill town-pill-soft">Holyoke</span>
+                <span class="town-pill town-pill-soft">Ludlow</span>
+                <span class="town-pill town-pill-soft">Monson</span>
+                <span class="town-pill town-pill-soft">Springfield</span>
+                <span class="town-pill town-pill-soft">Suffield</span>
+                <span class="town-pill town-pill-soft">Westfield</span>
+                <span class="town-pill town-pill-soft">Ellington</span>
+                <span class="town-pill town-pill-soft">Stafford</span>
+              </div>
             </div>
           </div>
         </section>
@@ -449,12 +489,38 @@
               <h2>Starting in towns where this kind of recognition already makes sense.</h2>
             </div>
             <div class="towns-grid reveal">
-              <span>Longmeadow</span>
-              <span>Wilbraham</span>
-              <span>Southwick</span>
-              <span>West Springfield</span>
-              <span>East Longmeadow</span>
-              <span>Somers</span>
+              <div class="town-inline-list">
+                <span class="town-pill">Longmeadow</span>
+                <span class="town-pill">Wilbraham</span>
+                <span class="town-pill">Southwick</span>
+                <span class="town-pill">West Springfield</span>
+                <span class="town-pill">East Longmeadow</span>
+                <span class="town-pill">Somers</span>
+                <button
+                  class="town-more-button"
+                  data-town-toggle="launch"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="nearby-towns-list-launch"
+                >
+                  More
+                </button>
+              </div>
+              <div class="town-extra-list" id="nearby-towns-list-launch" hidden>
+                <span class="town-pill town-pill-soft">Agawam</span>
+                <span class="town-pill town-pill-soft">Chicopee</span>
+                <span class="town-pill town-pill-soft">Enfield</span>
+                <span class="town-pill town-pill-soft">Granby</span>
+                <span class="town-pill town-pill-soft">Hampden</span>
+                <span class="town-pill town-pill-soft">Holyoke</span>
+                <span class="town-pill town-pill-soft">Ludlow</span>
+                <span class="town-pill town-pill-soft">Monson</span>
+                <span class="town-pill town-pill-soft">Springfield</span>
+                <span class="town-pill town-pill-soft">Suffield</span>
+                <span class="town-pill town-pill-soft">Westfield</span>
+                <span class="town-pill town-pill-soft">Ellington</span>
+                <span class="town-pill town-pill-soft">Stafford</span>
+              </div>
             </div>
           </div>
         </section>
