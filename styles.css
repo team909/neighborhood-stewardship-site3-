@@ -1038,8 +1038,10 @@ h3 {
 .towns-modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 18, 0.58);
-  backdrop-filter: blur(10px);
+  background:
+    linear-gradient(180deg, rgba(17, 25, 20, 0.34), rgba(17, 25, 20, 0.42)),
+    rgba(15, 23, 18, 0.16);
+  backdrop-filter: blur(12px) saturate(120%);
 }
 
 .towns-modal.is-open .towns-modal-backdrop {
@@ -1070,11 +1072,13 @@ h3 {
 .towns-modal-card {
   width: min(38rem, 100%);
   border-radius: 1.18rem;
-  background: linear-gradient(180deg, rgba(246, 241, 232, 0.9), rgba(234, 227, 216, 0.86));
-  border: 1px solid rgba(255, 251, 245, 0.5);
+  background:
+    linear-gradient(180deg, rgba(248, 244, 237, 0.42), rgba(235, 228, 217, 0.28));
+  border: 1px solid rgba(255, 251, 245, 0.34);
   box-shadow:
-    0 26px 46px rgba(27, 23, 16, 0.18),
-    0 1px 0 rgba(255, 255, 255, 0.42) inset;
+    0 26px 46px rgba(27, 23, 16, 0.12),
+    0 1px 0 rgba(255, 255, 255, 0.28) inset;
+  backdrop-filter: blur(22px) saturate(125%);
 }
 
 .towns-modal.is-open .towns-modal-card {
@@ -1107,22 +1111,24 @@ h3 {
 }
 
 .towns-modal-card .intro-kicker {
-  color: #6a665a;
+  color: rgba(77, 72, 63, 0.88);
 }
 
 .towns-modal-card h2 {
-  color: #1f1a15;
+  color: rgba(31, 26, 21, 0.94);
   text-shadow: none;
 }
 
 .towns-modal-intro {
   padding: 1rem 1.05rem 1.05rem;
   border-radius: 1rem;
-  background: linear-gradient(180deg, rgba(247, 242, 234, 0.96), rgba(236, 229, 219, 0.94));
-  border: 1px solid rgba(31, 48, 39, 0.08);
+  background:
+    linear-gradient(180deg, rgba(250, 246, 240, 0.58), rgba(239, 232, 221, 0.42));
+  border: 1px solid rgba(255, 251, 245, 0.32);
   box-shadow:
-    0 16px 28px rgba(43, 36, 24, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.42) inset;
+    0 16px 28px rgba(43, 36, 24, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.34) inset;
+  backdrop-filter: blur(18px) saturate(120%);
 }
 
 .towns-modal-intro .intro-kicker {
@@ -1274,7 +1280,7 @@ h3 {
 }
 
 .towns-modal-copy {
-  color: rgba(34, 29, 23, 0.92);
+  color: rgba(34, 29, 23, 0.84);
   font-size: 1.02rem;
   line-height: 1.68;
   max-width: 32rem;
