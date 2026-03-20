@@ -30,6 +30,8 @@ const flowTabs = document.querySelectorAll(".flow-tab");
 const flowPanels = document.querySelectorAll(".flow-panel");
 const pathCards = document.querySelectorAll("[data-path-card]");
 const flowButtons = document.querySelectorAll(".js-open-flow");
+const flowCloseButtons = document.querySelectorAll(".flow-modal-close");
+const flowBackdrops = document.querySelectorAll(".flow-modal-backdrop");
 const shareButtons = document.querySelectorAll(".js-share-project");
 const shareModal = document.getElementById("share-modal");
 const shareStatus = document.getElementById("share-status");
@@ -259,6 +261,20 @@ flowTabs.forEach((tab) => {
     }
 
     setFlow(path);
+  });
+});
+
+flowCloseButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    closeFlowModal();
+  });
+});
+
+flowBackdrops.forEach((backdrop) => {
+  backdrop.addEventListener("click", () => {
+    closeFlowModal();
   });
 });
 
