@@ -1070,6 +1070,11 @@ h3 {
 .towns-modal-card {
   width: min(38rem, 100%);
   border-radius: 1.18rem;
+  background: linear-gradient(180deg, rgba(246, 241, 232, 0.9), rgba(234, 227, 216, 0.86));
+  border: 1px solid rgba(255, 251, 245, 0.5);
+  box-shadow:
+    0 26px 46px rgba(27, 23, 16, 0.18),
+    0 1px 0 rgba(255, 255, 255, 0.42) inset;
 }
 
 .towns-modal.is-open .towns-modal-card {
@@ -1108,6 +1113,24 @@ h3 {
 .towns-modal-card h2 {
   color: #1f1a15;
   text-shadow: none;
+}
+
+.towns-modal-intro {
+  padding: 1rem 1.05rem 1.05rem;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, rgba(247, 242, 234, 0.96), rgba(236, 229, 219, 0.94));
+  border: 1px solid rgba(31, 48, 39, 0.08);
+  box-shadow:
+    0 16px 28px rgba(43, 36, 24, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.42) inset;
+}
+
+.towns-modal-intro .intro-kicker {
+  margin-bottom: 0.55rem;
+}
+
+.towns-modal-intro h2 {
+  margin-bottom: 0.55rem;
 }
 
 .story-modal-location {
@@ -1251,10 +1274,11 @@ h3 {
 }
 
 .towns-modal-copy {
-  color: rgba(34, 29, 23, 0.84);
+  color: rgba(34, 29, 23, 0.92);
   font-size: 1.02rem;
-  line-height: 1.72;
+  line-height: 1.68;
   max-width: 32rem;
+  margin-bottom: 0;
 }
 
 @keyframes modalBackdropFade {
