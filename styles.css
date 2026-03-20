@@ -279,6 +279,28 @@ h3 {
   box-shadow: var(--shadow-soft);
 }
 
+.button-ghost {
+  background: linear-gradient(180deg, rgba(252, 248, 241, 0.94), rgba(245, 239, 230, 0.88));
+  color: var(--green);
+  border: 1px solid rgba(31, 48, 39, 0.1);
+  box-shadow: var(--shadow-soft);
+}
+
+.button-ghost:hover {
+  background: linear-gradient(180deg, rgba(255, 250, 244, 0.98), rgba(246, 240, 232, 0.92));
+}
+
+.hero-actions .button-ghost {
+  background: rgba(250, 246, 239, 0.12);
+  color: #fff9f0;
+  border: 1px solid rgba(255, 247, 236, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.hero-actions .button-ghost:hover {
+  background: rgba(250, 246, 239, 0.18);
+}
+
 .text-link {
   color: var(--green);
   font-weight: 800;
@@ -541,7 +563,7 @@ h3 {
   inset: 0;
   background-image:
     linear-gradient(180deg, rgba(25, 36, 27, 0.08), rgba(25, 36, 27, 0.22)),
-    url("./assets/why-it-matters.png");
+    url("./assets/why-it-matters.jpg");
   background-position: center 54%;
 }
 
@@ -609,7 +631,7 @@ h3 {
 .editorial-image-garden {
   background-image:
     linear-gradient(180deg, rgba(22, 33, 25, 0.08), rgba(22, 33, 25, 0.24)),
-    url("./assets/around-the-block.png");
+    url("./assets/around-the-block.jpg");
   background-position: center 56%;
 }
 
@@ -658,14 +680,14 @@ h3 {
 .story-image-longmeadow {
   background-image:
     linear-gradient(180deg, rgba(25, 36, 27, 0.08), rgba(25, 36, 27, 0.24)),
-    url("./assets/longmeadow-porch-light-story-card.png");
+    url("./assets/longmeadow-porch-light-story-card.jpg");
   background-position: center 58%;
 }
 
 .story-image-wilbraham {
   background-image:
     linear-gradient(180deg, rgba(25, 36, 27, 0.08), rgba(25, 36, 27, 0.24)),
-    url("./assets/wilbraham-story-card.png");
+    url("./assets/wilbraham-story-card.jpg");
   background-position: center 58%;
 }
 
@@ -942,8 +964,16 @@ h3 {
   font-weight: 700;
 }
 
+.footer-share {
+  justify-self: start;
+  color: var(--green);
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .story-modal,
-.flow-modal {
+.flow-modal,
+.share-modal {
   position: fixed;
   inset: 0;
   z-index: 40;
@@ -954,12 +984,14 @@ h3 {
 }
 
 .story-modal.is-open,
-.flow-modal.is-open {
+.flow-modal.is-open,
+.share-modal.is-open {
   display: flex;
 }
 
 .story-modal-backdrop,
-.flow-modal-backdrop {
+.flow-modal-backdrop,
+.share-modal-backdrop {
   position: absolute;
   inset: 0;
   background: rgba(15, 23, 18, 0.58);
@@ -967,7 +999,8 @@ h3 {
 }
 
 .story-modal-card,
-.flow-modal-card {
+.flow-modal-card,
+.share-modal-card {
   position: relative;
   z-index: 1;
   width: min(44rem, 100%);
@@ -981,8 +1014,13 @@ h3 {
   overflow: auto;
 }
 
+.share-modal-card {
+  width: min(34rem, 100%);
+}
+
 .story-modal-close,
-.flow-modal-close {
+.flow-modal-close,
+.share-modal-close {
   position: absolute;
   top: 0.9rem;
   right: 0.9rem;
@@ -996,7 +1034,8 @@ h3 {
 }
 
 .story-modal-card h2,
-.flow-modal-card h2 {
+.flow-modal-card h2,
+.share-modal-card h2 {
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   line-height: 0.95;
   margin-bottom: 0.8rem;
@@ -1121,6 +1160,20 @@ h3 {
   width: 100%;
 }
 
+.share-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.share-status {
+  min-height: 1.5rem;
+  margin: 0.9rem 0 0;
+  color: var(--green);
+  font-weight: 600;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -1161,11 +1214,23 @@ h3 {
   .flow-form-row-three {
     grid-template-columns: 1fr;
   }
+
+  .hero-copy {
+    max-width: 46rem;
+  }
+
+  .hero-panels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 760px) {
   .container {
     width: min(calc(100% - 1rem), var(--max-width));
+  }
+
+  .section {
+    padding: 4.25rem 0;
   }
 
   .site-nav {
@@ -1177,15 +1242,38 @@ h3 {
   }
 
   .hero-content {
-    padding-top: 7.5rem;
+    padding-top: 6.5rem;
+    padding-bottom: 2.2rem;
+    gap: 1.2rem;
   }
 
   .hero-copy h1 {
-    font-size: 3.7rem;
+    font-size: clamp(3rem, 13vw, 4.1rem);
+    max-width: 8.8ch;
+    line-height: 0.9;
   }
 
   .hero-copy {
-    padding-left: 0;
+    padding: 1.1rem 1rem 0;
+    max-width: none;
+  }
+
+  .hero-copy .hero-lede {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .hero-signals {
+    gap: 0.65rem;
+  }
+
+  .signal-chip {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .hero-panels {
+    display: none;
   }
 
   .hero-actions,
@@ -1210,8 +1298,40 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .activation-band {
+    margin-top: -0.7rem;
+  }
+
+  .activation-grid {
+    padding: 1rem;
+  }
+
+  .activation-copy,
+  .section-heading,
+  .stories-top,
+  .recognition-intro {
+    margin-bottom: 1.4rem;
+  }
+
+  .stories-top {
+    gap: 1rem;
+  }
+
+  .stories-note {
+    padding: 1rem 1rem 0;
+  }
+
+  .story-card {
+    gap: 0;
+  }
+
+  .story-image {
+    min-height: 13rem;
+  }
+
   .story-modal-card,
   .flow-modal-card,
+  .share-modal-card,
   .path-card,
   .floating-card,
   .editorial-copy-panel,
@@ -1223,7 +1343,60 @@ h3 {
   }
 
   .story-modal-card,
-  .flow-modal-card {
-    padding-top: 3rem;
+  .flow-modal-card,
+  .share-modal-card {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: 1.35rem 1.35rem 0 0;
+    padding: 3rem 1rem 1rem;
+  }
+
+  .story-modal,
+  .flow-modal,
+  .share-modal {
+    align-items: end;
+    padding: 0.5rem 0.5rem 0;
+  }
+
+  .flow-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.2rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .flow-tab {
+    flex: 0 0 auto;
+  }
+
+  .flow-head {
+    padding-right: 0.5rem;
+  }
+
+  .flow-highlight {
+    margin-bottom: 0.85rem;
+  }
+
+  .flow-form {
+    gap: 0.75rem;
+  }
+
+  .flow-form textarea {
+    min-height: 7.5rem;
+  }
+
+  .flow-actions {
+    position: sticky;
+    bottom: 0;
+    padding-top: 0.85rem;
+    background: linear-gradient(180deg, rgba(248, 242, 233, 0), rgba(248, 242, 233, 0.96) 26%);
+  }
+
+  .share-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    gap: 0.85rem;
   }
 }

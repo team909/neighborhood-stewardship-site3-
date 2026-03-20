@@ -30,6 +30,18 @@ const flowTabs = document.querySelectorAll(".flow-tab");
 const flowPanels = document.querySelectorAll(".flow-panel");
 const pathCards = document.querySelectorAll("[data-path-card]");
 const flowButtons = document.querySelectorAll(".js-open-flow");
+const shareButtons = document.querySelectorAll(".js-share-project");
+const shareModal = document.getElementById("share-modal");
+const shareStatus = document.getElementById("share-status");
+const copyLinkButton = document.querySelector(".js-copy-link");
+const shareTextLink = document.getElementById("share-text-link");
+const shareEmailLink = document.getElementById("share-email-link");
+
+const shareData = {
+  title: "Neighborhood Stewardship Project",
+  text: "Recognition for the homes and neighbors that make a street feel better kept.",
+  url: window.location.href,
+};
 
 const flowContent = {
   mailed: {
@@ -54,6 +66,21 @@ const flowContent = {
 
 function setBodyLock(isLocked) {
   document.body.style.overflow = isLocked ? "hidden" : "";
+}
+
+function updateShareLinks() {
+  if (!shareTextLink || !shareEmailLink) {
+    return;
+  }
+
+  const encodedText = encodeURIComponent(`${shareData.text} ${shareData.url}`);
+  const encodedSubject = encodeURIComponent("Neighborhood Stewardship Project");
+  const encodedBody = encodeURIComponent(
+    `I wanted to share this with you:\n\n${shareData.text}\n\n${shareData.url}`,
+  );
+
+  shareTextLink.href = `sms:?body=${encodedText}`;
+  shareEmailLink.href = `mailto:?subject=${encodedSubject}&body=${encodedBody}`;
 }
 
 function closeStoryModal() {
@@ -130,6 +157,48 @@ function closeFlowModal() {
   }
 }
 
+function closeShareModal() {
+  if (!shareModal) {
+    return;
+  }
+
+  shareModal.classList.remove("is-open");
+  shareModal.setAttribute("aria-hidden", "true");
+
+  if (!storyModal?.classList.contains("is-open") && !flowModal?.classList.contains("is-open")) {
+    setBodyLock(false);
+  }
+}
+
+function openShareModal() {
+  if (!shareModal) {
+    return;
+  }
+
+  updateShareLinks();
+  if (shareStatus) {
+    shareStatus.textContent = "";
+  }
+  shareModal.classList.add("is-open");
+  shareModal.setAttribute("aria-hidden", "false");
+  setBodyLock(true);
+}
+
+async function handleShare() {
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+      return;
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
+        return;
+      }
+    }
+  }
+
+  openShareModal();
+}
+
 storyCards.forEach((card) => {
   const trigger = card.querySelector(".story-button");
 
@@ -164,6 +233,26 @@ flowTabs.forEach((tab) => {
   });
 });
 
+shareButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    handleShare();
+  });
+});
+
+copyLinkButton?.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(shareData.url);
+
+    if (shareStatus) {
+      shareStatus.textContent = "Link copied. You can paste it into a text or email.";
+    }
+  } catch {
+    if (shareStatus) {
+      shareStatus.textContent = "Could not copy automatically. Use the text or email buttons below.";
+    }
+  }
+});
+
 document.addEventListener("click", (event) => {
   const target = event.target;
 
@@ -178,6 +267,10 @@ document.addEventListener("click", (event) => {
   if (target.matches(".flow-modal-close") || target.dataset.closeFlow === "true") {
     closeFlowModal();
   }
+
+  if (target.matches(".share-modal-close") || target.dataset.closeShare === "true") {
+    closeShareModal();
+  }
 });
 
 document.addEventListener("keydown", (event) => {
@@ -187,4 +280,7 @@ document.addEventListener("keydown", (event) => {
 
   closeStoryModal();
   closeFlowModal();
+  closeShareModal();
 });
+
+updateShareLinks();
