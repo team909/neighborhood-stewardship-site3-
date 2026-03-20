@@ -15,6 +15,12 @@
   --gold: #8a7251;
   --shadow: 0 22px 54px rgba(43, 36, 24, 0.12);
   --shadow-soft: 0 12px 26px rgba(43, 36, 24, 0.08);
+  --glass-warm: linear-gradient(180deg, rgba(248, 244, 237, 0.2), rgba(235, 228, 217, 0.1));
+  --glass-warm-strong: linear-gradient(180deg, rgba(250, 246, 240, 0.24), rgba(239, 232, 221, 0.14));
+  --glass-warm-soft: linear-gradient(180deg, rgba(250, 246, 240, 0.16), rgba(239, 232, 221, 0.08));
+  --glass-border: rgba(255, 251, 245, 0.2);
+  --glass-shadow: 0 20px 40px rgba(27, 23, 16, 0.08), 0 1px 0 rgba(255, 255, 255, 0.18) inset, 0 -1px 0 rgba(255, 255, 255, 0.08) inset;
+  --glass-shadow-soft: 0 14px 28px rgba(43, 36, 24, 0.05), 0 1px 0 rgba(255, 255, 255, 0.16) inset;
   --radius-xl: 2rem;
   --radius-lg: 1.45rem;
   --radius-md: 1rem;
@@ -392,10 +398,10 @@ h3 {
 .signal-chip {
   padding: 1rem 1.05rem;
   border-radius: 0.78rem;
-  background: linear-gradient(180deg, rgba(255, 246, 233, 0.16), rgba(255, 246, 233, 0.08));
-  border: 1px solid rgba(255, 249, 242, 0.18);
-  backdrop-filter: blur(16px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  background: var(--glass-warm-soft);
+  border: 1px solid rgba(255, 249, 242, 0.16);
+  backdrop-filter: blur(18px) saturate(135%);
+  box-shadow: 0 12px 24px rgba(14, 18, 14, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .signal-chip strong {
@@ -432,22 +438,25 @@ h3 {
 }
 
 .town-pill {
-  background: rgba(252, 247, 240, 0.72);
+  background: rgba(252, 247, 240, 0.4);
   text-align: center;
-  border: 1px solid rgba(31, 48, 39, 0.08);
+  border: 1px solid rgba(255, 251, 245, 0.16);
   color: var(--text);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 18px rgba(27, 23, 16, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px) saturate(130%);
 }
 
 .town-pill-soft {
-  background: rgba(244, 237, 227, 0.92);
+  background: rgba(244, 237, 227, 0.28);
 }
 
 .town-more-button {
-  background: rgba(232, 225, 213, 0.88);
-  border: 1px solid rgba(31, 48, 39, 0.12);
+  background: rgba(232, 225, 213, 0.34);
+  border: 1px solid rgba(255, 251, 245, 0.18);
   color: var(--green);
   cursor: pointer;
+  box-shadow: 0 10px 18px rgba(27, 23, 16, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(16px) saturate(130%);
   transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
 }
 
@@ -457,10 +466,10 @@ h3 {
 }
 
 .town-inline-list-dark .town-pill {
-  background: rgba(250, 246, 239, 0.12);
+  background: rgba(250, 246, 239, 0.1);
   border: 1px solid rgba(255, 247, 236, 0.18);
   color: #fff7ec;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 18px rgba(11, 15, 12, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .town-inline-list-dark .town-pill-soft {
@@ -492,13 +501,10 @@ h3 {
 .broadcast-card,
 .story-modal-card,
 .flow-modal-card {
-  background:
-    linear-gradient(180deg, rgba(249, 244, 236, 0.98), rgba(238, 229, 214, 0.95));
-  border: 1px solid rgba(255, 251, 245, 0.64);
-  box-shadow:
-    0 16px 30px rgba(43, 36, 24, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.42) inset;
-  backdrop-filter: blur(18px);
+  background: var(--glass-warm);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(140%);
 }
 
 .floating-card {
@@ -615,12 +621,10 @@ h3 {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
   gap: 1rem;
-  background:
-    linear-gradient(135deg, rgba(239, 240, 230, 0.98), rgba(220, 227, 212, 0.94));
-  border: 1px solid rgba(78, 66, 49, 0.1);
-  box-shadow:
-    0 14px 28px rgba(43, 36, 24, 0.09),
-    0 1px 0 rgba(255, 255, 255, 0.36) inset;
+  background: var(--glass-warm-strong);
+  border: 1px solid rgba(255, 251, 245, 0.22);
+  box-shadow: var(--glass-shadow-soft);
+  backdrop-filter: blur(22px) saturate(140%);
 }
 
 .band-text {
@@ -682,11 +686,10 @@ h3 {
   bottom: 1rem;
   padding: 1rem 1.05rem;
   border-radius: 0.9rem;
-  background: linear-gradient(180deg, rgba(244, 242, 233, 0.96), rgba(228, 232, 220, 0.94));
-  border: 1px solid rgba(255, 251, 245, 0.64);
-  box-shadow:
-    0 16px 30px rgba(43, 36, 24, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.42) inset;
+  background: var(--glass-warm-strong);
+  border: 1px solid rgba(255, 251, 245, 0.24);
+  box-shadow: var(--glass-shadow-soft);
+  backdrop-filter: blur(22px) saturate(140%);
 }
 
 .movement-photo-note p:last-child {
@@ -714,22 +717,18 @@ h3 {
 
 .editorial-photo-panel {
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(245, 243, 233, 0.98), rgba(229, 233, 220, 0.95));
-  border: 1px solid rgba(255, 251, 245, 0.64);
-  box-shadow:
-    0 16px 30px rgba(43, 36, 24, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.42) inset;
+  background: var(--glass-warm);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(140%);
 }
 
 .editorial-copy-panel {
   padding: 1.75rem;
-  background:
-    linear-gradient(180deg, rgba(245, 243, 233, 0.98), rgba(229, 233, 220, 0.95));
-  border: 1px solid rgba(255, 251, 245, 0.64);
-  box-shadow:
-    0 16px 30px rgba(43, 36, 24, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.42) inset;
+  background: var(--glass-warm-strong);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(140%);
 }
 
 .editorial-image {
@@ -764,9 +763,10 @@ h3 {
 .stories-note {
   padding: 1.35rem 1.45rem;
   border-radius: 0.98rem;
-  background: linear-gradient(180deg, rgba(239, 239, 229, 0.98), rgba(223, 228, 214, 0.94));
-  border: 1px solid rgba(34, 29, 23, 0.06);
-  box-shadow: var(--shadow-soft);
+  background: var(--glass-warm-strong);
+  border: 1px solid rgba(255, 251, 245, 0.22);
+  box-shadow: var(--glass-shadow-soft);
+  backdrop-filter: blur(22px) saturate(140%);
 }
 
 .stories-note p:last-child {
@@ -835,11 +835,14 @@ h3 {
 .story-tag {
   padding: 0.42rem 0.68rem;
   border-radius: 999px;
-  background: rgba(24, 57, 45, 0.08);
-  color: var(--green);
+  background: rgba(248, 244, 237, 0.32);
+  color: var(--green-deep);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.04em;
+  border: 1px solid rgba(255, 251, 245, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(14px) saturate(130%);
 }
 
 .story-copy h3 {
@@ -872,8 +875,7 @@ h3 {
 .recognition-aside {
   padding: 1.4rem;
   border-radius: 0.98rem;
-  background:
-    linear-gradient(180deg, rgba(237, 238, 227, 0.98), rgba(220, 226, 212, 0.94));
+  background: var(--glass-warm-strong);
 }
 
 .path-grid {
@@ -895,8 +897,9 @@ h3 {
 
 .path-card-featured {
   background:
-    radial-gradient(circle at top right, rgba(191, 156, 107, 0.22), transparent 28%),
-    linear-gradient(180deg, rgba(241, 239, 228, 0.98), rgba(223, 228, 212, 0.97));
+    radial-gradient(circle at top right, rgba(191, 156, 107, 0.14), transparent 30%),
+    linear-gradient(180deg, rgba(248, 244, 237, 0.24), rgba(235, 228, 217, 0.14));
+  border-color: rgba(255, 247, 236, 0.24);
 }
 
 .path-header {
@@ -921,18 +924,25 @@ h3 {
 }
 
 .path-badge {
-  background: rgba(31, 92, 59, 0.08);
+  background: rgba(248, 244, 237, 0.34);
   color: var(--green);
+  border: 1px solid rgba(255, 251, 245, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(14px) saturate(130%);
 }
 
 .path-badge-featured {
-  background: rgba(138, 105, 64, 0.14);
+  background: rgba(244, 232, 211, 0.34);
   color: var(--gold);
+  border: 1px solid rgba(255, 247, 236, 0.18);
 }
 
 .path-price {
-  background: rgba(252, 248, 242, 0.94);
+  background: rgba(248, 244, 237, 0.34);
   color: var(--text);
+  border: 1px solid rgba(255, 251, 245, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(14px) saturate(130%);
 }
 
 .path-list,
@@ -1000,7 +1010,7 @@ h3 {
 }
 
 .broadcast-card.muted {
-  background: linear-gradient(180deg, rgba(239, 239, 229, 0.96), rgba(223, 228, 214, 0.92));
+  background: var(--glass-warm-strong);
 }
 
 .towns-layout {
@@ -1016,11 +1026,10 @@ h3 {
 .closing-layout {
   padding: 1.65rem;
   border-radius: 1.08rem;
-  background: linear-gradient(135deg, rgba(248, 242, 233, 0.98), rgba(234, 227, 216, 0.92));
-  border: 1px solid rgba(31, 48, 39, 0.08);
-  box-shadow:
-    0 18px 34px rgba(43, 36, 24, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.44) inset;
+  background: var(--glass-warm-strong);
+  border: 1px solid rgba(255, 251, 245, 0.22);
+  box-shadow: var(--glass-shadow-soft);
+  backdrop-filter: blur(22px) saturate(140%);
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 1rem;
@@ -1144,6 +1153,10 @@ h3 {
 
 .share-modal-card {
   width: min(34rem, 100%);
+  background: var(--glass-warm);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(24px) saturate(140%);
 }
 
 .towns-modal-card {
