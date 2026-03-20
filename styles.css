@@ -481,7 +481,7 @@ h3 {
   display: grid;
   gap: 1rem;
   justify-self: end;
-  width: min(30rem, 100%);
+  width: min(28rem, 100%);
 }
 
 .floating-card,
@@ -504,6 +504,60 @@ h3 {
 .floating-card {
   padding: 1.3rem;
   border-radius: 1.35rem;
+}
+
+.hero-glass-panel {
+  background:
+    linear-gradient(180deg, rgba(248, 244, 237, 0.12), rgba(235, 228, 217, 0.08));
+  border: 1px solid rgba(255, 251, 245, 0.18);
+  box-shadow:
+    0 20px 40px rgba(18, 20, 16, 0.12),
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.05) inset;
+  backdrop-filter: blur(20px) saturate(140%);
+}
+
+.hero-glass-panel .panel-kicker {
+  color: rgba(245, 240, 232, 0.84);
+}
+
+.hero-glass-panel h2 {
+  color: #fffaf2;
+  text-shadow: 0 10px 22px rgba(11, 15, 12, 0.22);
+  margin-bottom: 0.7rem;
+}
+
+.hero-panel-copy {
+  color: rgba(245, 241, 234, 0.84);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.hero-focus-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.hero-focus-item {
+  padding: 0.85rem 0.9rem;
+  border-radius: 0.95rem;
+  background: linear-gradient(180deg, rgba(249, 244, 237, 0.12), rgba(235, 228, 217, 0.08));
+  border: 1px solid rgba(255, 251, 245, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.hero-focus-item strong {
+  display: block;
+  color: #fffaf3;
+  font-size: 0.96rem;
+  margin-bottom: 0.2rem;
+}
+
+.hero-focus-item span {
+  color: rgba(245, 241, 234, 0.76);
+  font-size: 0.9rem;
+  line-height: 1.45;
 }
 
 .floating-card h2,
