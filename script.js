@@ -36,6 +36,8 @@ const shareStatus = document.getElementById("share-status");
 const copyLinkButton = document.querySelector(".js-copy-link");
 const shareTextLink = document.getElementById("share-text-link");
 const shareEmailLink = document.getElementById("share-email-link");
+const nearbyTownsToggle = document.getElementById("nearby-towns-toggle");
+const nearbyTownsList = document.getElementById("nearby-towns-list");
 
 const shareData = {
   title: "Neighborhood Stewardship Project",
@@ -237,6 +239,17 @@ shareButtons.forEach((button) => {
   button.addEventListener("click", () => {
     handleShare();
   });
+});
+
+nearbyTownsToggle?.addEventListener("click", () => {
+  if (!nearbyTownsList) {
+    return;
+  }
+
+  const isExpanded = nearbyTownsToggle.getAttribute("aria-expanded") === "true";
+  nearbyTownsToggle.setAttribute("aria-expanded", String(!isExpanded));
+  nearbyTownsToggle.textContent = isExpanded ? "More" : "Less";
+  nearbyTownsList.hidden = isExpanded;
 });
 
 copyLinkButton?.addEventListener("click", async () => {

@@ -411,6 +411,39 @@ h3 {
   color: rgba(247, 244, 239, 0.8);
 }
 
+.signal-town-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.55rem;
+}
+
+.signal-town-list {
+  color: rgba(247, 244, 239, 0.8);
+}
+
+.signal-more-button {
+  min-height: 2rem;
+  padding: 0 0.8rem;
+  border-radius: 999px;
+  background: rgba(250, 246, 239, 0.14);
+  border: 1px solid rgba(255, 247, 236, 0.2);
+  color: #fff7ec;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.signal-more-button:hover {
+  transform: translateY(-1px);
+  background: rgba(250, 246, 239, 0.2);
+}
+
+.signal-nearby-towns {
+  margin: 0.75rem 0 0;
+  color: rgba(247, 244, 239, 0.8);
+}
+
 .hero-panels {
   display: grid;
   gap: 1rem;
