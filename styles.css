@@ -1042,6 +1042,10 @@ h3 {
   backdrop-filter: blur(10px);
 }
 
+.towns-modal.is-open .towns-modal-backdrop {
+  animation: modalBackdropFade 320ms ease forwards;
+}
+
 .story-modal-card,
 .flow-modal-card,
 .share-modal-card,
@@ -1065,6 +1069,11 @@ h3 {
 
 .towns-modal-card {
   width: min(38rem, 100%);
+  border-radius: 1.18rem;
+}
+
+.towns-modal.is-open .towns-modal-card {
+  animation: townsModalCardIn 420ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .story-modal-close,
@@ -1090,6 +1099,15 @@ h3 {
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   line-height: 0.95;
   margin-bottom: 0.8rem;
+}
+
+.towns-modal-card .intro-kicker {
+  color: #6a665a;
+}
+
+.towns-modal-card h2 {
+  color: #1f1a15;
+  text-shadow: none;
 }
 
 .story-modal-location {
@@ -1230,6 +1248,44 @@ h3 {
   flex-wrap: wrap;
   gap: 0.6rem;
   margin-top: 1rem;
+}
+
+.towns-modal-copy {
+  color: rgba(34, 29, 23, 0.84);
+  font-size: 1.02rem;
+  line-height: 1.72;
+  max-width: 32rem;
+}
+
+@keyframes modalBackdropFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes townsModalCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes townsModalSheetIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .reveal {
@@ -1417,6 +1473,10 @@ h3 {
   .towns-modal {
     align-items: end;
     padding: 0.5rem 0.5rem 0;
+  }
+
+  .towns-modal.is-open .towns-modal-card {
+    animation: townsModalSheetIn 440ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   }
 
   .flow-tabs {
