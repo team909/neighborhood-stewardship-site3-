@@ -172,7 +172,7 @@ export const categories = [
     extraProductIds: ["wide-outdoor-broom", "simple-wreath-hanger"],
     ideasHeading:
       "Pretty little front-door ideas that make the whole house feel friendlier fast.",
-    leadProductsEyebrow: "Shop the mood",
+    leadProductsEyebrow: "Shop now",
     leadProductsHeading:
       "The little pieces that make a front door feel warm, dressed, and easy to love.",
     extraProductsEyebrow: "Helpful extras",
@@ -257,7 +257,7 @@ export const categories = [
     ],
     ideasHeading:
       "Soft floral ideas that make the front steps feel prettier without getting precious about it.",
-    leadProductsEyebrow: "Shop the mood",
+    leadProductsEyebrow: "Shop now",
     leadProductsHeading:
       "The pretty pieces that make the steps feel fuller, softer, and much more charming.",
     extraProductsEyebrow: "Helpful extras",
@@ -320,7 +320,7 @@ export const categories = [
     extraProductIds: ["wide-outdoor-broom"],
     ideasHeading:
       "Saveable little house details people notice faster than you think they will.",
-    leadProductsEyebrow: "Shop the mood",
+    leadProductsEyebrow: "Shop now",
     leadProductsHeading:
       "The little finds that make a house feel more polished, sweeter, and somehow a little more admired.",
     extraProductsEyebrow: "Helpful extras",
@@ -409,7 +409,7 @@ export const ideaPages = [
     extraProductIds: ["wide-outdoor-broom", "simple-wreath-hanger"],
     stepsHeading:
       "A few easy little moves that make the front door feel sweeter fast.",
-    leadProductsEyebrow: "Shop the mood",
+    leadProductsEyebrow: "Shop now",
     leadProductsHeading:
       "The little front-door pieces that always make a house feel warmer.",
     extraProductsEyebrow: "Helpful extras",
@@ -509,7 +509,7 @@ export const ideaPages = [
     ],
     stepsHeading:
       "A few gentle little moves that make the steps feel softer fast.",
-    leadProductsEyebrow: "Shop the mood",
+    leadProductsEyebrow: "Shop now",
     leadProductsHeading:
       "The pretty floral pieces that make the entry feel instantly sweeter.",
     extraProductsEyebrow: "Helpful extras",
@@ -607,7 +607,7 @@ export const ideaPages = [
     extraProductIds: ["wide-outdoor-broom"],
     stepsHeading:
       "A few little details that make the house feel more finished fast.",
-    leadProductsEyebrow: "Shop the mood",
+    leadProductsEyebrow: "Shop now",
     leadProductsHeading:
       "The saveable little finds that make the front feel instantly more put together.",
     extraProductsEyebrow: "Helpful extras",

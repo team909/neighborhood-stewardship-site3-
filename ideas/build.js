@@ -310,35 +310,71 @@ function renderIdeaCard(fromFile, idea) {
     : `<article class="ideas-card ideas-card-muted">${cardInner}</article>`;
 }
 
-function renderProductCard(fromFile, product) {
+function renderProductCard(fromFile, product, variant = "lead", index = 0) {
   const media = renderMedia({
     fromFile,
     image: product.image,
     alt: product.imageAlt,
     className: "ideas-product-media",
-    ratioClass: "ideas-ratio-product",
+    ratioClass:
+      variant === "extras"
+        ? "ideas-ratio-product-extra"
+        : index === 0
+          ? "ideas-ratio-product-featured"
+          : "ideas-ratio-product",
     fallbackLabel: product.name,
     slotNote: product.imageSlot || "",
   });
+  const productHref = escapeHtml(product.affiliateUrl);
+  const visibleTags =
+    variant === "extras" ? product.tags : product.tags.slice(0, 2);
+  const cardClass = [
+    "ideas-product-card",
+    variant === "extras" ? "ideas-product-card-extra" : "ideas-product-card-lead",
+    variant !== "extras" && index === 0 ? "is-featured" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const headlineNote = variant === "extras" ? product.description : product.whyItHelps;
+  const ctaLabel = variant === "extras" ? "View extra" : "Shop now";
 
   return `
-    <article class="ideas-product-card">
-      ${media}
+    <article class="${cardClass}">
+      <a class="ideas-product-media-link" href="${productHref}" target="_blank" rel="noreferrer noopener" aria-label="${escapeHtml(`Shop ${product.name} on Amazon`)}">
+        ${media}
+        ${variant === "extras"
+          ? ""
+          : `
+        <div class="ideas-product-media-overlay">
+          <div class="ideas-product-topline ideas-product-topline-overlay">
+            ${product.badge ? `<span class="ideas-status-pill">${escapeHtml(product.badge)}</span>` : ""}
+            ${product.popularityLabel ? `<span class="ideas-status-pill">${escapeHtml(product.popularityLabel)}</span>` : ""}
+          </div>
+          <div class="ideas-product-hero-copy">
+            <p class="ideas-product-brand">${escapeHtml(product.brand)}</p>
+            <h3>${escapeHtml(product.name)}</h3>
+            <p class="ideas-product-overlay-copy">${escapeHtml(product.description)}</p>
+          </div>
+        </div>
+        `}
+      </a>
       <div class="ideas-product-copy">
-        <div class="ideas-product-topline">
-          ${product.badge ? `<span class="ideas-status-pill">${escapeHtml(product.badge)}</span>` : ""}
-          ${product.popularityLabel ? `<span class="ideas-status-pill">${escapeHtml(product.popularityLabel)}</span>` : ""}
+        <div class="ideas-product-topline ${variant === "extras" ? "" : "ideas-product-topline-secondary"}">
+          ${variant === "extras" && product.badge ? `<span class="ideas-status-pill">${escapeHtml(product.badge)}</span>` : ""}
+          ${variant === "extras" && product.popularityLabel ? `<span class="ideas-status-pill">${escapeHtml(product.popularityLabel)}</span>` : ""}
           ${product.priceLabel ? `<span class="ideas-price-pill">${escapeHtml(product.priceLabel)}</span>` : ""}
         </div>
-        <h3>${escapeHtml(product.name)}</h3>
-        <p class="ideas-product-brand">${escapeHtml(product.brand)}</p>
-        <p>${escapeHtml(product.description)}</p>
-        <p class="ideas-editor-note">${escapeHtml(product.whyItHelps)}</p>
+        ${variant === "extras" ? `<h3>${escapeHtml(product.name)}</h3>` : ""}
+        ${variant === "extras" ? `<p class="ideas-product-brand">${escapeHtml(product.brand)}</p>` : ""}
+        <p class="ideas-editor-note">${escapeHtml(headlineNote)}</p>
         ${product.editorNote ? `<p class="ideas-product-note">${escapeHtml(product.editorNote)}</p>` : ""}
         <div class="ideas-tag-row">
-          ${product.tags.map((tag) => `<span class="ideas-tag">${escapeHtml(tag)}</span>`).join("")}
+          ${visibleTags.map((tag) => `<span class="ideas-tag">${escapeHtml(tag)}</span>`).join("")}
         </div>
-        <a class="ideas-button ideas-button-secondary" href="${escapeHtml(product.affiliateUrl)}" target="_blank" rel="noreferrer noopener">${escapeHtml(product.ctaLabel)}</a>
+        <div class="ideas-product-actions">
+          <a class="ideas-button ideas-button-secondary" href="${productHref}" target="_blank" rel="noreferrer noopener">${escapeHtml(ctaLabel)}</a>
+          <span class="ideas-product-merchant">${escapeHtml(product.merchant)}</span>
+        </div>
       </div>
     </article>
   `;
@@ -350,6 +386,7 @@ function renderProductGroup({
   title,
   productIds = [],
   fallbackTitle = "Cute touches people keep choosing",
+  note = "",
   variant = "lead",
 }) {
   const products = productIds.map(getProductById).filter(Boolean);
@@ -363,12 +400,63 @@ function renderProductGroup({
       <div class="ideas-section-heading">
         ${eyebrow ? `<p class="ideas-eyebrow">${escapeHtml(eyebrow)}</p>` : ""}
         <h2>${escapeHtml(title || fallbackTitle)}</h2>
+        ${note ? `<p class="ideas-section-copy ideas-section-copy-compact">${escapeHtml(note)}</p>` : ""}
       </div>
       <div class="ideas-grid ${variant === "extras" ? "ideas-grid-products-extras" : "ideas-grid-products"}">
-        ${products.map((product) => renderProductCard(fromFile, product)).join("")}
+        ${products.map((product, index) => renderProductCard(fromFile, product, variant, index)).join("")}
       </div>
     </div>
   `;
+}
+
+function renderLandingFeedTile({
+  fromFile,
+  image,
+  alt,
+  href = "",
+  eyebrow = "",
+  title,
+  copy,
+  badge = "",
+  cta = "",
+  size = "medium",
+  kind = "story",
+  textOnly = false,
+}) {
+  const tileClass = [
+    "ideas-feed-tile",
+    `ideas-feed-tile-${size}`,
+    textOnly ? "ideas-feed-tile-text" : `ideas-feed-tile-${kind}`,
+  ].join(" ");
+  const content = `
+    ${textOnly
+      ? ""
+      : renderMedia({
+          fromFile,
+          image,
+          alt,
+          className: "ideas-feed-media",
+          ratioClass: `ideas-feed-ratio-${size}`,
+          fallbackLabel: title,
+        })}
+    <div class="ideas-feed-overlay ${textOnly ? "ideas-feed-overlay-text" : ""}">
+      <div class="ideas-feed-head">
+        ${eyebrow ? `<p class="ideas-feed-eyebrow">${escapeHtml(eyebrow)}</p>` : ""}
+        ${badge ? `<span class="ideas-status-pill">${escapeHtml(badge)}</span>` : ""}
+      </div>
+      <div class="ideas-feed-body">
+        <h3>${escapeHtml(title)}</h3>
+        <p>${escapeHtml(copy)}</p>
+        ${cta ? `<span class="ideas-feed-cta">${escapeHtml(cta)}</span>` : ""}
+      </div>
+    </div>
+  `;
+
+  if (href) {
+    return `<a class="${tileClass}" href="${escapeHtml(href)}">${content}</a>`;
+  }
+
+  return `<article class="${tileClass}">${content}</article>`;
 }
 
 function renderEditorialSplit({
@@ -475,6 +563,162 @@ function buildLandingPage() {
     .filter(Boolean);
   const seasonalCategory = getCategoryBySlug("seasonal-sweetness");
   const cuteFindsCategory = getCategoryBySlug("cute-finds-worth-saving");
+  const shopFeedTiles = [
+    renderLandingFeedTile({
+      fromFile: file,
+      kind: "editorial",
+      textOnly: true,
+      size: "short",
+      eyebrow: "Shop and save",
+      title: "A cleaner little feed of pretty things worth opening.",
+      copy:
+        "This is the browse layer now: mood first, image first, and only the pieces that make the house feel sweeter right away.",
+      cta: "Open a card or jump into a story",
+    }),
+    renderLandingFeedTile({
+      fromFile: file,
+      kind: "category",
+      size: "tall",
+      image: featuredCategory.heroImage,
+      alt: featuredCategory.coverAlt,
+      href: ensureRelativeHref(file, `ideas/categories/${featuredCategory.slug}/index.html`),
+      eyebrow: "Front Door & Porch Charm",
+      badge: "Start here",
+      title: "The little front-door touches people always save first.",
+      copy: "Mat, glow, planter, wreath, and the soft details that make the whole house feel friendlier.",
+      cta: "Explore lane",
+    }),
+    renderLandingFeedTile({
+      fromFile: file,
+      kind: "product",
+      size: "short",
+      image: getProductById("soft-front-door-wreath")?.image,
+      alt: getProductById("soft-front-door-wreath")?.imageAlt,
+      href: getProductById("soft-front-door-wreath")?.affiliateUrl,
+      eyebrow: "Cute touch people keep choosing",
+      badge: "Shop now",
+      title: "Soft front-door wreath",
+      copy: "An easy layer that makes the entry feel sweet without decorating the whole porch.",
+      cta: "Browse on Amazon",
+    }),
+    renderLandingFeedTile({
+      fromFile: file,
+      kind: "story",
+      size: "wide",
+      image: featuredIdea.heroImage,
+      alt: featuredIdea.heroAlt,
+      href: ensureRelativeHref(file, `ideas/${featuredIdea.slug}/index.html`),
+      eyebrow: "Featured story",
+      badge: "Popular around the neighborhood",
+      title: featuredIdea.title,
+      copy: featuredIdea.dek,
+      cta: "Read story",
+    }),
+    renderLandingFeedTile({
+      fromFile: file,
+      kind: "product",
+      size: "medium",
+      image: getProductById("dark-entry-planter")?.image,
+      alt: getProductById("dark-entry-planter")?.imageAlt,
+      href: getProductById("dark-entry-planter")?.affiliateUrl,
+      eyebrow: "Looks more expensive than it is",
+      badge: "Shop now",
+      title: "Dark olive porch planter",
+      copy: "One good planter does more for the front than a cluster of smaller pieces.",
+      cta: "Browse on Amazon",
+    }),
+    renderLandingFeedTile({
+      fromFile: file,
+      kind: "category",
+      size: "medium",
+      image: seasonalCategory?.heroImage,
+      alt: seasonalCategory?.coverAlt,
+      href: ensureRelativeHref(file, `ideas/categories/${seasonalCategory.slug}/index.html`),
+      eyebrow: "Seasonal Sweetness",
+      badge: "Soft floral mood",
+      title: "Flowers and porch moments that make the steps feel sweeter.",
+      copy: "The softer side of the front of the house, with just enough seasonal color and shape.",
+      cta: "Explore seasonal ideas",
+    }),
+    renderLandingFeedTile({
+      fromFile: file,
+      kind: "product",
+      size: "short",
+      image: getProductById("black-outdoor-lantern")?.image,
+      alt: getProductById("black-outdoor-lantern")?.imageAlt,
+      href: getProductById("black-outdoor-lantern")?.affiliateUrl,
+      eyebrow: "Small detail, big difference",
+      badge: "Shop now",
+      title: "Simple black lantern",
+      copy: "A tiny glow-and-texture layer that makes the whole front click.",
+      cta: "Browse on Amazon",
+    }),
+    renderLandingFeedTile({
+      fromFile: file,
+      kind: "story",
+      size: "tall",
+      image: getIdeaBySlug("pretty-front-step-flowers-that-make-everything-feel-sweeter")?.heroImage,
+      alt: getIdeaBySlug("pretty-front-step-flowers-that-make-everything-feel-sweeter")?.heroAlt,
+      href: ensureRelativeHref(file, "ideas/pretty-front-step-flowers-that-make-everything-feel-sweeter/index.html"),
+      eyebrow: "Seasonal favorite",
+      badge: "Read story",
+      title: "Pretty Front-Step Flowers That Make Everything Feel Sweeter",
+      copy: "The soft, fuller look that changes the mood before anyone notices the exact plants.",
+      cta: "Open story",
+    }),
+    renderLandingFeedTile({
+      fromFile: file,
+      kind: "product",
+      size: "medium",
+      image: getProductById("weather-ready-doormat")?.image,
+      alt: getProductById("weather-ready-doormat")?.imageAlt,
+      href: getProductById("weather-ready-doormat")?.affiliateUrl,
+      eyebrow: "Easy favorite",
+      badge: "Shop now",
+      title: "Weather-ready coir mat",
+      copy: "The quick first layer that makes the front feel grounded, tidy, and more finished right away.",
+      cta: "Browse on Amazon",
+    }),
+    renderLandingFeedTile({
+      fromFile: file,
+      kind: "category",
+      size: "medium",
+      image: cuteFindsCategory?.heroImage,
+      alt: cuteFindsCategory?.coverAlt,
+      href: ensureRelativeHref(file, `ideas/categories/${cuteFindsCategory.slug}/index.html`),
+      eyebrow: "Cute Finds Worth Saving",
+      badge: "Low-lift favorites",
+      title: "The little house details people notice almost immediately.",
+      copy: "Mailboxes, numbers, lanterns, baskets, and the tiny upgrades that make the front feel finished.",
+      cta: "Browse the finds",
+    }),
+    renderLandingFeedTile({
+      fromFile: file,
+      kind: "product",
+      size: "short",
+      image: getProductById("matte-black-house-numbers")?.image,
+      alt: getProductById("matte-black-house-numbers")?.imageAlt,
+      href: getProductById("matte-black-house-numbers")?.affiliateUrl,
+      eyebrow: "Small detail, big difference",
+      badge: "Shop now",
+      title: "Matte black house numbers",
+      copy: "One of the fastest ways to make the whole front feel sharper and more intentional.",
+      cta: "Browse on Amazon",
+    }),
+    renderLandingFeedTile({
+      fromFile: file,
+      kind: "story",
+      size: "tall",
+      image: getIdeaBySlug("little-house-details-people-notice-right-away")?.heroImage,
+      alt: getIdeaBySlug("little-house-details-people-notice-right-away")?.heroAlt,
+      href: ensureRelativeHref(file, "ideas/little-house-details-people-notice-right-away/index.html"),
+      eyebrow: "Cute finds story",
+      badge: "Read story",
+      title: "Little House Details People Notice Right Away",
+      copy: "The tiny upgrades that make the place feel more admired without starting a whole project.",
+      cta: "Open story",
+    }),
+  ].join("");
 
   const body = `
     <main class="ideas-main">
@@ -499,42 +743,13 @@ function buildLandingPage() {
       <section class="ideas-section">
         <div class="ideas-container">
           <div class="ideas-section-heading">
-            <p class="ideas-eyebrow">Choose the kind of mood you want first</p>
-            <h2>Choose the kind of mood you want first.</h2>
-            <p class="ideas-lede ideas-lede-compact">
-              Start with the feeling you want to create: a sweeter front door, a cozier little corner, a weekend project that actually sounds fun, a seasonal mood, or a cute find worth saving for later.
-            </p>
-          </div>
-          <div class="ideas-grid ideas-grid-categories">
-            ${liveCategories.map((category) => renderCategoryCard(file, category)).join("")}
-          </div>
-        </div>
-      </section>
-
-      ${renderEditorialSplit({
-        fromFile: file,
-        eyebrow: "A favorite around the neighborhood",
-        title: featuredIdea.title,
-        copy:
-          "The first live story is all about the walk up: the glow at dusk, the mat, the planter, and the little pieces that make a house feel friendlier before anyone reaches the door.",
-        image: featuredIdea.gallery[0]?.image || featuredIdea.heroImage,
-        alt: featuredIdea.gallery[0]?.alt || featuredIdea.heroAlt,
-        actionHref: ensureRelativeHref(file, `ideas/${featuredIdea.slug}/index.html`),
-        actionLabel: "Read the featured idea",
-      })}
-
-      <section class="ideas-section">
-        <div class="ideas-container">
-          <div class="ideas-section-heading">
             <p class="ideas-eyebrow">What people are saving</p>
-            <h2>The sweet little ideas and finds that keep pulling people back in.</h2>
+            <h2>A Pinterest-style save feed, but built around your actual shop lanes.</h2>
             <p class="ideas-lede ideas-lede-compact">
-              The three live stories are meant to feel like a good saved folder: pretty, doable, and easy to imagine trying this weekend.
+              The cards below mix stories, shoppable finds, and category lanes in one image-led rhythm so the browsing feels easier and more visual.
             </p>
           </div>
-          <div class="ideas-grid ideas-grid-ideas-featured">
-            ${trendingIdeaCards.map((idea) => renderIdeaCard(file, idea)).join("")}
-          </div>
+          <div class="ideas-save-feed">${shopFeedTiles}</div>
         </div>
       </section>
 
@@ -542,8 +757,10 @@ function buildLandingPage() {
         <div class="ideas-container">
           ${renderProductGroup({
             fromFile: file,
-            eyebrow: "Cute touches people keep choosing",
-            title: "The little finds that make a home feel sweeter almost immediately.",
+            eyebrow: "Shop now",
+            title: "Cute touches people keep choosing.",
+            note:
+              "If someone wants the cleaner product view after the feed, this is the calmer shop strip underneath it.",
             productIds: cuteTouchesProducts,
             variant: "lead",
           })}
@@ -553,36 +770,14 @@ function buildLandingPage() {
         </div>
       </section>
 
-      ${renderEditorialSplit({
-        fromFile: file,
-        eyebrow: "Seasonal sweetness",
-        title: "The softer side of the front of the house.",
-        copy:
-          "Flowers by the steps, porch moments with a little glow, and the kind of seasonal touches that make the whole place feel more alive without looking overdone.",
-        image: seasonalCategory?.heroImage,
-        alt: seasonalCategory?.coverAlt,
-        actionHref: ensureRelativeHref(file, `ideas/categories/${seasonalCategory.slug}/index.html`),
-        actionLabel: "Explore seasonal ideas",
-      })}
-
-      ${renderEditorialSplit({
-        fromFile: file,
-        eyebrow: "Cute finds worth saving",
-        title: "The little house details people always seem to notice.",
-        copy:
-          "A mailbox moment, sharper numbers, one lantern, one basket, one charming little accent. These are the low-lift pieces that make the front finally click.",
-        image: cuteFindsCategory?.heroImage,
-        alt: cuteFindsCategory?.coverAlt,
-        actionHref: ensureRelativeHref(file, `ideas/categories/${cuteFindsCategory.slug}/index.html`),
-        actionLabel: "Browse the cute finds",
-      })}
-
       <section class="ideas-section">
         <div class="ideas-container">
           ${renderProductGroup({
             fromFile: file,
             eyebrow: "Helpful extras",
             title: "Helpful extras if you want to finish it properly.",
+            note:
+              "These stay lower on purpose. They help the cute part keep working without taking over the whole page.",
             productIds: helpfulExtrasProducts,
             variant: "extras",
           })}
@@ -666,11 +861,13 @@ function buildCategoryPage(category) {
         <div class="ideas-container">
           ${renderProductGroup({
             fromFile: file,
-            eyebrow: category.leadProductsEyebrow || "Cute touches people keep choosing",
+            eyebrow: category.leadProductsEyebrow || "Shop now",
             title:
               category.leadProductsHeading ||
               category.productsHeading ||
               "The little pieces that make the front feel nicer fast.",
+            note:
+              "Start with the pieces you can picture right away. The practical extras can come later.",
             productIds: leadProductIds,
             variant: "lead",
           })}
@@ -694,6 +891,8 @@ function buildCategoryPage(category) {
             title:
               category.extraProductsHeading ||
               "Helpful extras if you want to finish it properly.",
+            note:
+              "This is the quieter utility layer that helps the prettier part stay easy.",
             productIds: extraProductIds,
             variant: "extras",
           })}
@@ -826,10 +1025,12 @@ function buildIdeaPage(idea) {
         <div class="ideas-container">
           ${renderProductGroup({
             fromFile: file,
-            eyebrow: idea.leadProductsEyebrow || "Cute touches people keep choosing",
+            eyebrow: idea.leadProductsEyebrow || "Shop now",
             title:
               idea.leadProductsHeading ||
               "The little pieces that make this idea feel especially good.",
+            note:
+              "These are the first pieces to click when you want the look, the mood, and the easiest visible payoff.",
             productIds: leadProductIds,
             variant: "lead",
           })}
@@ -853,6 +1054,8 @@ function buildIdeaPage(idea) {
             title:
               idea.extraProductsHeading ||
               "Helpful extras if you want to finish it properly.",
+            note:
+              "The useful support pieces live down here so the pretty part stays the star.",
             productIds: extraProductIds,
             variant: "extras",
           })}
