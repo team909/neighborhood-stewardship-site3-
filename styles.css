@@ -823,6 +823,101 @@ h3 {
   background-position: center 56%;
 }
 
+.ideas-home-teaser {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(220, 230, 212, 0.2), rgba(244, 247, 240, 0.04));
+}
+
+.ideas-home-layout {
+  display: grid;
+  grid-template-columns: 1.04fr 0.96fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.ideas-home-copy,
+.ideas-home-card {
+  background: var(--glass-warm);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(140%);
+}
+
+.ideas-home-copy {
+  padding: 1.75rem;
+  border-radius: 1.08rem;
+  display: grid;
+  gap: 1rem;
+  align-content: center;
+}
+
+.ideas-home-copy h2 {
+  font-size: clamp(2.35rem, 4.4vw, 4.15rem);
+  line-height: 0.98;
+  margin-bottom: 0;
+}
+
+.ideas-home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.ideas-home-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.ideas-home-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.15rem;
+  padding: 0 0.9rem;
+  border-radius: 999px;
+  background: rgba(250, 246, 239, 0.64);
+  border: 1px solid rgba(255, 248, 240, 0.24);
+  color: var(--green);
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 10px 18px rgba(27, 23, 16, 0.04);
+}
+
+.ideas-home-pill-muted {
+  color: #5c695f;
+  background: rgba(241, 235, 226, 0.44);
+}
+
+.ideas-home-card {
+  display: grid;
+  border-radius: 1.08rem;
+  overflow: hidden;
+}
+
+.ideas-home-media {
+  min-height: 16rem;
+  background-image:
+    linear-gradient(180deg, rgba(22, 33, 25, 0.07), rgba(22, 33, 25, 0.3)),
+    url("./assets/why-it-matters.png");
+  background-size: cover;
+  background-position: center 54%;
+}
+
+.ideas-home-card-copy {
+  padding: 1.4rem;
+}
+
+.ideas-home-card-copy h3 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 0.98;
+  margin-bottom: 0.75rem;
+}
+
+.ideas-home-card-copy p {
+  margin-bottom: 1rem;
+}
+
 .stories-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1582,6 +1677,7 @@ h3 {
   }
 
   .editorial-layout,
+  .ideas-home-layout,
   .stories-top,
   .how-it-works-top {
     grid-template-columns: 1fr;
@@ -1675,6 +1771,19 @@ h3 {
 
   .editorial-layout {
     grid-template-columns: 1fr;
+  }
+
+  .ideas-home-actions {
+    flex-direction: column;
+  }
+
+  .ideas-home-copy,
+  .ideas-home-card-copy {
+    padding: 1.2rem;
+  }
+
+  .ideas-home-media {
+    min-height: 13rem;
   }
 
   .activation-band {
