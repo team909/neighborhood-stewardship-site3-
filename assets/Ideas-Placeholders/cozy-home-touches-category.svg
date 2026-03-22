@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#F5EDDF"/>
+  <rect x="24" y="27" width="1152" height="819" rx="32" fill="url(#paper)" stroke="#D8C8AF"/>
+  <rect x="66" y="72" width="1068" height="648" rx="25" fill="url(#wash)"/>
+  <ellipse cx="600" cy="774" rx="408" ry="41" fill="#DCC8AB" fill-opacity=".42"/>
+  
+    <rect x="110" y="128" width="980" height="474" rx="30" fill="url(#glow)" opacity=".8"/>
+    <g filter="url(#shadow)">
+      <rect x="238" y="482" width="724" height="56" rx="16" fill="#E4D2B8"/>
+      <rect x="296" y="360" width="220" height="118" rx="18" fill="#B98D61"/>
+      <rect x="326" y="320" width="34" height="48" rx="16" fill="#A17853"/>
+      <rect x="454" y="320" width="34" height="48" rx="16" fill="#A17853"/>
+      <rect x="566" y="210" width="316" height="14" rx="7" fill="#D0B291"/>
+      <circle cx="622" cy="248" r="18" fill="#60745C"/>
+      <circle cx="724" cy="248" r="18" fill="#60745C"/>
+      <circle cx="826" cy="248" r="18" fill="#60745C"/>
+      <rect x="604" y="266" width="36" height="86" rx="18" fill="#D7B28A"/>
+      <path d="M618 350C618 390 598 428 564 450" stroke="#92704B" stroke-width="10" stroke-linecap="round"/>
+      <rect x="698" y="300" width="108" height="132" rx="20" fill="#B88B5D"/>
+      <path d="M730 322C730 282 760 252 800 252" stroke="#9D7752" stroke-width="10" stroke-linecap="round"/>
+    </g>
+  <text x="600" y="761" text-anchor="middle" fill="#947450" font-family="Arial, sans-serif" font-size="22" letter-spacing="5">COMING SOON</text>
+  <text x="600" y="815" text-anchor="middle" fill="#223327" font-family="Georgia, serif" font-size="50">Cozy Home Touches</text>
+  <text x="600" y="851" text-anchor="middle" fill="#5F715C" font-family="Arial, sans-serif" font-size="25">Hooks, baskets, benches, and sweet little home corners.</text>
+  <defs>
+    <linearGradient id="paper" x1="600" y1="0" x2="600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF7F0"/>
+      <stop offset="1" stop-color="#EEE2D0"/>
+    </linearGradient>
+    <linearGradient id="wash" x1="600" y1="72" x2="600" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F2E9"/>
+      <stop offset="0.58" stop-color="#F0E5D6"/>
+      <stop offset="1" stop-color="#E6D5BD"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 180) rotate(90) scale(162 420)">
+      <stop stop-color="#FFF7E6"/>
+      <stop offset="1" stop-color="#FFF7E6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#8B7254" flood-opacity=".16"/>
+    </filter>
+  </defs>
+</svg>

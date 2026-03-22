@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" fill="none">
+  <rect width="1200" height="1200" fill="#F5EDDF"/>
+  <rect x="24" y="36" width="1152" height="1092" rx="42" fill="url(#paper)" stroke="#D8C8AF"/>
+  <rect x="66" y="96" width="1068" height="864" rx="34" fill="url(#wash)"/>
+  <ellipse cx="600" cy="1032" rx="408" ry="54" fill="#DCC8AB" fill-opacity=".42"/>
+  
+    <rect x="112" y="166" width="976" height="652" rx="34" fill="url(#glow)" opacity=".8"/>
+    <g filter="url(#shadow)">
+      <ellipse cx="600" cy="650" rx="330" ry="88" fill="#6B4D35"/>
+      <ellipse cx="600" cy="638" rx="290" ry="68" fill="#7A573C"/>
+      <g fill="#D990B4"><circle cx="470" cy="514" r="30"/><circle cx="540" cy="480" r="28"/><circle cx="610" cy="500" r="32"/><circle cx="692" cy="482" r="30"/><circle cx="760" cy="520" r="28"/></g>
+      <g fill="#6F8461"><ellipse cx="488" cy="566" rx="18" ry="42" transform="rotate(-28 488 566)"/><ellipse cx="566" cy="550" rx="18" ry="40"/><ellipse cx="642" cy="556" rx="18" ry="40"/><ellipse cx="730" cy="568" rx="18" ry="42" transform="rotate(28 730 568)"/></g>
+    </g>
+  <text x="600" y="1014" text-anchor="middle" fill="#947450" font-family="Arial, sans-serif" font-size="29" letter-spacing="6">HELPFUL EXTRA</text>
+  <text x="600" y="1086" text-anchor="middle" fill="#223327" font-family="Georgia, serif" font-size="66">Dark Bark Mulch</text>
+  <text x="600" y="1134" text-anchor="middle" fill="#5F715C" font-family="Arial, sans-serif" font-size="34">A soft dark finish that makes flowers stand out more.</text>
+  <defs>
+    <linearGradient id="paper" x1="600" y1="0" x2="600" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF7F0"/>
+      <stop offset="1" stop-color="#EEE2D0"/>
+    </linearGradient>
+    <linearGradient id="wash" x1="600" y1="96" x2="600" y2="960" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F2E9"/>
+      <stop offset="0.58" stop-color="#F0E5D6"/>
+      <stop offset="1" stop-color="#E6D5BD"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 240) rotate(90) scale(216 420)">
+      <stop stop-color="#FFF7E6"/>
+      <stop offset="1" stop-color="#FFF7E6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="19" stdDeviation="22" flood-color="#8B7254" flood-opacity=".16"/>
+    </filter>
+  </defs>
+</svg>

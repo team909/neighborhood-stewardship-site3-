@@ -1,189 +1,332 @@
 export const IDEAS_IMAGE_ASSETS = {
   categories: {
-    porchEntry: "assets/Editorial/why-it-matters.jpg",
-    gardenFlowers: "assets/Editorial/around-the-block.jpg",
-    curbAppealBasics: "assets/Editorial/wilbraham-story-card.jpg",
-    toolsEssentials: null,
+    frontDoorPorchCharm:
+      "assets/Ideas-Placeholders/front-door-porch-charm-category.svg",
+    cozyHomeTouches: "assets/Ideas-Placeholders/cozy-home-touches-category.svg",
+    weekendLittleProjects:
+      "assets/Ideas-Placeholders/weekend-little-projects-category.svg",
+    seasonalSweetness:
+      "assets/Ideas-Placeholders/seasonal-sweetness-category.svg",
+    hostingHomeLife: "assets/Ideas-Placeholders/hosting-home-life-category.svg",
+    cuteFindsWorthSaving:
+      "assets/Ideas-Placeholders/cute-finds-worth-saving-category.svg",
   },
   ideas: {
-    frontWalkHero: "assets/Editorial/why-it-matters.jpg",
-    frontWalkGalleryStreet: "assets/Editorial/around-the-block.jpg",
-    frontWalkGalleryPorch: "assets/Editorial/longmeadow-porch-light-story-card.jpg",
-    hydrangeasHero: "assets/Editorial/why-it-matters.jpg",
-    hydrangeasGalleryBed: "assets/Editorial/around-the-block.jpg",
-    hydrangeasGalleryYard: "assets/Editorial/wilbraham-story-card.jpg",
-    curbAppealHero: "assets/Editorial/wilbraham-story-card.jpg",
-    curbAppealGalleryPorch: "assets/Editorial/longmeadow-porch-light-story-card.jpg",
-    curbAppealGalleryDrive: "assets/Editorial/around-the-block.jpg",
+    frontDoorCharmHero: "assets/Ideas-Placeholders/front-door-charm-hero.svg",
+    frontDoorCharmGalleryGlow:
+      "assets/Ideas-Placeholders/front-door-glow-gallery.svg",
+    frontDoorCharmGalleryPorch:
+      "assets/Ideas-Placeholders/front-door-porch-gallery.svg",
+    frontStepFlowersHero:
+      "assets/Ideas-Placeholders/front-step-flowers-hero.svg",
+    frontStepFlowersGalleryBed:
+      "assets/Ideas-Placeholders/front-step-bed-gallery.svg",
+    frontStepFlowersGalleryYard:
+      "assets/Ideas-Placeholders/front-step-yard-gallery.svg",
+    littleDetailsHero: "assets/Ideas-Placeholders/little-details-hero.svg",
+    littleDetailsGalleryPorch:
+      "assets/Ideas-Placeholders/little-details-porch-gallery.svg",
+    littleDetailsGalleryDrive:
+      "assets/Ideas-Placeholders/little-details-drive-gallery.svg",
   },
   products: {
-    weatherReadyDoormat: "assets/Products/weather-ready-doormat.jpg",
-    warmEntryLight: "assets/Products/warm-entry-light.jpg",
-    darkEntryPlanter: "assets/Products/dark-entry-planter.jpg",
-    bedEdgeSpade: "assets/Products/stone-edge-bed-shovel.jpg",
-    darkBarkMulch: "assets/Products/hydrangea-friendly-mulch.jpg",
-    wateringWand: "assets/Products/entry-watering-wand.jpg",
-    houseNumbers: "assets/Products/matte-black-house-numbers.jpg",
-    mailboxRefresh: "assets/Products/classic-mailbox-post-refresh.jpg",
-    outdoorBroom: "assets/Products/wide-outdoor-broom.jpg",
+    weatherReadyDoormat:
+      "assets/Ideas-Placeholders/weather-ready-doormat-illustrated.svg",
+    warmEntryLight:
+      "assets/Ideas-Placeholders/warm-entry-light-illustrated.svg",
+    darkEntryPlanter:
+      "assets/Ideas-Placeholders/dark-entry-planter-illustrated.svg",
+    stoneEdgeBedShovel:
+      "assets/Ideas-Placeholders/stone-edge-bed-shovel-illustrated.svg",
+    darkBarkMulch:
+      "assets/Ideas-Placeholders/dark-bark-mulch-illustrated.svg",
+    entryWateringWand:
+      "assets/Ideas-Placeholders/entry-watering-wand-illustrated.svg",
+    matteBlackHouseNumbers:
+      "assets/Ideas-Placeholders/matte-black-house-numbers-illustrated.svg",
+    classicMailboxPostRefresh:
+      "assets/Ideas-Placeholders/classic-mailbox-post-refresh-illustrated.svg",
+    wideOutdoorBroom:
+      "assets/Ideas-Placeholders/wide-outdoor-broom-illustrated.svg",
+    softFrontDoorWreath: "assets/Ideas-Placeholders/soft-front-door-wreath.svg",
+    simpleWreathHanger: "assets/Ideas-Placeholders/simple-wreath-hanger.svg",
+    frontStepFlowerBasket:
+      "assets/Ideas-Placeholders/front-step-flower-basket.svg",
+    softGreeneryPot: "assets/Ideas-Placeholders/soft-greenery-pot.svg",
+    wovenFrontDoorBasket:
+      "assets/Ideas-Placeholders/woven-front-door-basket.svg",
+    blackOutdoorLantern:
+      "assets/Ideas-Placeholders/black-outdoor-lantern.svg",
+    seasonalDoorAccent:
+      "assets/Ideas-Placeholders/seasonal-door-accent.svg",
   },
 };
 
 export const IDEAS_IMAGE_SLOTS = {
   categories: {
-    toolsEssentials:
-      "Add one horizontal cover image for Tools & Essentials (4:3, porch or shed-side tools detail).",
+    cozyHomeTouches:
+      "Add one 4:3 lifestyle image for Cozy Home Touches (entry bench, basket, hook wall, or coffee corner).",
+    weekendLittleProjects:
+      "Add one 4:3 lifestyle image for Weekend Little Projects (small DIY moment, paint can, hook rail, or styled worktable).",
+    hostingHomeLife:
+      "Add one 4:3 lifestyle image for Hosting & Home Life (table, tray, lemonade setup, or cake moment).",
   },
   ideas: {
-    porchLighting:
-      "Add one 16:9 hero image for Porch Lighting That Feels Warm at Dusk.",
-    entryPlanter:
-      "Add one 16:9 hero image for An Entry Planter That Softens the Door.",
-    frontBed:
-      "Add one 16:9 hero image for A Front Bed That Softens the Walk.",
-    flowerBeds:
-      "Add one 16:9 hero image for Flower Beds That Hold Their Shape.",
-    houseNumbers:
-      "Add one 16:9 hero image for Clean House Numbers That Read Fast.",
-    mailboxArea:
-      "Add one 16:9 hero image for A Mailbox Area That Doesn’t Drag Down the Front.",
+    porchBasket:
+      "Add one 16:9 hero image for The Porch Basket Trick That Always Looks Good.",
+    coatHookCorner:
+      "Add one 16:9 hero image for A Coat Hook Corner That Makes the Entry Feel So Put Together.",
+    kitchenTouches:
+      "Add one 16:9 hero image for Cute Little Kitchen Touches That Feel Instantly Cozier.",
+    weekendDIYs:
+      "Add one 16:9 hero image for Easy Weekend DIYs That Look Better Than They Cost.",
+    lemonadeSetup:
+      "Add one 16:9 hero image for A Lemonade Setup That Makes Summer Guests Feel Welcome.",
+    appleCakeWeekend:
+      "Add one 16:9 hero image for The Apple Cake Weekend That Makes the House Feel Cozy.",
+    cuteAmazonFinds:
+      "Add one 16:9 hero image for Cute Amazon Finds That Make a Porch Feel More Finished.",
+    mailboxFlowers:
+      "Add one 16:9 hero image for The Mailbox Corner That Looks So Much Better With Flowers.",
   },
   products: {
-    weatherReadyDoormat:
-      "Add one square product image for the weather-ready coir mat.",
-    warmEntryLight:
-      "Add one square product image for the warm-glow porch light.",
-    darkEntryPlanter:
-      "Add one square product image for the dark entry planter.",
-    bedEdgeSpade:
-      "Add one square product image for the stone-edge bed shovel.",
-    darkBarkMulch:
-      "Add one square product image for the dark bark mulch.",
-    wateringWand:
-      "Add one square product image for the entry watering wand.",
-    houseNumbers:
-      "Add one square product image for the matte black house numbers.",
-    mailboxRefresh:
-      "Add one square product image for the mailbox refresh set.",
-    outdoorBroom:
-      "Add one square product image for the wide outdoor broom.",
+    softFrontDoorWreath:
+      "Add one square product image for a soft front-door wreath.",
+    simpleWreathHanger:
+      "Add one square product image for a simple wreath hanger.",
+    frontStepFlowerBasket:
+      "Add one square product image for a front-step flower basket.",
+    softGreeneryPot:
+      "Add one square product image for a soft greenery pot or faux porch fern.",
+    wovenFrontDoorBasket:
+      "Add one square product image for a woven front-door basket.",
+    blackOutdoorLantern:
+      "Add one square product image for a black outdoor lantern.",
+    seasonalDoorAccent:
+      "Add one square product image for a seasonal door accent.",
   },
 };
 
 export const PRODUCT_LINKS = {
-  porchEntry: {
+  frontDoorPorchCharm: {
     weatherReadyDoormat:
       "https://www.amazon.com/s?k=waterproof+coir+doormat+outdoor+entrance",
     warmEntryLight:
       "https://www.amazon.com/s?k=matte+black+modern+outdoor+light+fixture",
     darkEntryPlanter: "https://www.amazon.com/s?k=black+outdoor+planter",
+    softFrontDoorWreath: "https://www.amazon.com/s?k=front+door+wreath",
+    matteBlackHouseNumbers:
+      "https://www.amazon.com/s?k=matte+black+house+numbers",
+    simpleWreathHanger:
+      "https://www.amazon.com/s?k=wreath+hanger+for+front+door",
   },
-  gardenFlowers: {
-    bedEdgeSpade: "https://www.amazon.com/s?k=edging+shovel",
+  seasonalSweetness: {
+    darkEntryPlanter: "https://www.amazon.com/s?k=black+outdoor+planter",
+    frontStepFlowerBasket:
+      "https://www.amazon.com/s?k=outdoor+flower+basket+front+door",
+    softGreeneryPot:
+      "https://www.amazon.com/s?k=faux+outdoor+plant+for+porch+planter",
+    stoneEdgeBedShovel: "https://www.amazon.com/s?k=edging+shovel",
     darkBarkMulch: "https://www.amazon.com/s?k=dark+bark+mulch",
-    wateringWand: "https://www.amazon.com/s?k=watering+wand",
+    entryWateringWand: "https://www.amazon.com/s?k=watering+wand",
   },
-  curbAppealBasics: {
-    houseNumbers: "https://www.amazon.com/s?k=matte+black+house+numbers",
-    mailboxRefresh: "https://www.amazon.com/s?k=mailbox+with+post",
-    outdoorBroom: "https://www.amazon.com/s?k=outdoor+broom+for+porch",
+  cuteFindsWorthSaving: {
+    matteBlackHouseNumbers:
+      "https://www.amazon.com/s?k=matte+black+house+numbers",
+    classicMailboxPostRefresh:
+      "https://www.amazon.com/s?k=mailbox+with+post",
+    wovenFrontDoorBasket: "https://www.amazon.com/s?k=door+hanging+basket",
+    blackOutdoorLantern: "https://www.amazon.com/s?k=black+outdoor+lantern",
+    seasonalDoorAccent: "https://www.amazon.com/s?k=seasonal+door+hanger",
+    wideOutdoorBroom: "https://www.amazon.com/s?k=outdoor+broom+for+porch",
   },
 };
 
 export const categories = [
   {
     slug: "porch-entry",
-    name: "Porch & Entry",
+    name: "Front Door & Porch Charm",
     kicker: "Neighborhood Ideas",
     description:
-      "Small entry details that make a home feel warm, settled, and cared for from the curb.",
-    heroImage: IDEAS_IMAGE_ASSETS.categories.porchEntry,
-    coverAlt: "A front walk leading to a lit porch at dusk.",
+      "The cute little front-door touches that make a house feel warmer right away.",
+    heroImage: IDEAS_IMAGE_ASSETS.categories.frontDoorPorchCharm,
+    coverAlt: "A welcoming front walk with a softly lit porch and flowers by the steps.",
     intro:
-      "This category focuses on the first few seconds people have with a home: the walk up, the lighting, the mat, and the small signs that someone is paying attention.",
+      "This is where the easy porch charm lives: the doormat, the front-door glow, the planter, the wreath, and the little things that make people think this house feels so sweet.",
     ideaSlugs: ["front-walk-that-sets-the-tone"],
     featuredProductIds: [
       "weather-ready-doormat",
       "warm-entry-light",
       "dark-entry-planter",
+      "soft-front-door-wreath",
+      "matte-black-house-numbers",
     ],
+    leadProductIds: [
+      "weather-ready-doormat",
+      "warm-entry-light",
+      "dark-entry-planter",
+      "soft-front-door-wreath",
+      "matte-black-house-numbers",
+    ],
+    extraProductIds: ["wide-outdoor-broom", "simple-wreath-hanger"],
     ideasHeading:
-      "Simple entry changes that make a home feel calmer from the curb.",
-    productsHeading:
-      "Three practical picks that support the entry without cluttering it.",
-    seoTitle: "Porch & Entry Ideas | Neighborhood Stewardship Project",
+      "Pretty little front-door ideas that make the whole house feel friendlier.",
+    leadProductsEyebrow: "Cute touches people keep choosing",
+    leadProductsHeading:
+      "The little pieces that make a front door feel warm right away.",
+    extraProductsEyebrow: "Helpful extras",
+    extraProductsHeading:
+      "Helpful extras if you want to finish it properly.",
+    seoTitle: "Front Door & Porch Charm | Neighborhood Ideas",
     seoDescription:
-      "Browse warm, practical porch and entry ideas that help a home feel more cared for from the first step in.",
+      "Browse sweet little front-door and porch ideas built around doormats, lights, planters, wreaths, and the details that make a house feel instantly warmer.",
     live: true,
   },
   {
+    slug: "cozy-home-touches",
+    name: "Cozy Home Touches",
+    kicker: "Coming soon",
+    description:
+      "Coat hooks, baskets, trays, kitchen corners, and the cute little home touches that make everyday spaces feel more put together.",
+    heroImage: IDEAS_IMAGE_ASSETS.categories.cozyHomeTouches,
+    imageSlot: IDEAS_IMAGE_SLOTS.categories.cozyHomeTouches,
+    coverAlt: "A cozy home touches placeholder with baskets, hooks, and small styling pieces.",
+    intro:
+      "This category will hold the entryway hooks, coffee corners, catch-all stations, baskets, and kitchen touches people actually want to save and try.",
+    ideaSlugs: [
+      "a-coat-hook-corner-that-makes-the-entry-feel-so-put-together",
+      "cute-little-kitchen-touches-that-feel-instantly-cozier",
+    ],
+    featuredProductIds: [],
+    seoTitle: "Cozy Home Touches | Neighborhood Ideas",
+    seoDescription:
+      "Coming soon: cozy home touches for entryways, kitchen corners, baskets, hooks, and pretty practical storage.",
+    live: false,
+  },
+  {
+    slug: "weekend-little-projects",
+    name: "Weekend Little Projects",
+    kicker: "Coming soon",
+    description:
+      "Easy little projects that feel satisfying, visible, and worth doing on a slow weekend.",
+    heroImage: IDEAS_IMAGE_ASSETS.categories.weekendLittleProjects,
+    imageSlot: IDEAS_IMAGE_SLOTS.categories.weekendLittleProjects,
+    coverAlt: "A weekend little projects placeholder with a small DIY scene.",
+    intro:
+      "This category will gather one-afternoon porch refreshes, cute mini DIYs, simple swap-outs, and the kind of projects that make the whole house feel better in under a day.",
+    ideaSlugs: [
+      "the-porch-basket-trick-that-always-looks-good",
+      "easy-weekend-diys-that-look-better-than-they-cost",
+    ],
+    featuredProductIds: [],
+    seoTitle: "Weekend Little Projects | Neighborhood Ideas",
+    seoDescription:
+      "Coming soon: cute weekend projects and small DIYs that make home feel sweeter fast.",
+    live: false,
+  },
+  {
     slug: "garden-flowers",
-    name: "Garden & Flowers",
+    name: "Seasonal Sweetness",
     kicker: "Neighborhood Ideas",
     description:
-      "Planting ideas that soften a front edge and make a home feel looked after through the season.",
-    heroImage: IDEAS_IMAGE_ASSETS.categories.gardenFlowers,
-    coverAlt: "A tidy front yard with planted beds, a clean walk, and a warm porch light.",
+      "Pretty flowers, seasonal porch moments, and little ideas that make the steps feel softer and sweeter.",
+    heroImage: IDEAS_IMAGE_ASSETS.categories.seasonalSweetness,
+    coverAlt: "A front yard with a soft flower bed, a clean walk, and a warm porch light.",
     intro:
-      "Garden and flower ideas start with restraint: one bed that holds its shape, one planted edge that softens the steps, and choices that still look good when the week gets busy.",
+      "This is the softer, seasonal side of the house: hydrangeas by the steps, a pretty porch pot, greenery that feels generous, and the small floral touches that make everything look sweeter.",
     ideaSlugs: ["hydrangeas-that-soften-the-steps"],
     featuredProductIds: [
+      "dark-entry-planter",
+      "front-step-flower-basket",
+      "soft-greenery-pot",
+      "stone-edge-bed-shovel",
+      "hydrangea-friendly-mulch",
+      "entry-watering-wand",
+    ],
+    leadProductIds: [
+      "dark-entry-planter",
+      "front-step-flower-basket",
+      "soft-greenery-pot",
+    ],
+    extraProductIds: [
       "stone-edge-bed-shovel",
       "hydrangea-friendly-mulch",
       "entry-watering-wand",
     ],
     ideasHeading:
-      "Front-bed ideas that make the walk feel softer and more settled.",
-    productsHeading:
-      "A few useful picks that support the bed without turning it into a shopping list.",
-    seoTitle: "Garden & Flowers Ideas | Neighborhood Stewardship Project",
+      "Soft floral ideas that make the front steps feel prettier without getting precious.",
+    leadProductsEyebrow: "Cute touches people keep choosing",
+    leadProductsHeading:
+      "The pretty pieces that make the steps feel fuller, softer, and more charming.",
+    extraProductsEyebrow: "Helpful extras",
+    extraProductsHeading:
+      "Helpful extras if you want to keep the flowers looking good.",
+    seoTitle: "Seasonal Sweetness | Neighborhood Ideas",
     seoDescription:
-      "Browse calm, practical garden and flower ideas for front beds, entries, and curb-facing planting.",
+      "Browse floral, seasonal, and porch-side ideas that make the steps and front beds feel softer and sweeter.",
     live: true,
   },
   {
+    slug: "hosting-home-life",
+    name: "Hosting & Home Life",
+    kicker: "Coming soon",
+    description:
+      "Little welcoming rituals, porch drinks, cozy recipes, and home-life ideas that make guests feel instantly at ease.",
+    heroImage: IDEAS_IMAGE_ASSETS.categories.hostingHomeLife,
+    imageSlot: IDEAS_IMAGE_SLOTS.categories.hostingHomeLife,
+    coverAlt: "A hosting and home life placeholder with a tray, drinks, and cozy kitchen touches.",
+    intro:
+      "This category will hold the recipes, porch moments, guest-ready touches, and little homemaking ideas that make the house feel especially warm and lived in.",
+    ideaSlugs: [
+      "a-lemonade-setup-that-makes-summer-guests-feel-welcome",
+      "the-apple-cake-weekend-that-makes-the-house-feel-cozy",
+    ],
+    featuredProductIds: [],
+    seoTitle: "Hosting & Home Life | Neighborhood Ideas",
+    seoDescription:
+      "Coming soon: hosting touches, recipes, porch moments, and home-life ideas that make the house feel sweeter.",
+    live: false,
+  },
+  {
     slug: "curb-appeal-basics",
-    name: "Curb Appeal Basics",
+    name: "Cute Finds Worth Saving",
     kicker: "Neighborhood Ideas",
     description:
-      "Useful, non-flashy routines that help a home read as clean, steady, and well kept.",
-    heroImage: IDEAS_IMAGE_ASSETS.categories.curbAppealBasics,
+      "The little house details and charming Amazon finds that make the front feel more admired.",
+    heroImage: IDEAS_IMAGE_ASSETS.categories.cuteFindsWorthSaving,
     coverAlt:
-      "A cared-for home with tidy lawn edges and a clear front approach.",
+      "A tidy, charming home exterior with a clear approach and a polished front-facing view.",
     intro:
-      "Curb appeal basics are often the simplest things to maintain: a sharper edge at the lawn, a cleaner mailbox area, numbers that read clearly, and a few small updates that make the house feel steadily looked after.",
+      "This is the product-forward lane: the pretty practical finds, little details, and charming front-of-house touches that make a home feel more finished without turning it into a project.",
     ideaSlugs: ["easy-curb-appeal-upgrades-under-100"],
     featuredProductIds: [
       "matte-black-house-numbers",
       "classic-mailbox-post-refresh",
+      "woven-front-door-basket",
+      "black-outdoor-lantern",
+      "seasonal-door-accent",
       "wide-outdoor-broom",
     ],
+    leadProductIds: [
+      "matte-black-house-numbers",
+      "classic-mailbox-post-refresh",
+      "woven-front-door-basket",
+      "black-outdoor-lantern",
+      "seasonal-door-accent",
+    ],
+    extraProductIds: ["wide-outdoor-broom"],
     ideasHeading:
-      "Low-cost upgrades that make a house feel more settled without trying too hard.",
-    productsHeading:
-      "A few practical basics that help the front of the house read cleaner and more cared for.",
-    seoTitle: "Curb Appeal Basics | Neighborhood Stewardship Project",
+      "Saveable little house details people notice faster than you think.",
+    leadProductsEyebrow: "Cute touches people keep choosing",
+    leadProductsHeading:
+      "The little finds that make a house feel more polished, sweeter, and somehow a little more admired.",
+    extraProductsEyebrow: "Helpful extras",
+    extraProductsHeading:
+      "Helpful extras if you want to keep it all looking nice.",
+    seoTitle: "Cute Finds Worth Saving | Neighborhood Ideas",
     seoDescription:
-      "Browse practical curb appeal ideas built around upkeep, clarity, and modest upgrades that make a home feel more cared for.",
+      "Browse charming Amazon finds and little house details that make the front of a home feel more finished and loved.",
     live: true,
-  },
-  {
-    slug: "tools-essentials",
-    name: "Tools & Essentials",
-    kicker: "Coming soon",
-    description:
-      "A calm edit of practical tools and outdoor essentials that support care without clutter.",
-    heroImage: IDEAS_IMAGE_ASSETS.categories.toolsEssentials,
-    imageSlot: IDEAS_IMAGE_SLOTS.categories.toolsEssentials,
-    coverAlt: "A curated tools and essentials placeholder.",
-    intro:
-      "This category will collect the simple tools, bins, lights, and entry pieces that make maintenance easier to keep up.",
-    ideaSlugs: [],
-    featuredProductIds: [],
-    seoTitle: "Tools & Essentials | Neighborhood Stewardship Project",
-    seoDescription:
-      "Coming soon: a practical edit of entry, garden, and curb care essentials.",
-    live: false,
   },
 ];
 
@@ -191,349 +334,296 @@ export const ideaPages = [
   {
     slug: "front-walk-that-sets-the-tone",
     categorySlug: "porch-entry",
-    title: "A Front Walk That Sets the Tone",
+    title: "Cute Front Door Ideas That Feel Warm Right Away",
     dek:
-      "A clean path, one clear light source, and a few steady details can make an entry feel more settled without making it feel staged.",
-    heroImage: IDEAS_IMAGE_ASSETS.ideas.frontWalkHero,
+      "A better mat, a warm glow, a pretty planter, and one or two sweet little details can make the whole front of a house feel friendlier fast.",
+    heroImage: IDEAS_IMAGE_ASSETS.ideas.frontDoorCharmHero,
     heroAlt:
-      "A front walk curving toward a warmly lit porch with flowers by the steps.",
+      "A welcoming front door with a softly lit porch, flowers by the steps, and a clear path.",
     gallery: [
       {
-        image: IDEAS_IMAGE_ASSETS.ideas.frontWalkGalleryStreet,
-        alt: "A clean sidewalk edge and simple front planting near a ranch home.",
+        image: IDEAS_IMAGE_ASSETS.ideas.frontDoorCharmGalleryGlow,
+        alt: "A front porch with warm evening light and a clear front walk.",
       },
       {
-        image: IDEAS_IMAGE_ASSETS.ideas.frontWalkGalleryPorch,
-        alt: "A front porch with evening light and a maintained walkway.",
+        image: IDEAS_IMAGE_ASSETS.ideas.frontDoorCharmGalleryPorch,
+        alt: "A clean front walk and tidy porch with a soft planted edge.",
       },
     ],
     intro:
-      "The front walk is often the first thing a neighbor, guest, or passerby notices. It does not need to be elaborate. It only needs to feel clear, intentional, and easy to keep up over time.",
+      "The front door sets the feeling before anyone steps inside. When it looks softly lit, a little dressed, and easy to approach, the whole house feels sweeter right away.",
     whyItWorks: [
-      "A front walk sets expectations before anyone reaches the door. When the edges are swept, the lighting feels warm, and the approach is uncluttered, the whole house reads as more looked after.",
-      "The goal is not to create a showpiece. It is to create an entry that feels steady, practical, and welcoming in ordinary daily use.",
+      "This kind of front-door charm works because the details read fast. A doormat, a warm porch light, a planter, and a wreath all say the same thing at once: someone loves this home.",
+      "The best part is how doable it is. None of these touches have to be big or expensive. They just need to feel warm, pretty, and easy enough to keep up with.",
     ],
     steps: [
       {
-        title: "Keep the path visually clear",
+        title: "Start with the front-door glow",
         body:
-          "Start with the concrete itself. Sweep debris, trim plant spillover, and keep the edges readable so the walk feels intentional from the curb.",
+          "A warm porch light changes the mood faster than almost anything else. It makes the whole house feel occupied, calm, and easy to walk toward.",
       },
       {
-        title: "Add one warm point of light",
+        title: "Give the door one cute focal point",
         body:
-          "A single porch light or entry lantern at dusk changes the tone immediately. It helps the home feel occupied, calm, and easier to approach.",
+          "A wreath, a planter, or a favorite mat can do most of the work here. One sweet, clear detail usually feels better than too many little ones.",
       },
       {
-        title: "Use one grounded entry object",
+        title: "Let the practical pieces be pretty too",
         body:
-          "A simple mat, planter, or low bench can anchor the entry without crowding it. One useful object is usually enough.",
+          "House numbers, the mat, and the planter all help the entry function better, but they can also make it feel much more finished.",
       },
       {
-        title: "Choose maintenance you can actually keep up",
+        title: "Keep it easy enough to stay lovely",
         body:
-          "The best entry ideas are the ones that still look cared for on a normal Tuesday. Durable materials matter more than decorative excess.",
+          "The best front-door ideas are the ones that still look good on a normal week. Pick durable pieces that still feel charming when life gets busy.",
       },
     ],
     careNotes: [
-      "Sweep the walk weekly during the active season.",
-      "Replace tired mats before they fray at the edges.",
-      "Keep planters simple and prune anything that spills too far into the path.",
+      "Shake out the mat often so the entry still feels fresh.",
+      "Trim planters before they start leaning into the walkway.",
+      "Swap tired wreaths or ribbons before they make the door look forgotten.",
     ],
     seasonalNotes: [
-      "In spring and summer, focus on edging, mulch touch-ups, and one planted accent.",
-      "In fall and winter, keep the walk free of leaves, grit, and clutter so the entry still reads clearly.",
+      "In spring and summer, let the planter carry the color and keep the wreath simple.",
+      "In fall and winter, let the light, wreath, and numbers do more of the visual work.",
     ],
     productIds: [
       "weather-ready-doormat",
       "warm-entry-light",
       "dark-entry-planter",
+      "soft-front-door-wreath",
+      "matte-black-house-numbers",
+      "wide-outdoor-broom",
+      "simple-wreath-hanger",
     ],
+    leadProductIds: [
+      "weather-ready-doormat",
+      "warm-entry-light",
+      "dark-entry-planter",
+      "soft-front-door-wreath",
+      "matte-black-house-numbers",
+    ],
+    extraProductIds: ["wide-outdoor-broom", "simple-wreath-hanger"],
+    stepsHeading:
+      "A few easy little moves that make the front door feel sweeter fast.",
+    leadProductsEyebrow: "Cute touches people keep choosing",
+    leadProductsHeading:
+      "The little front-door pieces that always make a house feel warmer.",
+    extraProductsEyebrow: "Helpful extras",
+    extraProductsHeading:
+      "Helpful extras if you want the cute part to stay looking good.",
     relatedIdeaSlugs: [
-      "porch-lighting-that-feels-warm",
-      "an-entry-planter-that-softens-the-door",
+      "the-porch-basket-trick-that-always-looks-good",
+      "a-coat-hook-corner-that-makes-the-entry-feel-so-put-together",
     ],
-    seoTitle: "A Front Walk That Sets the Tone | Neighborhood Ideas",
+    seoTitle:
+      "Cute Front Door Ideas That Feel Warm Right Away | Neighborhood Ideas",
     seoDescription:
-      "A practical porch and entry idea for making the first steps to a home feel cleaner, warmer, and more cared for.",
-    badge: "Featured idea",
-    popularityLabel: "Easy first upgrade",
+      "Charming front-door ideas built around doormats, porch lights, planters, wreaths, and the little details that make a house feel sweeter right away.",
+    badge: "Popular Around the Neighborhood",
+    popularityLabel: "Easy Favorite",
     editorNote:
-      "Start with the path itself before adding anything decorative. A clean walk usually changes the whole impression first.",
+      "If the front door looks warm, softly lit, and just a little dressed up, the whole house usually feels nicer before anyone even gets inside.",
     live: true,
   },
   {
     slug: "hydrangeas-that-soften-the-steps",
     categorySlug: "garden-flowers",
-    title: "Hydrangeas That Soften the Steps",
+    title: "Pretty Front-Step Flowers That Make Everything Feel Sweeter",
     dek:
-      "One planted edge by the walk can make a front approach feel friendlier, fuller, and more settled without turning the entry into a garden project.",
-    heroImage: IDEAS_IMAGE_ASSETS.ideas.hydrangeasHero,
+      "A soft porch pot, a little greenery, and flowers by the steps can make the whole entry feel fuller, prettier, and much more charming.",
+    heroImage: IDEAS_IMAGE_ASSETS.ideas.frontStepFlowersHero,
     heroAlt:
-      "Hydrangeas and layered plantings softening the steps to a porch at dusk.",
+      "Flowers and greenery softening the steps to a welcoming porch.",
     gallery: [
       {
-        image: IDEAS_IMAGE_ASSETS.ideas.hydrangeasGalleryBed,
-        alt: "A simple front bed wrapping a clean walk near a modest ranch house.",
+        image: IDEAS_IMAGE_ASSETS.ideas.frontStepFlowersGalleryBed,
+        alt: "A flower bed and walkway that make the front steps feel softer.",
       },
       {
-        image: IDEAS_IMAGE_ASSETS.ideas.hydrangeasGalleryYard,
-        alt: "A front yard with warm planting shapes and a tidy entry edge.",
+        image: IDEAS_IMAGE_ASSETS.ideas.frontStepFlowersGalleryYard,
+        alt: "A tidy front yard with warm planting shapes and a soft entry edge.",
       },
     ],
     intro:
-      "Front beds work best when they calm the approach rather than compete with it. A few shrubs with enough room to mature, a dark mulch bed that stays contained, and one repeatable shape near the steps can make a house feel more settled before anyone reaches the porch.",
+      "Flowers by the steps do something special. They make the whole walk up feel softer, the porch feel sweeter, and even a simple entry feel a little more loved.",
     whyItWorks: [
-      "A soft planted edge changes how a home meets the sidewalk. It makes the entry feel looked after without making it feel precious or overly styled.",
-      "Hydrangeas, hostas, and other rounded plantings work well here because they fill space generously, hold the line of the walk, and still read clearly from the street.",
+      "This kind of floral styling works because it changes the feel of the steps before anyone notices the exact flowers. The entry looks fuller, more welcoming, and just a little more charming.",
+      "You do not need a real garden project for this. A good planter, one floral basket, and a little greenery can carry the whole feeling without becoming a huge chore.",
     ],
     steps: [
       {
-        title: "Keep the bed close to the entry simple",
+        title: "Start with one good pot near the steps",
         body:
-          "Choose one main flowering shrub and one or two steady green companions. Too many small choices make the bed harder to keep clean.",
+          "A sturdy, pretty planter gives the whole entry a focal point right away. It helps the flowers feel intentional instead of scattered.",
       },
       {
-        title: "Shape the edge so the walk still reads clearly",
+        title: "Keep the flowers soft and generous",
         body:
-          "The goal is softness, not spillover. The planted edge should frame the path, not close in on it.",
+          "Rounded flowers and easy greenery work especially well here. You want the steps to feel sweeter, not crowded.",
       },
       {
-        title: "Mulch deeply enough to calm the bed",
+        title: "Let the plants soften the hard lines",
         body:
-          "Fresh mulch creates visual order fast. It helps the flowers and foliage read as intentional even when everything is not in peak bloom.",
+          "The best front-step flowers sit close enough to the entry to soften it, but not so close that they swallow the path.",
       },
       {
-        title: "Plant for a good normal week, not for one perfect weekend",
+        title: "Use the practical extras later",
         body:
-          "Use varieties that still look respectable after a missed watering or a stretch of rain. Dependable structure matters more than a short bloom moment.",
+          "Once the pretty part feels right, the mulch, tools, and watering help keep it all looking nice without becoming the star of the page.",
       },
     ],
     careNotes: [
-      "Cut back damaged stems before the active season starts.",
-      "Keep mulch off the stems and refresh the edge line when it begins to blur.",
-      "Deadhead only if it improves the look; a good shrub should still carry itself well.",
+      "Deadhead only when it truly improves the look.",
+      "Keep pots and baskets watered before they reach the visibly droopy stage.",
+      "Refresh the front edge before weeds make the flowers feel messier than they are.",
     ],
     seasonalNotes: [
-      "In spring, focus on shape and fresh mulch before adding any annual color.",
-      "In late summer, let the bed mature naturally instead of forcing a second round of planting.",
+      "Spring and early summer are the easiest time to set this up with fresh greenery and flowers.",
+      "In late summer, let the shapes stay full and relaxed instead of forcing a total replant.",
     ],
     productIds: [
+      "dark-entry-planter",
+      "front-step-flower-basket",
+      "soft-greenery-pot",
       "stone-edge-bed-shovel",
       "hydrangea-friendly-mulch",
       "entry-watering-wand",
     ],
-    relatedIdeaSlugs: [
-      "a-front-walk-that-sets-the-tone-garden",
-      "flower-beds-that-hold-their-shape",
+    leadProductIds: [
+      "dark-entry-planter",
+      "front-step-flower-basket",
+      "soft-greenery-pot",
     ],
-    seoTitle: "Hydrangeas That Soften the Steps | Neighborhood Ideas",
+    extraProductIds: [
+      "stone-edge-bed-shovel",
+      "hydrangea-friendly-mulch",
+      "entry-watering-wand",
+    ],
+    stepsHeading:
+      "A few gentle little moves that make the steps feel softer fast.",
+    leadProductsEyebrow: "Cute touches people keep choosing",
+    leadProductsHeading:
+      "The pretty floral pieces that make the entry feel instantly sweeter.",
+    extraProductsEyebrow: "Helpful extras",
+    extraProductsHeading:
+      "Helpful extras if you want to keep the flowers looking good.",
+    relatedIdeaSlugs: [
+      "the-mailbox-corner-that-looks-so-much-better-with-flowers",
+      "a-lemonade-setup-that-makes-summer-guests-feel-welcome",
+    ],
+    seoTitle:
+      "Pretty Front-Step Flowers That Make Everything Feel Sweeter | Neighborhood Ideas",
     seoDescription:
-      "A calm front-bed idea for softening porch steps and making an entry feel more settled from the street.",
-    badge: "Garden idea",
-    popularityLabel: "Front-bed favorite",
+      "A soft, charming front-step flowers idea built around porch pots, floral styling, and the little touches that make an entry feel sweeter.",
+    badge: "Cute Touch People Keep Choosing",
+    popularityLabel: "Easy Favorite",
     editorNote:
-      "The bed should support the entry, not overpower it. If the walk still reads first, the planting is doing its job.",
+      "If the flowers make the steps feel softer and the whole entry look fuller, they are doing exactly what they should.",
     live: true,
   },
   {
     slug: "easy-curb-appeal-upgrades-under-100",
     categorySlug: "curb-appeal-basics",
-    title: "Easy Curb Appeal Upgrades Under $100",
+    title: "Little House Details People Notice Right Away",
     dek:
-      "A few low-cost changes at the front of the house can make everything feel more intentional: cleaner numbers, a sharper walk edge, and one or two details that read clearly from the street.",
-    heroImage: IDEAS_IMAGE_ASSETS.ideas.curbAppealHero,
+      "House numbers, a tidier mailbox, a lantern, and one or two sweet little extras can make the front of a house feel much more finished than you would think.",
+    heroImage: IDEAS_IMAGE_ASSETS.ideas.littleDetailsHero,
     heroAlt:
-      "A tidy front yard and house exterior with a calm, well-kept curb-facing view.",
+      "A charming front-facing view of a house with polished little details and a tidy entry.",
     gallery: [
       {
-        image: IDEAS_IMAGE_ASSETS.ideas.curbAppealGalleryPorch,
-        alt: "A front porch and lawn that feel steady and well maintained.",
+        image: IDEAS_IMAGE_ASSETS.ideas.littleDetailsGalleryPorch,
+        alt: "A front porch with warm light and small details that feel finished.",
       },
       {
-        image: IDEAS_IMAGE_ASSETS.ideas.curbAppealGalleryDrive,
-        alt: "A driveway edge, walk, and flower bed that give the house a more settled look.",
+        image: IDEAS_IMAGE_ASSETS.ideas.littleDetailsGalleryDrive,
+        alt: "A clear front approach with details that make the house feel more polished.",
       },
     ],
     intro:
-      "A lot of curb appeal is built from the ordinary parts of a house that either look cared for or start to blur together when nobody gets around to them. This kind of upgrade is less about decorating and more about restoring clarity to the front of the property.",
+      "Some of the sweetest house upgrades are the ones people notice without even realizing why the place feels better. Cleaner numbers, a nicer mailbox moment, a lantern, a basket, one seasonal touch, and suddenly the whole front feels more admired.",
     whyItWorks: [
-      "When the mailbox area looks upright, the house numbers read cleanly, and the walk edge is kept in line, the whole property feels more settled even before anyone notices the details separately.",
-      "Small fixes work well here because they are realistic to finish and maintain. The point is not to transform the house. It is to help it keep showing up well every week.",
+      "These details work because they read fast from the curb and the sidewalk. They make the house feel clearer, sweeter, and a little more intentional even when the changes are tiny.",
+      "This is the kind of page people save because the fixes are low-lift and visible. It feels like finding the exact little detail that makes the house finally click.",
     ],
     steps: [
       {
-        title: "Start with what reads from the street",
+        title: "Start with the detail people notice first",
         body:
-          "House numbers, the mailbox, and the first edge of the lawn are the parts people register quickly. If those look clear, the whole property already feels more looked after.",
+          "Usually that is the house numbers or the mailbox. If those look crisp, upright, and cared for, the whole front already feels better.",
       },
       {
-        title: "Refresh one tired element instead of five small ones",
+        title: "Add one charming little layer",
         body:
-          "Choose the thing that currently makes the front feel neglected, whether that is faded numbers, a leaning mailbox, or a dirty walk edge.",
+          "A basket, lantern, or seasonal accent can make the front feel softer and more personal without taking over.",
       },
       {
-        title: "Use one dark, simple finish",
+        title: "Keep the palette simple",
         body:
-          "Black or dark bronze works well for numbers, hooks, small hardware, and mailbox pieces because it reads crisp without looking flashy.",
+          "Dark metals, natural textures, and one soft seasonal note usually feel more expensive than a bunch of competing pieces.",
       },
       {
-        title: "End with a maintenance tool you will actually use",
+        title: "Use cleanup as the last pass",
         body:
-          "A broom, edging spade, or hose attachment can matter more than another decorative item because it helps the front stay clean in ordinary use.",
+          "Once the pretty part is done, one quick cleanup tool helps the whole thing keep its charm instead of slipping back into looking tired.",
       },
     ],
     careNotes: [
-      "Clean the walk edge and mailbox area before adding any new hardware.",
-      "Check that numbers remain visible from the street, especially at dusk.",
-      "If a finish starts to chip, touch it up early before the front begins to look tired again.",
+      "Wipe down numbers and lantern glass before the front starts looking dusty.",
+      "Keep baskets or accents tidy enough that they still feel intentional.",
+      "Refresh seasonal pieces before they start looking out of date or weather-worn.",
     ],
     seasonalNotes: [
-      "Spring is the best time to reset the front edge, refresh numbers, and clean winter residue off the walk.",
-      "In fall, keep leaves from collecting around the mailbox base and front step so the upgrades still read clearly.",
+      "This page works especially well at the start of a season when one small switch can change the whole feel.",
+      "In colder months, let the lantern, numbers, and one soft accent do the work instead of overloading the porch.",
     ],
     productIds: [
       "matte-black-house-numbers",
       "classic-mailbox-post-refresh",
+      "woven-front-door-basket",
+      "black-outdoor-lantern",
+      "seasonal-door-accent",
       "wide-outdoor-broom",
     ],
+    leadProductIds: [
+      "matte-black-house-numbers",
+      "classic-mailbox-post-refresh",
+      "woven-front-door-basket",
+      "black-outdoor-lantern",
+      "seasonal-door-accent",
+    ],
+    extraProductIds: ["wide-outdoor-broom"],
+    stepsHeading:
+      "A few little details that make the house feel more finished fast.",
+    leadProductsEyebrow: "Cute touches people keep choosing",
+    leadProductsHeading:
+      "The saveable little finds that make the front feel instantly more put together.",
+    extraProductsEyebrow: "Helpful extras",
+    extraProductsHeading:
+      "Helpful extras if you want the cute part to stay looking fresh.",
     relatedIdeaSlugs: [
-      "clean-house-numbers-that-read-fast",
-      "a-mailbox-area-that-doesnt-drag-down-the-front",
+      "cute-amazon-finds-that-make-a-porch-feel-more-finished",
+      "easy-weekend-diys-that-look-better-than-they-cost",
     ],
     seoTitle:
-      "Easy Curb Appeal Upgrades Under $100 | Neighborhood Ideas",
+      "Little House Details People Notice Right Away | Neighborhood Ideas",
     seoDescription:
-      "A practical curb appeal idea built around modest upgrades that make the front of a house feel cleaner, clearer, and more cared for.",
-    badge: "Budget-friendly",
-    popularityLabel: "High impact, low effort",
+      "A warm, saveable page of little house details and cute finds that make the front of a home feel more admired right away.",
+    badge: "Looks More Expensive Than It Is",
+    popularityLabel: "Small Detail, Big Difference",
     editorNote:
-      "The best low-cost curb appeal changes are usually the ones that restore clarity, not the ones that add more things.",
+      "The nicest little house details are the ones that make people think the whole place feels more put together, even if they cannot name exactly why.",
     live: true,
   },
   {
-    slug: "porch-lighting-that-feels-warm",
-    categorySlug: "porch-entry",
-    title: "Porch Lighting That Feels Warm at Dusk",
+    slug: "the-porch-basket-trick-that-always-looks-good",
+    categorySlug: "weekend-little-projects",
+    title: "The Porch Basket Trick That Always Looks Good",
     dek: "Coming soon.",
-    heroImage: null,
-    imageSlot: IDEAS_IMAGE_SLOTS.ideas.porchLighting,
-    heroAlt: "Porch lighting idea coming soon.",
-    gallery: [],
-    intro: "Coming soon.",
-    whyItWorks: [],
-    steps: [],
-    careNotes: [],
-    seasonalNotes: [],
-    productIds: [],
-    relatedIdeaSlugs: [],
-    seoTitle: "Porch Lighting That Feels Warm at Dusk | Neighborhood Ideas",
-    seoDescription: "Coming soon.",
-    badge: "Coming soon",
-    popularityLabel: null,
-    editorNote: null,
-    live: false,
-  },
-  {
-    slug: "an-entry-planter-that-softens-the-door",
-    categorySlug: "porch-entry",
-    title: "An Entry Planter That Softens the Door",
-    dek: "Coming soon.",
-    heroImage: null,
-    imageSlot: IDEAS_IMAGE_SLOTS.ideas.entryPlanter,
-    heroAlt: "Entry planter idea coming soon.",
-    gallery: [],
-    intro: "Coming soon.",
-    whyItWorks: [],
-    steps: [],
-    careNotes: [],
-    seasonalNotes: [],
-    productIds: [],
-    relatedIdeaSlugs: [],
-    seoTitle: "An Entry Planter That Softens the Door | Neighborhood Ideas",
-    seoDescription: "Coming soon.",
-    badge: "Coming soon",
-    popularityLabel: null,
-    editorNote: null,
-    live: false,
-  },
-  {
-    slug: "a-front-walk-that-sets-the-tone-garden",
-    categorySlug: "garden-flowers",
-    title: "A Front Bed That Softens the Walk",
-    dek: "Coming soon.",
-    heroImage: null,
-    imageSlot: IDEAS_IMAGE_SLOTS.ideas.frontBed,
-    heroAlt: "Front bed idea coming soon.",
-    gallery: [],
-    intro: "Coming soon.",
-    whyItWorks: [],
-    steps: [],
-    careNotes: [],
-    seasonalNotes: [],
-    productIds: [],
-    relatedIdeaSlugs: [],
-    seoTitle: "A Front Bed That Softens the Walk | Neighborhood Ideas",
-    seoDescription: "Coming soon.",
-    badge: "Coming soon",
-    popularityLabel: null,
-    editorNote: null,
-    live: false,
-  },
-  {
-    slug: "flower-beds-that-hold-their-shape",
-    categorySlug: "garden-flowers",
-    title: "Flower Beds That Hold Their Shape",
-    dek: "Coming soon.",
-    heroImage: null,
-    imageSlot: IDEAS_IMAGE_SLOTS.ideas.flowerBeds,
-    heroAlt: "Flower bed idea coming soon.",
-    gallery: [],
-    intro: "Coming soon.",
-    whyItWorks: [],
-    steps: [],
-    careNotes: [],
-    seasonalNotes: [],
-    productIds: [],
-    relatedIdeaSlugs: [],
-    seoTitle: "Flower Beds That Hold Their Shape | Neighborhood Ideas",
-    seoDescription: "Coming soon.",
-    badge: "Coming soon",
-    popularityLabel: null,
-    editorNote: null,
-    live: false,
-  },
-  {
-    slug: "clean-house-numbers-that-read-fast",
-    categorySlug: "curb-appeal-basics",
-    title: "Clean House Numbers That Read Fast",
-    dek: "Coming soon.",
-    heroImage: null,
-    imageSlot: IDEAS_IMAGE_SLOTS.ideas.houseNumbers,
-    heroAlt: "House numbers idea coming soon.",
-    gallery: [],
-    intro: "Coming soon.",
-    whyItWorks: [],
-    steps: [],
-    careNotes: [],
-    seasonalNotes: [],
-    productIds: [],
-    relatedIdeaSlugs: [],
-    seoTitle: "Clean House Numbers That Read Fast | Neighborhood Ideas",
-    seoDescription: "Coming soon.",
-    badge: "Coming soon",
-    popularityLabel: null,
-    editorNote: null,
-    live: false,
-  },
-  {
-    slug: "a-mailbox-area-that-doesnt-drag-down-the-front",
-    categorySlug: "curb-appeal-basics",
-    title: "A Mailbox Area That Doesn’t Drag Down the Front",
-    dek: "Coming soon.",
-    heroImage: null,
-    imageSlot: IDEAS_IMAGE_SLOTS.ideas.mailboxArea,
-    heroAlt: "Mailbox area idea coming soon.",
+    heroImage: "assets/Ideas-Placeholders/porch-basket-idea.svg",
+    imageSlot: IDEAS_IMAGE_SLOTS.ideas.porchBasket,
+    heroAlt: "Porch basket idea coming soon.",
     gallery: [],
     intro: "Coming soon.",
     whyItWorks: [],
@@ -543,7 +633,175 @@ export const ideaPages = [
     productIds: [],
     relatedIdeaSlugs: [],
     seoTitle:
-      "A Mailbox Area That Doesn’t Drag Down the Front | Neighborhood Ideas",
+      "The Porch Basket Trick That Always Looks Good | Neighborhood Ideas",
+    seoDescription: "Coming soon.",
+    badge: "Coming soon",
+    popularityLabel: null,
+    editorNote: null,
+    live: false,
+  },
+  {
+    slug: "a-coat-hook-corner-that-makes-the-entry-feel-so-put-together",
+    categorySlug: "cozy-home-touches",
+    title: "A Coat Hook Corner That Makes the Entry Feel So Put Together",
+    dek: "Coming soon.",
+    heroImage: "assets/Ideas-Placeholders/coat-hook-corner-idea.svg",
+    imageSlot: IDEAS_IMAGE_SLOTS.ideas.coatHookCorner,
+    heroAlt: "Coat hook corner idea coming soon.",
+    gallery: [],
+    intro: "Coming soon.",
+    whyItWorks: [],
+    steps: [],
+    careNotes: [],
+    seasonalNotes: [],
+    productIds: [],
+    relatedIdeaSlugs: [],
+    seoTitle:
+      "A Coat Hook Corner That Makes the Entry Feel So Put Together | Neighborhood Ideas",
+    seoDescription: "Coming soon.",
+    badge: "Coming soon",
+    popularityLabel: null,
+    editorNote: null,
+    live: false,
+  },
+  {
+    slug: "cute-little-kitchen-touches-that-feel-instantly-cozier",
+    categorySlug: "cozy-home-touches",
+    title: "Cute Little Kitchen Touches That Feel Instantly Cozier",
+    dek: "Coming soon.",
+    heroImage: "assets/Ideas-Placeholders/weekend-diys-idea.svg",
+    imageSlot: IDEAS_IMAGE_SLOTS.ideas.kitchenTouches,
+    heroAlt: "Kitchen touches idea coming soon.",
+    gallery: [],
+    intro: "Coming soon.",
+    whyItWorks: [],
+    steps: [],
+    careNotes: [],
+    seasonalNotes: [],
+    productIds: [],
+    relatedIdeaSlugs: [],
+    seoTitle:
+      "Cute Little Kitchen Touches That Feel Instantly Cozier | Neighborhood Ideas",
+    seoDescription: "Coming soon.",
+    badge: "Coming soon",
+    popularityLabel: null,
+    editorNote: null,
+    live: false,
+  },
+  {
+    slug: "easy-weekend-diys-that-look-better-than-they-cost",
+    categorySlug: "weekend-little-projects",
+    title: "Easy Weekend DIYs That Look Better Than They Cost",
+    dek: "Coming soon.",
+    heroImage: "assets/Ideas-Placeholders/lemonade-setup-idea.svg",
+    imageSlot: IDEAS_IMAGE_SLOTS.ideas.weekendDIYs,
+    heroAlt: "Weekend DIY idea coming soon.",
+    gallery: [],
+    intro: "Coming soon.",
+    whyItWorks: [],
+    steps: [],
+    careNotes: [],
+    seasonalNotes: [],
+    productIds: [],
+    relatedIdeaSlugs: [],
+    seoTitle:
+      "Easy Weekend DIYs That Look Better Than They Cost | Neighborhood Ideas",
+    seoDescription: "Coming soon.",
+    badge: "Coming soon",
+    popularityLabel: null,
+    editorNote: null,
+    live: false,
+  },
+  {
+    slug: "a-lemonade-setup-that-makes-summer-guests-feel-welcome",
+    categorySlug: "hosting-home-life",
+    title: "A Lemonade Setup That Makes Summer Guests Feel Welcome",
+    dek: "Coming soon.",
+    heroImage: "assets/Ideas-Placeholders/lemonade-setup-idea.svg",
+    imageSlot: IDEAS_IMAGE_SLOTS.ideas.lemonadeSetup,
+    heroAlt: "Lemonade setup idea coming soon.",
+    gallery: [],
+    intro: "Coming soon.",
+    whyItWorks: [],
+    steps: [],
+    careNotes: [],
+    seasonalNotes: [],
+    productIds: [],
+    relatedIdeaSlugs: [],
+    seoTitle:
+      "A Lemonade Setup That Makes Summer Guests Feel Welcome | Neighborhood Ideas",
+    seoDescription: "Coming soon.",
+    badge: "Coming soon",
+    popularityLabel: null,
+    editorNote: null,
+    live: false,
+  },
+  {
+    slug: "the-apple-cake-weekend-that-makes-the-house-feel-cozy",
+    categorySlug: "hosting-home-life",
+    title: "The Apple Cake Weekend That Makes the House Feel Cozy",
+    dek: "Coming soon.",
+    heroImage: "assets/Ideas-Placeholders/apple-cake-weekend-idea.svg",
+    imageSlot: IDEAS_IMAGE_SLOTS.ideas.appleCakeWeekend,
+    heroAlt: "Apple cake weekend idea coming soon.",
+    gallery: [],
+    intro: "Coming soon.",
+    whyItWorks: [],
+    steps: [],
+    careNotes: [],
+    seasonalNotes: [],
+    productIds: [],
+    relatedIdeaSlugs: [],
+    seoTitle:
+      "The Apple Cake Weekend That Makes the House Feel Cozy | Neighborhood Ideas",
+    seoDescription: "Coming soon.",
+    badge: "Coming soon",
+    popularityLabel: null,
+    editorNote: null,
+    live: false,
+  },
+  {
+    slug: "cute-amazon-finds-that-make-a-porch-feel-more-finished",
+    categorySlug: "curb-appeal-basics",
+    title: "Cute Amazon Finds That Make a Porch Feel More Finished",
+    dek: "Coming soon.",
+    heroImage: "assets/Ideas-Placeholders/cute-amazon-finds-idea.svg",
+    imageSlot: IDEAS_IMAGE_SLOTS.ideas.cuteAmazonFinds,
+    heroAlt: "Cute Amazon finds idea coming soon.",
+    gallery: [],
+    intro: "Coming soon.",
+    whyItWorks: [],
+    steps: [],
+    careNotes: [],
+    seasonalNotes: [],
+    productIds: [],
+    relatedIdeaSlugs: [],
+    seoTitle:
+      "Cute Amazon Finds That Make a Porch Feel More Finished | Neighborhood Ideas",
+    seoDescription: "Coming soon.",
+    badge: "Coming soon",
+    popularityLabel: null,
+    editorNote: null,
+    live: false,
+  },
+  {
+    slug: "the-mailbox-corner-that-looks-so-much-better-with-flowers",
+    categorySlug: "garden-flowers",
+    title: "The Mailbox Corner That Looks So Much Better With Flowers",
+    dek: "Coming soon.",
+    heroImage: "assets/Ideas-Placeholders/mailbox-flowers-idea.svg",
+    imageSlot: IDEAS_IMAGE_SLOTS.ideas.mailboxFlowers,
+    heroAlt: "Mailbox flowers idea coming soon.",
+    gallery: [],
+    intro: "Coming soon.",
+    whyItWorks: [],
+    steps: [],
+    careNotes: [],
+    seasonalNotes: [],
+    productIds: [],
+    relatedIdeaSlugs: [],
+    seoTitle:
+      "The Mailbox Corner That Looks So Much Better With Flowers | Neighborhood Ideas",
     seoDescription: "Coming soon.",
     badge: "Coming soon",
     popularityLabel: null,
@@ -556,209 +814,371 @@ export const productCards = [
   {
     id: "weather-ready-doormat",
     name: "Weather-ready coir mat",
-    brand: "Entry edit",
+    brand: "Front-door charm",
     image: IDEAS_IMAGE_ASSETS.products.weatherReadyDoormat,
     imageSlot: IDEAS_IMAGE_SLOTS.products.weatherReadyDoormat,
     imageAlt: "A durable coir doormat placed at a front door.",
     merchant: "Amazon",
-    priceLabel: "Under $40",
-    affiliateUrl: PRODUCT_LINKS.porchEntry.weatherReadyDoormat,
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.frontDoorPorchCharm.weatherReadyDoormat,
     description:
-      "A straightforward mat that makes the entry feel anchored and catches grit before it travels inside.",
+      "A good mat makes the whole entry feel grounded, tidy, and a little more finished the second you walk up.",
     whyItHelps:
-      "One of the fastest ways to make an entry feel intentional without adding visual clutter.",
-    tags: ["Entry", "Practical", "Low effort"],
+      "It is one of the easiest ways to make the front door feel intentional without adding any fuss.",
+    tags: ["Front door", "Easy", "Low effort"],
     disclosure:
       "This product link points to Amazon and is meant to support the idea without taking over the page.",
     ctaLabel: "Browse on Amazon",
-    badge: "Practical pick",
-    popularityLabel: "Most useful first step",
+    badge: "Easy Favorite",
+    popularityLabel: "Popular Around the Neighborhood",
     editorNote:
-      "Choose a plain edge and a deep neutral color so it still looks good when the weather changes.",
+      "A deep neutral mat almost always looks better longer than a trendy one.",
   },
   {
     id: "warm-entry-light",
-    name: "Warm-glow porch light",
-    brand: "Lighting edit",
+    name: "Warm front-door lantern",
+    brand: "Front-door charm",
     image: IDEAS_IMAGE_ASSETS.products.warmEntryLight,
     imageSlot: IDEAS_IMAGE_SLOTS.products.warmEntryLight,
     imageAlt: "A simple porch light with a warm evening glow.",
     merchant: "Amazon",
-    priceLabel: "Under $80",
-    affiliateUrl: PRODUCT_LINKS.porchEntry.warmEntryLight,
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.frontDoorPorchCharm.warmEntryLight,
     description:
-      "A single warm light source can make the whole approach feel calmer and more occupied after sunset.",
+      "A soft front-door glow makes the whole walk up feel calmer, prettier, and much more welcoming after sunset.",
     whyItHelps:
-      "Lighting changes tone faster than almost any other entry update.",
-    tags: ["Evening", "Porch", "Warm light"],
+      "Lighting changes the mood faster than almost anything else at the front door.",
+    tags: ["Porch", "Evening", "Warm light"],
     disclosure:
       "This product link points to Amazon and is meant to support the idea without taking over the page.",
     ctaLabel: "Browse on Amazon",
-    badge: "Evening upgrade",
-    popularityLabel: "Best at dusk",
+    badge: "Small Detail, Big Difference",
+    popularityLabel: "Looks More Expensive Than It Is",
     editorNote:
-      "Look for a warmer bulb temperature and a shape that matches the home rather than competing with it.",
+      "A warmer bulb and a simple shape will almost always feel sweeter than something too sharp or trendy.",
   },
   {
     id: "dark-entry-planter",
-    name: "Dark olive entry planter",
-    brand: "Outdoor edit",
+    name: "Dark olive porch planter",
+    brand: "Front-door charm",
     image: IDEAS_IMAGE_ASSETS.products.darkEntryPlanter,
     imageSlot: IDEAS_IMAGE_SLOTS.products.darkEntryPlanter,
     imageAlt: "A simple dark planter placed beside an entry step.",
     merchant: "Amazon",
-    priceLabel: "Under $60",
-    affiliateUrl: PRODUCT_LINKS.porchEntry.darkEntryPlanter,
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.frontDoorPorchCharm.darkEntryPlanter,
     description:
-      "A grounded planter can soften a doorway and add life without making the path feel crowded.",
+      "A dark planter beside the door softens the entry and makes the whole front feel more dressed without looking overdone.",
     whyItHelps:
-      "It gives the entry one calm point of focus and works across seasons.",
+      "It gives the door one pretty focal point and works in every season.",
     tags: ["Planter", "Entry", "All season"],
     disclosure:
       "This product link points to Amazon and is meant to support the idea without taking over the page.",
     ctaLabel: "Browse on Amazon",
-    badge: "Editor note",
+    badge: "Cute Touch People Keep Choosing",
+    popularityLabel: "Looks More Expensive Than It Is",
+    editorNote:
+      "One good planter usually feels better than a cluster of smaller ones.",
+  },
+  {
+    id: "soft-front-door-wreath",
+    name: "Soft front-door wreath",
+    brand: "Front-door charm",
+    image: IDEAS_IMAGE_ASSETS.products.softFrontDoorWreath,
+    imageSlot: IDEAS_IMAGE_SLOTS.products.softFrontDoorWreath,
+    imageAlt: "A soft wreath hanging on a front door.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.frontDoorPorchCharm.softFrontDoorWreath,
+    description:
+      "A soft wreath gives the front door an instant little layer of charm without asking you to decorate the whole porch.",
+    whyItHelps:
+      "It makes the entry feel sweet, finished, and a touch more personal right away.",
+    tags: ["Wreath", "Door", "Seasonal"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "Browse on Amazon",
+    badge: "Cute Touch People Keep Choosing",
+    popularityLabel: "Easy Favorite",
+    editorNote:
+      "Choose something soft and simple enough to swap with the seasons without feeling overdecorated.",
+  },
+  {
+    id: "simple-wreath-hanger",
+    name: "Simple wreath hanger",
+    brand: "Helpful extra",
+    image: IDEAS_IMAGE_ASSETS.products.simpleWreathHanger,
+    imageSlot: IDEAS_IMAGE_SLOTS.products.simpleWreathHanger,
+    imageAlt: "A simple wreath hanger for a front door.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.frontDoorPorchCharm.simpleWreathHanger,
+    description:
+      "A clean wreath hanger is the kind of little practical extra that keeps the pretty part easy.",
+    whyItHelps:
+      "It makes seasonal swaps simpler and keeps the front door setup low stress.",
+    tags: ["Door", "Helpful extra", "Simple"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "Browse on Amazon",
+    badge: "Helpful Extra",
     popularityLabel: null,
     editorNote:
-      "Use one planter with a healthy, easy-to-maintain planting instead of several smaller pieces.",
+      "The boring little add-on is usually what makes the cute part easy to keep doing.",
   },
   {
     id: "stone-edge-bed-shovel",
     name: "Bed-edge spade",
-    brand: "Garden edit",
-    image: IDEAS_IMAGE_ASSETS.products.bedEdgeSpade,
-    imageSlot: IDEAS_IMAGE_SLOTS.products.bedEdgeSpade,
+    brand: "Helpful extra",
+    image: IDEAS_IMAGE_ASSETS.products.stoneEdgeBedShovel,
+    imageSlot: IDEAS_IMAGE_SLOTS.products.stoneEdgeBedShovel,
     imageAlt: "A narrow garden spade for defining the edge of a flower bed.",
     merchant: "Amazon",
-    priceLabel: "Under $45",
-    affiliateUrl: PRODUCT_LINKS.gardenFlowers.bedEdgeSpade,
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.seasonalSweetness.stoneEdgeBedShovel,
     description:
-      "A narrow spade helps keep the line between walk and planting bed crisp, which changes the look of the whole entry quickly.",
+      "A narrow spade helps keep the flower bed edge crisp, which is often what makes the whole thing look neat instead of messy.",
     whyItHelps:
-      "Clean edges are often more important than adding more flowers.",
-    tags: ["Garden", "Edges", "Useful"],
+      "A clean edge does a surprising amount of visual work once the flowers are in.",
+    tags: ["Garden", "Edge", "Useful"],
     disclosure:
       "This product link points to Amazon and is meant to support the idea without taking over the page.",
     ctaLabel: "Browse on Amazon",
-    badge: "Most practical",
-    popularityLabel: "High-impact tool",
+    badge: "Helpful Extra",
+    popularityLabel: null,
     editorNote:
-      "If the bed line stays sharp, the whole planting reads as more deliberate even before anything blooms.",
+      "If the bed line stays sharp, the flowers read as more intentional even before everything fills in.",
   },
   {
     id: "hydrangea-friendly-mulch",
     name: "Dark bark mulch",
-    brand: "Garden edit",
+    brand: "Helpful extra",
     image: IDEAS_IMAGE_ASSETS.products.darkBarkMulch,
     imageSlot: IDEAS_IMAGE_SLOTS.products.darkBarkMulch,
     imageAlt: "A dark mulch spread through a front flower bed.",
     merchant: "Amazon",
-    priceLabel: "Under $20",
-    affiliateUrl: PRODUCT_LINKS.gardenFlowers.darkBarkMulch,
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.seasonalSweetness.darkBarkMulch,
     description:
-      "A dark mulch layer settles the bed visually and gives the flowers and foliage a cleaner backdrop.",
+      "A dark mulch layer settles the whole bed visually and gives the flowers and greenery a cleaner backdrop.",
     whyItHelps:
-      "Fresh mulch can make a modest bed feel finished faster than almost anything else.",
+      "It is one of the fastest ways to make a modest bed feel much more finished.",
     tags: ["Mulch", "Front bed", "Seasonal"],
     disclosure:
       "This product link points to Amazon and is meant to support the idea without taking over the page.",
     ctaLabel: "Browse on Amazon",
-    badge: "Fast visual fix",
-    popularityLabel: "Best before bloom",
+    badge: "Helpful Extra",
+    popularityLabel: "Small Detail, Big Difference",
     editorNote:
-      "Use enough to calm the bed, but keep it off the stems so the planting still looks healthy and deliberate.",
+      "It is not glamorous, but it really does make the flowers look prettier almost immediately.",
   },
   {
     id: "entry-watering-wand",
     name: "Gentle watering wand",
-    brand: "Garden edit",
-    image: IDEAS_IMAGE_ASSETS.products.wateringWand,
-    imageSlot: IDEAS_IMAGE_SLOTS.products.wateringWand,
+    brand: "Helpful extra",
+    image: IDEAS_IMAGE_ASSETS.products.entryWateringWand,
+    imageSlot: IDEAS_IMAGE_SLOTS.products.entryWateringWand,
     imageAlt: "A long watering wand used to water plants beside front steps.",
     merchant: "Amazon",
-    priceLabel: "Under $35",
-    affiliateUrl: PRODUCT_LINKS.gardenFlowers.wateringWand,
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.seasonalSweetness.entryWateringWand,
     description:
-      "A watering wand makes it easier to keep front-edge planting alive without dragging a hose awkwardly through the entry.",
+      "A watering wand makes it easier to keep front-step flowers happy without dragging a hose awkwardly through the entry.",
     whyItHelps:
-      "The easier the routine feels, the more likely the bed will still look good in a normal week.",
+      "The easier the routine feels, the more likely the flowers will still look nice in a normal week.",
     tags: ["Watering", "Garden", "Routine"],
     disclosure:
       "This product link points to Amazon and is meant to support the idea without taking over the page.",
     ctaLabel: "Browse on Amazon",
-    badge: "Routine helper",
+    badge: "Helpful Extra",
     popularityLabel: null,
     editorNote:
-      "Choose the simplest version that feels easy to grab and use, especially near the front steps.",
+      "The best helpful extras are the ones you actually grab often enough to matter.",
+  },
+  {
+    id: "front-step-flower-basket",
+    name: "Front-step flower basket",
+    brand: "Seasonal sweetness",
+    image: IDEAS_IMAGE_ASSETS.products.frontStepFlowerBasket,
+    imageSlot: IDEAS_IMAGE_SLOTS.products.frontStepFlowerBasket,
+    imageAlt: "A flower basket styled near front steps.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.seasonalSweetness.frontStepFlowerBasket,
+    description:
+      "A floral basket near the steps makes the whole entry feel fuller, prettier, and a little more loved.",
+    whyItHelps:
+      "It gives the front steps that soft, generous look people always seem to save.",
+    tags: ["Flowers", "Steps", "Seasonal"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "Browse on Amazon",
+    badge: "Cute Touch People Keep Choosing",
+    popularityLabel: "Popular Around the Neighborhood",
+    editorNote:
+      "This kind of piece works best when it looks easy and full, not overly arranged.",
+  },
+  {
+    id: "soft-greenery-pot",
+    name: "Soft greenery pot",
+    brand: "Seasonal sweetness",
+    image: IDEAS_IMAGE_ASSETS.products.softGreeneryPot,
+    imageSlot: IDEAS_IMAGE_SLOTS.products.softGreeneryPot,
+    imageAlt: "A soft greenery pot near a front step.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.seasonalSweetness.softGreeneryPot,
+    description:
+      "A greenery pot adds fullness and soft shape to the steps without asking for a whole flower-bed project.",
+    whyItHelps:
+      "It makes the entry feel softer even when everything else is simple.",
+    tags: ["Greenery", "Porch", "Soft shape"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "Browse on Amazon",
+    badge: "Easy Favorite",
+    popularityLabel: "Looks More Expensive Than It Is",
+    editorNote:
+      "This is the kind of little upgrade that makes the entry feel finished even before flowers peak.",
   },
   {
     id: "matte-black-house-numbers",
     name: "Matte black house numbers",
-    brand: "Curb edit",
-    image: IDEAS_IMAGE_ASSETS.products.houseNumbers,
-    imageSlot: IDEAS_IMAGE_SLOTS.products.houseNumbers,
+    brand: "Cute finds",
+    image: IDEAS_IMAGE_ASSETS.products.matteBlackHouseNumbers,
+    imageSlot: IDEAS_IMAGE_SLOTS.products.matteBlackHouseNumbers,
     imageAlt: "Simple matte black house numbers mounted near a front door.",
     merchant: "Amazon",
-    priceLabel: "Under $35",
-    affiliateUrl: PRODUCT_LINKS.curbAppealBasics.houseNumbers,
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.cuteFindsWorthSaving.matteBlackHouseNumbers,
     description:
-      "Fresh house numbers are one of the simplest ways to make the front of a home feel sharper and easier to read.",
+      "Fresh house numbers are one of the quickest little fixes for making the front of a house feel sharper and more considered.",
     whyItHelps:
-      "They restore clarity quickly and make the entry feel more intentional without adding clutter.",
+      "They add clarity fast and make the whole entry feel more intentional without adding clutter.",
     tags: ["Numbers", "Front door", "Fast fix"],
     disclosure:
       "This product link points to Amazon and is meant to support the idea without taking over the page.",
     ctaLabel: "Browse on Amazon",
-    badge: "Fastest refresh",
-    popularityLabel: "Under 30 minutes",
+    badge: "Small Detail, Big Difference",
+    popularityLabel: "Easy Favorite",
     editorNote:
-      "Choose a simple type style and a size that can be read from the curb without looking oversized.",
+      "A simple type style almost always feels more timeless than anything overly styled.",
   },
   {
     id: "classic-mailbox-post-refresh",
     name: "Classic mailbox refresh set",
-    brand: "Curb edit",
-    image: IDEAS_IMAGE_ASSETS.products.mailboxRefresh,
-    imageSlot: IDEAS_IMAGE_SLOTS.products.mailboxRefresh,
+    brand: "Cute finds",
+    image: IDEAS_IMAGE_ASSETS.products.classicMailboxPostRefresh,
+    imageSlot: IDEAS_IMAGE_SLOTS.products.classicMailboxPostRefresh,
     imageAlt: "A tidy mailbox area with a refreshed post and clean trim.",
     merchant: "Amazon",
-    priceLabel: "Under $90",
-    affiliateUrl: PRODUCT_LINKS.curbAppealBasics.mailboxRefresh,
+    priceLabel: null,
+    affiliateUrl:
+      PRODUCT_LINKS.cuteFindsWorthSaving.classicMailboxPostRefresh,
     description:
-      "A refreshed mailbox area can make the whole front edge of the property feel less neglected.",
+      "A tidier mailbox area can make the whole street-side edge of the property feel noticeably more finished.",
     whyItHelps:
-      "The mailbox is often noticed before the porch, so getting it upright and clean changes the first impression fast.",
+      "The mailbox is often noticed before the porch, so cleaning up that little moment changes the feel of the house fast.",
     tags: ["Mailbox", "Street edge", "Curb"],
     disclosure:
       "This product link points to Amazon and is meant to support the idea without taking over the page.",
     ctaLabel: "Browse on Amazon",
-    badge: "Street-side fix",
-    popularityLabel: "Most noticeable from the road",
+    badge: "Looks More Expensive Than It Is",
+    popularityLabel: "Popular Around the Neighborhood",
     editorNote:
-      "Keep the finish simple and durable. The best mailbox updates look steady, not decorative.",
+      "A simple, classic mailbox moment always reads better than something too decorative.",
+  },
+  {
+    id: "woven-front-door-basket",
+    name: "Woven front-door basket",
+    brand: "Cute finds",
+    image: IDEAS_IMAGE_ASSETS.products.wovenFrontDoorBasket,
+    imageSlot: IDEAS_IMAGE_SLOTS.products.wovenFrontDoorBasket,
+    imageAlt: "A woven basket styled near a front door.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.cuteFindsWorthSaving.wovenFrontDoorBasket,
+    description:
+      "A woven basket adds a warm, easy little layer that makes the front feel styled without feeling fussy.",
+    whyItHelps:
+      "Natural texture does a lot of work when the rest of the entry is simple.",
+    tags: ["Basket", "Porch", "Texture"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "Browse on Amazon",
+    badge: "Cute Touch People Keep Choosing",
+    popularityLabel: "Looks More Expensive Than It Is",
+    editorNote:
+      "A basket is one of those pieces that makes the front feel softer with almost no effort.",
+  },
+  {
+    id: "black-outdoor-lantern",
+    name: "Simple black lantern",
+    brand: "Cute finds",
+    image: IDEAS_IMAGE_ASSETS.products.blackOutdoorLantern,
+    imageSlot: IDEAS_IMAGE_SLOTS.products.blackOutdoorLantern,
+    imageAlt: "A simple black lantern near a front door.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.cuteFindsWorthSaving.blackOutdoorLantern,
+    description:
+      "A black lantern brings just enough glow-and-texture energy to make the front feel extra finished.",
+    whyItHelps:
+      "It is a small styling piece that makes the whole area feel more considered immediately.",
+    tags: ["Lantern", "Glow", "Porch"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "Browse on Amazon",
+    badge: "Small Detail, Big Difference",
+    popularityLabel: "Cute Touch People Keep Choosing",
+    editorNote:
+      "One lantern usually feels better than two if the porch is already carrying other details.",
+  },
+  {
+    id: "seasonal-door-accent",
+    name: "Seasonal door accent",
+    brand: "Cute finds",
+    image: IDEAS_IMAGE_ASSETS.products.seasonalDoorAccent,
+    imageSlot: IDEAS_IMAGE_SLOTS.products.seasonalDoorAccent,
+    imageAlt: "A seasonal accent displayed on or beside a front door.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.cuteFindsWorthSaving.seasonalDoorAccent,
+    description:
+      "One soft seasonal accent can make the whole front feel current, sweet, and just a little more welcoming.",
+    whyItHelps:
+      "This is the kind of tiny switch that makes people feel like the house is cared for right now.",
+    tags: ["Seasonal", "Door", "Accent"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "Browse on Amazon",
+    badge: "Easy Favorite",
+    popularityLabel: "Popular Around the Neighborhood",
+    editorNote:
+      "Keep the seasonal note small and soft so it feels charming instead of overdone.",
   },
   {
     id: "wide-outdoor-broom",
     name: "Wide outdoor broom",
-    brand: "Curb edit",
-    image: IDEAS_IMAGE_ASSETS.products.outdoorBroom,
-    imageSlot: IDEAS_IMAGE_SLOTS.products.outdoorBroom,
+    brand: "Helpful extra",
+    image: IDEAS_IMAGE_ASSETS.products.wideOutdoorBroom,
+    imageSlot: IDEAS_IMAGE_SLOTS.products.wideOutdoorBroom,
     imageAlt: "A wide outdoor broom used on a driveway edge and front walk.",
     merchant: "Amazon",
-    priceLabel: "Under $25",
-    affiliateUrl: PRODUCT_LINKS.curbAppealBasics.outdoorBroom,
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.cuteFindsWorthSaving.wideOutdoorBroom,
     description:
-      "A good outdoor broom keeps the walk, front step, and driveway edge from collecting the kind of grit that makes the front feel tired.",
+      "A good outdoor broom keeps the porch, walk, and front step from collecting the kind of grit that makes the sweet little details stop working.",
     whyItHelps:
-      "Routine cleanup is often what keeps a low-cost curb upgrade actually looking good.",
-    tags: ["Maintenance", "Walk", "Useful"],
+      "It is not the glamorous part, but it is often what helps the cute part stay cute.",
+    tags: ["Helpful extra", "Walk", "Useful"],
     disclosure:
       "This product link points to Amazon and is meant to support the idea without taking over the page.",
     ctaLabel: "Browse on Amazon",
-    badge: "Everyday essential",
+    badge: "Helpful Extra",
     popularityLabel: null,
     editorNote:
-      "A tool that is easy to grab and actually gets used is worth more here than another decorative object.",
+      "The best extra is always the one you will actually reach for often enough to matter.",
   },
 ];
 

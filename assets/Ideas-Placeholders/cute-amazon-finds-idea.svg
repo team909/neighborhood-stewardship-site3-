@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#F5EDDF"/>
+  <rect x="32" y="27" width="1536" height="819" rx="32" fill="url(#paper)" stroke="#D8C8AF"/>
+  <rect x="88" y="72" width="1424" height="648" rx="25" fill="url(#wash)"/>
+  <ellipse cx="800" cy="774" rx="544" ry="40.5" fill="#DCC8AB" fill-opacity=".42"/>
+  
+    <rect x="116" y="118" width="1368" height="272" rx="24" fill="url(#glow)" opacity=".82"/>
+    <g filter="url(#shadow)">
+      <rect x="104" y="430" width="1392" height="300" rx="26" fill="#E7D7BF" stroke="#D5C1A6"/>
+      <rect x="150" y="486" width="260" height="186" rx="20" fill="#F6F0E7"/>
+      <path d="M176 566C176 520 213 483 259 483H301C347 483 384 520 384 566V589H176V566Z" fill="#D68C60"/>
+      <rect x="202" y="588" width="156" height="54" rx="14" fill="#8F6A44"/>
+      <rect x="472" y="432" width="248" height="286" rx="124" fill="#667B5B"/>
+      <ellipse cx="596" cy="466" rx="92" ry="28" fill="#E7D6BB"/>
+      <ellipse cx="580" cy="390" rx="44" ry="88" fill="#798F6B"/>
+      <ellipse cx="630" cy="398" rx="38" ry="82" fill="#6A805D"/>
+      <rect x="760" y="468" width="262" height="190" rx="20" fill="#F6F0E7"/>
+      <circle cx="892" cy="564" r="74" fill="#6A805D"/>
+      <circle cx="892" cy="564" r="44" fill="#F7F2EA"/>
+      <circle cx="892" cy="480" r="18" fill="#A57B56"/>
+      <rect x="884" y="494" width="16" height="42" rx="8" fill="#A57B56"/>
+      <rect x="1080" y="446" width="164" height="238" rx="24" fill="#EEDDC3" stroke="#9A7D59"/>
+      <rect x="1120" y="494" width="86" height="138" rx="43" fill="#60755C"/>
+      <rect x="1276" y="494" width="154" height="146" rx="20" fill="#F7F1E7"/>
+      <rect x="1305" y="532" width="96" height="82" rx="14" fill="#223327"/>
+      <rect x="1336" y="550" width="34" height="46" rx="7" fill="#F4D79A"/>
+    </g>
+  <text x="800" y="760.5" text-anchor="middle" fill="#947450" font-family="Arial, sans-serif" font-size="22" letter-spacing="5">PLACEHOLDER</text>
+  <text x="800" y="814.5" text-anchor="middle" fill="#223327" font-family="Georgia, serif" font-size="50">Cute Amazon Finds</text>
+  <text x="800" y="850.5" text-anchor="middle" fill="#5F715C" font-family="Arial, sans-serif" font-size="25">Pretty little porch pieces that make the whole front feel sweeter.</text>
+  <defs>
+    <linearGradient id="paper" x1="800" y1="0" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF7F0"/>
+      <stop offset="1" stop-color="#EEE2D0"/>
+    </linearGradient>
+    <linearGradient id="wash" x1="800" y1="72" x2="800" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F2E9"/>
+      <stop offset="0.58" stop-color="#F0E5D6"/>
+      <stop offset="1" stop-color="#E6D5BD"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 180) rotate(90) scale(162 560)">
+      <stop stop-color="#FFF7E6"/>
+      <stop offset="1" stop-color="#FFF7E6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="0" y="0" width="1600" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#8B7254" flood-opacity=".16"/>
+    </filter>
+  </defs>
+</svg>

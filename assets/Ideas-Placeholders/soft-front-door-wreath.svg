@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" fill="none">
+  <rect width="1200" height="1200" fill="#F5EDDF"/>
+  <rect x="24" y="36" width="1152" height="1092" rx="42" fill="url(#paper)" stroke="#D8C8AF"/>
+  <rect x="66" y="96" width="1068" height="864" rx="34" fill="url(#wash)"/>
+  <ellipse cx="600" cy="1032" rx="408" ry="54" fill="#DCC8AB" fill-opacity=".42"/>
+  
+    <rect x="120" y="156" width="960" height="658" rx="34" fill="url(#glow)" opacity=".82"/>
+    <g filter="url(#shadow)">
+      <rect x="314" y="240" width="572" height="470" rx="34" fill="#F8F2E9" stroke="#D7C5AB"/>
+      <rect x="422" y="252" width="356" height="442" rx="22" fill="#C88A5F"/>
+      <circle cx="600" cy="474" r="156" fill="#EEF2E8" stroke="#6C8361" stroke-width="16"/>
+      <circle cx="600" cy="474" r="96" fill="#C88A5F"/>
+      <circle cx="600" cy="294" r="20" fill="#A27953"/>
+      <rect x="592" y="310" width="16" height="40" rx="8" fill="#A27953"/>
+      <g fill="#70866B">
+        <ellipse cx="486" cy="474" rx="28" ry="14" transform="rotate(-26 486 474)"/>
+        <ellipse cx="714" cy="474" rx="28" ry="14" transform="rotate(26 714 474)"/>
+        <ellipse cx="522" cy="356" rx="26" ry="13" transform="rotate(-56 522 356)"/>
+        <ellipse cx="678" cy="356" rx="26" ry="13" transform="rotate(56 678 356)"/>
+        <ellipse cx="520" cy="594" rx="26" ry="13" transform="rotate(56 520 594)"/>
+        <ellipse cx="680" cy="594" rx="26" ry="13" transform="rotate(-56 680 594)"/>
+      </g>
+      <path d="M696 548C742 548 780 536 812 514" stroke="#C98966" stroke-width="6" stroke-linecap="round"/>
+    </g>
+  <text x="600" y="1014" text-anchor="middle" fill="#947450" font-family="Arial, sans-serif" font-size="29" letter-spacing="6">CUTE TOUCH</text>
+  <text x="600" y="1086" text-anchor="middle" fill="#223327" font-family="Georgia, serif" font-size="66">Soft Front-Door Wreath</text>
+  <text x="600" y="1134" text-anchor="middle" fill="#5F715C" font-family="Arial, sans-serif" font-size="34">A sweet little layer that makes the door feel cared for.</text>
+  <defs>
+    <linearGradient id="paper" x1="600" y1="0" x2="600" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF7F0"/>
+      <stop offset="1" stop-color="#EEE2D0"/>
+    </linearGradient>
+    <linearGradient id="wash" x1="600" y1="96" x2="600" y2="960" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F2E9"/>
+      <stop offset="0.58" stop-color="#F0E5D6"/>
+      <stop offset="1" stop-color="#E6D5BD"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 240) rotate(90) scale(216 420)">
+      <stop stop-color="#FFF7E6"/>
+      <stop offset="1" stop-color="#FFF7E6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="19" stdDeviation="22" flood-color="#8B7254" flood-opacity=".16"/>
+    </filter>
+  </defs>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#F5EDDF"/>
+  <rect x="32" y="27" width="1536" height="819" rx="32" fill="url(#paper)" stroke="#D8C8AF"/>
+  <rect x="88" y="72" width="1424" height="648" rx="25" fill="url(#wash)"/>
+  <ellipse cx="800" cy="774" rx="544" ry="41" fill="#DCC8AB" fill-opacity=".42"/>
+  
+    <rect x="118" y="116" width="1364" height="272" rx="24" fill="url(#glow)" opacity=".82"/>
+    <g filter="url(#shadow)">
+      <rect x="188" y="604" width="1224" height="54" rx="18" fill="#E4D2B8"/>
+      <rect x="490" y="458" width="310" height="168" rx="88" fill="#667B5B"/>
+      <ellipse cx="646" cy="458" rx="112" ry="32" fill="#E8D8BE"/>
+      <ellipse cx="562" cy="338" rx="58" ry="110" fill="#8EA07C"/>
+      <ellipse cx="650" cy="284" rx="74" ry="134" fill="#D8A2C1"/>
+      <ellipse cx="742" cy="340" rx="58" ry="110" fill="#CF789D"/>
+      <rect x="880" y="410" width="160" height="160" rx="34" fill="#B88B5D"/>
+      <path d="M896 434C896 372 948 324 1008 324C1068 324 1120 372 1120 434" stroke="#9C7551" stroke-width="14" stroke-linecap="round"/>
+      <circle cx="972" cy="408" r="26" fill="#D783A8"/>
+      <circle cx="1034" cy="398" r="28" fill="#E7C7D8"/>
+    </g>
+  <text x="800" y="761" text-anchor="middle" fill="#947450" font-family="Arial, sans-serif" font-size="22" letter-spacing="5">FEATURED IDEA</text>
+  <text x="800" y="815" text-anchor="middle" fill="#223327" font-family="Georgia, serif" font-size="50">Pretty Front-Step Flowers</text>
+  <text x="800" y="851" text-anchor="middle" fill="#5F715C" font-family="Arial, sans-serif" font-size="25">Soft flowers and pretty pots that make the steps feel sweeter.</text>
+  <defs>
+    <linearGradient id="paper" x1="800" y1="0" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF7F0"/>
+      <stop offset="1" stop-color="#EEE2D0"/>
+    </linearGradient>
+    <linearGradient id="wash" x1="800" y1="72" x2="800" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F2E9"/>
+      <stop offset="0.58" stop-color="#F0E5D6"/>
+      <stop offset="1" stop-color="#E6D5BD"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 180) rotate(90) scale(162 560)">
+      <stop stop-color="#FFF7E6"/>
+      <stop offset="1" stop-color="#FFF7E6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="0" y="0" width="1600" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#8B7254" flood-opacity=".16"/>
+    </filter>
+  </defs>
+</svg>

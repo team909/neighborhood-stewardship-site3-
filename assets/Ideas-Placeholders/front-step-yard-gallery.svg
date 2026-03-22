@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#F5EDDF"/>
+  <rect x="32" y="27" width="1536" height="819" rx="32" fill="url(#paper)" stroke="#D8C8AF"/>
+  <rect x="88" y="72" width="1424" height="648" rx="25" fill="url(#wash)"/>
+  <ellipse cx="800" cy="774" rx="544" ry="41" fill="#DCC8AB" fill-opacity=".42"/>
+  
+    <rect x="118" y="116" width="1364" height="272" rx="24" fill="url(#glow)" opacity=".82"/>
+    <g filter="url(#shadow)">
+      <rect x="236" y="604" width="1128" height="52" rx="18" fill="#E4D2B8"/>
+      <rect x="450" y="236" width="318" height="382" rx="22" fill="#D8B68C"/>
+      <rect x="808" y="476" width="250" height="148" rx="30" fill="#667B5B"/>
+      <ellipse cx="934" cy="476" rx="90" ry="24" fill="#E7D6BB"/>
+      <ellipse cx="890" cy="386" rx="44" ry="92" fill="#7B906E"/>
+      <ellipse cx="974" cy="376" rx="40" ry="90" fill="#8EA07C"/>
+      <ellipse cx="1038" cy="398" rx="34" ry="84" fill="#6E8360"/>
+      <circle cx="1210" cy="470" r="56" fill="#F4D79A" opacity=".74"/>
+    </g>
+  <text x="800" y="761" text-anchor="middle" fill="#947450" font-family="Arial, sans-serif" font-size="22" letter-spacing="5">GALLERY</text>
+  <text x="800" y="815" text-anchor="middle" fill="#223327" font-family="Georgia, serif" font-size="50">Pretty Step-Side Yard</text>
+  <text x="800" y="851" text-anchor="middle" fill="#5F715C" font-family="Arial, sans-serif" font-size="25">A wider soft-and-sweet view of the front.</text>
+  <defs>
+    <linearGradient id="paper" x1="800" y1="0" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF7F0"/>
+      <stop offset="1" stop-color="#EEE2D0"/>
+    </linearGradient>
+    <linearGradient id="wash" x1="800" y1="72" x2="800" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F2E9"/>
+      <stop offset="0.58" stop-color="#F0E5D6"/>
+      <stop offset="1" stop-color="#E6D5BD"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 180) rotate(90) scale(162 560)">
+      <stop stop-color="#FFF7E6"/>
+      <stop offset="1" stop-color="#FFF7E6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="0" y="0" width="1600" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#8B7254" flood-opacity=".16"/>
+    </filter>
+  </defs>
+</svg>
