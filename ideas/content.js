@@ -144,16 +144,17 @@ export const PRODUCT_LINKS = {
 
 export const categories = [
   {
-    slug: "porch-entry",
+    slug: "front-door-porch-charm",
     name: "Front Door & Porch Charm",
+    navLabel: "Front Door",
     kicker: "Neighborhood Ideas",
     description:
-      "The cute little front-door touches that make a house feel warmer right away.",
+      "The cute little front-door touches that make a house feel warmer the second you walk up.",
     heroImage: IDEAS_IMAGE_ASSETS.categories.frontDoorPorchCharm,
     coverAlt: "A welcoming front walk with a softly lit porch and flowers by the steps.",
     intro:
-      "This is where the easy porch charm lives: the doormat, the front-door glow, the planter, the wreath, and the little things that make people think this house feels so sweet.",
-    ideaSlugs: ["front-walk-that-sets-the-tone"],
+      "This is where the easy porch charm lives: the mat, the glow at dusk, the planter, the wreath, and the few sweet little details that make a house feel instantly more welcoming.",
+    ideaSlugs: ["cute-front-door-ideas-that-feel-warm-right-away"],
     featuredProductIds: [
       "weather-ready-doormat",
       "warm-entry-light",
@@ -170,13 +171,13 @@ export const categories = [
     ],
     extraProductIds: ["wide-outdoor-broom", "simple-wreath-hanger"],
     ideasHeading:
-      "Pretty little front-door ideas that make the whole house feel friendlier.",
-    leadProductsEyebrow: "Cute touches people keep choosing",
+      "Pretty little front-door ideas that make the whole house feel friendlier fast.",
+    leadProductsEyebrow: "Shop the mood",
     leadProductsHeading:
-      "The little pieces that make a front door feel warm right away.",
+      "The little pieces that make a front door feel warm, dressed, and easy to love.",
     extraProductsEyebrow: "Helpful extras",
     extraProductsHeading:
-      "Helpful extras if you want to finish it properly.",
+      "The practical pieces behind the pretty.",
     seoTitle: "Front Door & Porch Charm | Neighborhood Ideas",
     seoDescription:
       "Browse sweet little front-door and porch ideas built around doormats, lights, planters, wreaths, and the details that make a house feel instantly warmer.",
@@ -187,12 +188,12 @@ export const categories = [
     name: "Cozy Home Touches",
     kicker: "Coming soon",
     description:
-      "Coat hooks, baskets, trays, kitchen corners, and the cute little home touches that make everyday spaces feel more put together.",
+      "Coat hooks, baskets, trays, kitchen corners, and the little home touches that make everyday spaces feel softer and more put together.",
     heroImage: IDEAS_IMAGE_ASSETS.categories.cozyHomeTouches,
     imageSlot: IDEAS_IMAGE_SLOTS.categories.cozyHomeTouches,
     coverAlt: "A cozy home touches placeholder with baskets, hooks, and small styling pieces.",
     intro:
-      "This category will hold the entryway hooks, coffee corners, catch-all stations, baskets, and kitchen touches people actually want to save and try.",
+      "This category will hold the entryway hooks, coffee corners, catch-all stations, baskets, and sweet little kitchen touches people actually want to save and try.",
     ideaSlugs: [
       "a-coat-hook-corner-that-makes-the-entry-feel-so-put-together",
       "cute-little-kitchen-touches-that-feel-instantly-cozier",
@@ -208,12 +209,12 @@ export const categories = [
     name: "Weekend Little Projects",
     kicker: "Coming soon",
     description:
-      "Easy little projects that feel satisfying, visible, and worth doing on a slow weekend.",
+      "Easy little projects that feel satisfying, visible, and worth doing on a slow, slightly ambitious weekend.",
     heroImage: IDEAS_IMAGE_ASSETS.categories.weekendLittleProjects,
     imageSlot: IDEAS_IMAGE_SLOTS.categories.weekendLittleProjects,
     coverAlt: "A weekend little projects placeholder with a small DIY scene.",
     intro:
-      "This category will gather one-afternoon porch refreshes, cute mini DIYs, simple swap-outs, and the kind of projects that make the whole house feel better in under a day.",
+      "This category will gather one-afternoon porch refreshes, cute mini DIYs, simple swap-outs, and the kind of projects that make the whole house feel better before dinner.",
     ideaSlugs: [
       "the-porch-basket-trick-that-always-looks-good",
       "easy-weekend-diys-that-look-better-than-they-cost",
@@ -225,16 +226,17 @@ export const categories = [
     live: false,
   },
   {
-    slug: "garden-flowers",
+    slug: "seasonal-sweetness",
     name: "Seasonal Sweetness",
+    navLabel: "Seasonal",
     kicker: "Neighborhood Ideas",
     description:
-      "Pretty flowers, seasonal porch moments, and little ideas that make the steps feel softer and sweeter.",
+      "Pretty flowers, seasonal porch moments, and little ideas that make the steps feel softer, sweeter, and more alive.",
     heroImage: IDEAS_IMAGE_ASSETS.categories.seasonalSweetness,
     coverAlt: "A front yard with a soft flower bed, a clean walk, and a warm porch light.",
     intro:
-      "This is the softer, seasonal side of the house: hydrangeas by the steps, a pretty porch pot, greenery that feels generous, and the small floral touches that make everything look sweeter.",
-    ideaSlugs: ["hydrangeas-that-soften-the-steps"],
+      "This is the softer, seasonal side of the house: hydrangeas by the steps, a pretty porch pot, greenery that feels generous, and the small floral touches that make everything look sweeter without feeling fussy.",
+    ideaSlugs: ["pretty-front-step-flowers-that-make-everything-feel-sweeter"],
     featuredProductIds: [
       "dark-entry-planter",
       "front-step-flower-basket",
@@ -254,13 +256,13 @@ export const categories = [
       "entry-watering-wand",
     ],
     ideasHeading:
-      "Soft floral ideas that make the front steps feel prettier without getting precious.",
-    leadProductsEyebrow: "Cute touches people keep choosing",
+      "Soft floral ideas that make the front steps feel prettier without getting precious about it.",
+    leadProductsEyebrow: "Shop the mood",
     leadProductsHeading:
-      "The pretty pieces that make the steps feel fuller, softer, and more charming.",
+      "The pretty pieces that make the steps feel fuller, softer, and much more charming.",
     extraProductsEyebrow: "Helpful extras",
     extraProductsHeading:
-      "Helpful extras if you want to keep the flowers looking good.",
+      "The practical pieces behind the pretty.",
     seoTitle: "Seasonal Sweetness | Neighborhood Ideas",
     seoDescription:
       "Browse floral, seasonal, and porch-side ideas that make the steps and front beds feel softer and sweeter.",
@@ -276,7 +278,7 @@ export const categories = [
     imageSlot: IDEAS_IMAGE_SLOTS.categories.hostingHomeLife,
     coverAlt: "A hosting and home life placeholder with a tray, drinks, and cozy kitchen touches.",
     intro:
-      "This category will hold the recipes, porch moments, guest-ready touches, and little homemaking ideas that make the house feel especially warm and lived in.",
+      "This category will hold the recipes, porch moments, guest-ready touches, and little homemaking ideas that make the house feel especially warm, easy, and lived in.",
     ideaSlugs: [
       "a-lemonade-setup-that-makes-summer-guests-feel-welcome",
       "the-apple-cake-weekend-that-makes-the-house-feel-cozy",
@@ -288,17 +290,18 @@ export const categories = [
     live: false,
   },
   {
-    slug: "curb-appeal-basics",
+    slug: "cute-finds-worth-saving",
     name: "Cute Finds Worth Saving",
+    navLabel: "Cute Finds",
     kicker: "Neighborhood Ideas",
     description:
-      "The little house details and charming Amazon finds that make the front feel more admired.",
+      "The little house details and charming Amazon finds that make the front feel prettier, sweeter, and more admired.",
     heroImage: IDEAS_IMAGE_ASSETS.categories.cuteFindsWorthSaving,
     coverAlt:
       "A tidy, charming home exterior with a clear approach and a polished front-facing view.",
     intro:
-      "This is the product-forward lane: the pretty practical finds, little details, and charming front-of-house touches that make a home feel more finished without turning it into a project.",
-    ideaSlugs: ["easy-curb-appeal-upgrades-under-100"],
+      "This is the product-forward lane: the pretty practical finds, little details, and charming front-of-house touches that make a home feel more finished without turning it into a whole project.",
+    ideaSlugs: ["little-house-details-people-notice-right-away"],
     featuredProductIds: [
       "matte-black-house-numbers",
       "classic-mailbox-post-refresh",
@@ -316,13 +319,13 @@ export const categories = [
     ],
     extraProductIds: ["wide-outdoor-broom"],
     ideasHeading:
-      "Saveable little house details people notice faster than you think.",
-    leadProductsEyebrow: "Cute touches people keep choosing",
+      "Saveable little house details people notice faster than you think they will.",
+    leadProductsEyebrow: "Shop the mood",
     leadProductsHeading:
       "The little finds that make a house feel more polished, sweeter, and somehow a little more admired.",
     extraProductsEyebrow: "Helpful extras",
     extraProductsHeading:
-      "Helpful extras if you want to keep it all looking nice.",
+      "The practical pieces behind the pretty.",
     seoTitle: "Cute Finds Worth Saving | Neighborhood Ideas",
     seoDescription:
       "Browse charming Amazon finds and little house details that make the front of a home feel more finished and loved.",
@@ -332,11 +335,11 @@ export const categories = [
 
 export const ideaPages = [
   {
-    slug: "front-walk-that-sets-the-tone",
-    categorySlug: "porch-entry",
+    slug: "cute-front-door-ideas-that-feel-warm-right-away",
+    categorySlug: "front-door-porch-charm",
     title: "Cute Front Door Ideas That Feel Warm Right Away",
     dek:
-      "A better mat, a warm glow, a pretty planter, and one or two sweet little details can make the whole front of a house feel friendlier fast.",
+      "A better mat, a warm glow, a pretty planter, and one or two sweet little details can make the whole front of a house feel friendlier almost immediately.",
     heroImage: IDEAS_IMAGE_ASSETS.ideas.frontDoorCharmHero,
     heroAlt:
       "A welcoming front door with a softly lit porch, flowers by the steps, and a clear path.",
@@ -353,8 +356,8 @@ export const ideaPages = [
     intro:
       "The front door sets the feeling before anyone steps inside. When it looks softly lit, a little dressed, and easy to approach, the whole house feels sweeter right away.",
     whyItWorks: [
-      "This kind of front-door charm works because the details read fast. A doormat, a warm porch light, a planter, and a wreath all say the same thing at once: someone loves this home.",
-      "The best part is how doable it is. None of these touches have to be big or expensive. They just need to feel warm, pretty, and easy enough to keep up with.",
+      "This kind of front-door charm works because the details read fast. A mat, a warm porch light, a planter, and a wreath all say the same thing at once: this house feels loved.",
+      "The best part is how doable it is. None of these touches have to be big or expensive. They just need to feel warm, pretty, and easy enough to keep up with on a normal week.",
     ],
     steps: [
       {
@@ -406,15 +409,15 @@ export const ideaPages = [
     extraProductIds: ["wide-outdoor-broom", "simple-wreath-hanger"],
     stepsHeading:
       "A few easy little moves that make the front door feel sweeter fast.",
-    leadProductsEyebrow: "Cute touches people keep choosing",
+    leadProductsEyebrow: "Shop the mood",
     leadProductsHeading:
       "The little front-door pieces that always make a house feel warmer.",
     extraProductsEyebrow: "Helpful extras",
     extraProductsHeading:
-      "Helpful extras if you want the cute part to stay looking good.",
+      "The practical pieces behind the pretty.",
     relatedIdeaSlugs: [
-      "the-porch-basket-trick-that-always-looks-good",
-      "a-coat-hook-corner-that-makes-the-entry-feel-so-put-together",
+      "pretty-front-step-flowers-that-make-everything-feel-sweeter",
+      "little-house-details-people-notice-right-away",
     ],
     seoTitle:
       "Cute Front Door Ideas That Feel Warm Right Away | Neighborhood Ideas",
@@ -424,11 +427,15 @@ export const ideaPages = [
     popularityLabel: "Easy Favorite",
     editorNote:
       "If the front door looks warm, softly lit, and just a little dressed up, the whole house usually feels nicer before anyone even gets inside.",
+    storyPills: ["Weekend-doable", "Saveable little upgrade", "Front-door favorite"],
+    listLabel: "Amazon list coming soon",
+    listNote:
+      "Once the list is live, this story will have one clean shopping list with the exact pieces that create the look.",
     live: true,
   },
   {
-    slug: "hydrangeas-that-soften-the-steps",
-    categorySlug: "garden-flowers",
+    slug: "pretty-front-step-flowers-that-make-everything-feel-sweeter",
+    categorySlug: "seasonal-sweetness",
     title: "Pretty Front-Step Flowers That Make Everything Feel Sweeter",
     dek:
       "A soft porch pot, a little greenery, and flowers by the steps can make the whole entry feel fuller, prettier, and much more charming.",
@@ -449,7 +456,7 @@ export const ideaPages = [
       "Flowers by the steps do something special. They make the whole walk up feel softer, the porch feel sweeter, and even a simple entry feel a little more loved.",
     whyItWorks: [
       "This kind of floral styling works because it changes the feel of the steps before anyone notices the exact flowers. The entry looks fuller, more welcoming, and just a little more charming.",
-      "You do not need a real garden project for this. A good planter, one floral basket, and a little greenery can carry the whole feeling without becoming a huge chore.",
+      "You do not need a real garden project for this. A good planter, one floral basket, and a little greenery can carry the whole feeling without becoming a huge chore or a whole Saturday.",
     ],
     steps: [
       {
@@ -502,15 +509,15 @@ export const ideaPages = [
     ],
     stepsHeading:
       "A few gentle little moves that make the steps feel softer fast.",
-    leadProductsEyebrow: "Cute touches people keep choosing",
+    leadProductsEyebrow: "Shop the mood",
     leadProductsHeading:
       "The pretty floral pieces that make the entry feel instantly sweeter.",
     extraProductsEyebrow: "Helpful extras",
     extraProductsHeading:
-      "Helpful extras if you want to keep the flowers looking good.",
+      "The practical pieces behind the pretty.",
     relatedIdeaSlugs: [
-      "the-mailbox-corner-that-looks-so-much-better-with-flowers",
-      "a-lemonade-setup-that-makes-summer-guests-feel-welcome",
+      "cute-front-door-ideas-that-feel-warm-right-away",
+      "little-house-details-people-notice-right-away",
     ],
     seoTitle:
       "Pretty Front-Step Flowers That Make Everything Feel Sweeter | Neighborhood Ideas",
@@ -520,11 +527,15 @@ export const ideaPages = [
     popularityLabel: "Easy Favorite",
     editorNote:
       "If the flowers make the steps feel softer and the whole entry look fuller, they are doing exactly what they should.",
+    storyPills: ["Seasonal favorite", "Soft floral mood", "Easy save"],
+    listLabel: "Amazon list coming soon",
+    listNote:
+      "This story will get one future list for the pot, basket, greenery, and the small extras that keep the whole look easy.",
     live: true,
   },
   {
-    slug: "easy-curb-appeal-upgrades-under-100",
-    categorySlug: "curb-appeal-basics",
+    slug: "little-house-details-people-notice-right-away",
+    categorySlug: "cute-finds-worth-saving",
     title: "Little House Details People Notice Right Away",
     dek:
       "House numbers, a tidier mailbox, a lantern, and one or two sweet little extras can make the front of a house feel much more finished than you would think.",
@@ -596,15 +607,15 @@ export const ideaPages = [
     extraProductIds: ["wide-outdoor-broom"],
     stepsHeading:
       "A few little details that make the house feel more finished fast.",
-    leadProductsEyebrow: "Cute touches people keep choosing",
+    leadProductsEyebrow: "Shop the mood",
     leadProductsHeading:
       "The saveable little finds that make the front feel instantly more put together.",
     extraProductsEyebrow: "Helpful extras",
     extraProductsHeading:
-      "Helpful extras if you want the cute part to stay looking fresh.",
+      "The practical pieces behind the pretty.",
     relatedIdeaSlugs: [
-      "cute-amazon-finds-that-make-a-porch-feel-more-finished",
-      "easy-weekend-diys-that-look-better-than-they-cost",
+      "cute-front-door-ideas-that-feel-warm-right-away",
+      "pretty-front-step-flowers-that-make-everything-feel-sweeter",
     ],
     seoTitle:
       "Little House Details People Notice Right Away | Neighborhood Ideas",
@@ -614,6 +625,10 @@ export const ideaPages = [
     popularityLabel: "Small Detail, Big Difference",
     editorNote:
       "The nicest little house details are the ones that make people think the whole place feels more put together, even if they cannot name exactly why.",
+    storyPills: ["Looks expensive", "Tiny change, big payoff", "Save-worthy find"],
+    listLabel: "Amazon list coming soon",
+    listNote:
+      "This story will get one future list for the save-worthy little details that make the front feel instantly more finished.",
     live: true,
   },
   {
@@ -762,7 +777,7 @@ export const ideaPages = [
   },
   {
     slug: "cute-amazon-finds-that-make-a-porch-feel-more-finished",
-    categorySlug: "curb-appeal-basics",
+    categorySlug: "cute-finds-worth-saving",
     title: "Cute Amazon Finds That Make a Porch Feel More Finished",
     dek: "Coming soon.",
     heroImage: "assets/Ideas-Placeholders/cute-amazon-finds-idea.svg",
@@ -786,7 +801,7 @@ export const ideaPages = [
   },
   {
     slug: "the-mailbox-corner-that-looks-so-much-better-with-flowers",
-    categorySlug: "garden-flowers",
+    categorySlug: "seasonal-sweetness",
     title: "The Mailbox Corner That Looks So Much Better With Flowers",
     dek: "Coming soon.",
     heroImage: "assets/Ideas-Placeholders/mailbox-flowers-idea.svg",

@@ -83,7 +83,7 @@ function renderHeader(fromFile, active = "ideas") {
       (category) => `
         <a class="${active === category.slug ? "is-active" : ""}" href="${escapeHtml(
           ensureRelativeHref(fromFile, `ideas/categories/${category.slug}/index.html`),
-        )}">${escapeHtml(category.name)}</a>
+        )}">${escapeHtml(category.navLabel || category.name)}</a>
       `,
     )
     .join("");
@@ -176,6 +176,50 @@ function renderIdeasHero({ fromFile, kicker, title, copy, image, alt, actions = 
             ratioClass: "ideas-ratio-hero",
             fallbackLabel: "Neighborhood Ideas image",
           })}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderPillRow(items = []) {
+  if (!items.length) {
+    return "";
+  }
+
+  return `
+    <div class="ideas-pill-row">
+      ${items
+        .map((item) => `<span class="ideas-story-pill">${escapeHtml(item)}</span>`)
+        .join("")}
+    </div>
+  `;
+}
+
+function renderStoryUtility({ idea }) {
+  const pills = Array.isArray(idea.storyPills) ? idea.storyPills : [];
+
+  return `
+    <section class="ideas-section ideas-section-first">
+      <div class="ideas-container">
+        <div class="ideas-story-utility">
+          <div class="ideas-story-utility-copy">
+            <p class="ideas-eyebrow">Story guide</p>
+            <h2>This one is meant to be easy to picture, easy to save, and easy to try.</h2>
+            <p class="ideas-lede ideas-lede-compact">
+              Start with the mood, then the pretty pieces, then the helpful extras if you want the look to stay easy.
+            </p>
+            ${renderPillRow(pills)}
+          </div>
+          <div class="ideas-story-list-card">
+            <p class="ideas-eyebrow">Amazon list</p>
+            <h3>${escapeHtml(idea.listLabel || "Amazon list coming soon")}</h3>
+            <p>${escapeHtml(
+              idea.listNote ||
+                "This story will eventually link to one clean list with the pieces that create the look.",
+            )}</p>
+            <span class="ideas-button ideas-button-secondary is-disabled">List link opens here later</span>
+          </div>
         </div>
       </div>
     </section>
@@ -306,6 +350,7 @@ function renderProductGroup({
   title,
   productIds = [],
   fallbackTitle = "Cute touches people keep choosing",
+  variant = "lead",
 }) {
   const products = productIds.map(getProductById).filter(Boolean);
 
@@ -314,12 +359,12 @@ function renderProductGroup({
   }
 
   return `
-    <div class="ideas-products-group">
+    <div class="ideas-products-group ${variant === "extras" ? "ideas-products-group-extras" : "ideas-products-group-lead"}">
       <div class="ideas-section-heading">
         ${eyebrow ? `<p class="ideas-eyebrow">${escapeHtml(eyebrow)}</p>` : ""}
         <h2>${escapeHtml(title || fallbackTitle)}</h2>
       </div>
-      <div class="ideas-grid ideas-grid-products">
+      <div class="ideas-grid ${variant === "extras" ? "ideas-grid-products-extras" : "ideas-grid-products"}">
         ${products.map((product) => renderProductCard(fromFile, product)).join("")}
       </div>
     </div>
@@ -374,6 +419,33 @@ function renderDisclosure(text) {
   `;
 }
 
+function renderGalleryStrip(fromFile, idea) {
+  if (!Array.isArray(idea.gallery) || !idea.gallery.length) {
+    return "";
+  }
+
+  return `
+    <section class="ideas-section ideas-section-gallery">
+      <div class="ideas-container">
+        <div class="ideas-grid ideas-grid-gallery">
+          ${idea.gallery
+            .map((item) =>
+              renderMedia({
+                fromFile,
+                image: item.image,
+                alt: item.alt,
+                className: "ideas-gallery-card",
+                ratioClass: "ideas-ratio-card",
+                fallbackLabel: idea.title,
+              }),
+            )
+            .join("")}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 function buildLandingPage() {
   const file = "ideas/index.html";
   const featuredCategory = liveCategories[0];
@@ -384,6 +456,8 @@ function buildLandingPage() {
     "warm-entry-light",
     "dark-entry-planter",
     "matte-black-house-numbers",
+    "front-step-flower-basket",
+    "black-outdoor-lantern",
   ];
   const helpfulExtrasProducts = [
     "simple-wreath-hanger",
@@ -392,20 +466,15 @@ function buildLandingPage() {
     "entry-watering-wand",
     "wide-outdoor-broom",
   ];
-  const weekendIdeaCards = [
-    "the-porch-basket-trick-that-always-looks-good",
-    "a-coat-hook-corner-that-makes-the-entry-feel-so-put-together",
-    "easy-weekend-diys-that-look-better-than-they-cost",
+  const trendingIdeaCards = [
+    "cute-front-door-ideas-that-feel-warm-right-away",
+    "pretty-front-step-flowers-that-make-everything-feel-sweeter",
+    "little-house-details-people-notice-right-away",
   ]
     .map(getIdeaBySlug)
     .filter(Boolean);
-  const seasonalIdeaCards = [
-    "hydrangeas-that-soften-the-steps",
-    "a-lemonade-setup-that-makes-summer-guests-feel-welcome",
-    "the-apple-cake-weekend-that-makes-the-house-feel-cozy",
-  ]
-    .map(getIdeaBySlug)
-    .filter(Boolean);
+  const seasonalCategory = getCategoryBySlug("seasonal-sweetness");
+  const cuteFindsCategory = getCategoryBySlug("cute-finds-worth-saving");
 
   const body = `
     <main class="ideas-main">
@@ -414,30 +483,30 @@ function buildLandingPage() {
         kicker: "Neighborhood Ideas",
         title: "Little home ideas that make life feel sweeter",
         copy:
-          "Front porch charm, cozy home touches, weekend little projects, seasonal favorites, and cute finds people actually want to try.",
-        image: featuredCategory.heroImage,
-        alt: featuredCategory.coverAlt,
+          "Front porch charm, cozy home touches, weekend little projects, seasonal favorites, hosting ideas, recipes, and cute finds people actually want to save.",
+        image: featuredIdea.heroImage,
+        alt: featuredIdea.heroAlt,
         actions: `
           <a class="ideas-button ideas-button-primary" href="${escapeHtml(
             ensureRelativeHref(file, `ideas/categories/${featuredCategory.slug}/index.html`),
-          )}">Explore ${escapeHtml(featuredCategory.name)}</a>
+          )}">Start with ${escapeHtml(featuredCategory.name)}</a>
           <a class="ideas-button ideas-button-secondary" href="${escapeHtml(
             ensureRelativeHref(file, `ideas/${featuredIdea.slug}/index.html`),
-          )}">Read the first idea</a>
+          )}">Read the featured story</a>
         `,
       })}
 
       <section class="ideas-section">
         <div class="ideas-container">
           <div class="ideas-section-heading">
-            <p class="ideas-eyebrow">Browse by category</p>
+            <p class="ideas-eyebrow">Choose the kind of mood you want first</p>
             <h2>Choose the kind of mood you want first.</h2>
             <p class="ideas-lede ideas-lede-compact">
-              Start with the feeling you want to create: a sweeter front door, a cozier corner, a cute little weekend project, or the kind of seasonal touch that makes the house feel especially lovely.
+              Start with the feeling you want to create: a sweeter front door, a cozier little corner, a weekend project that actually sounds fun, a seasonal mood, or a cute find worth saving for later.
             </p>
           </div>
           <div class="ideas-grid ideas-grid-categories">
-            ${categories.map((category) => renderCategoryCard(file, category)).join("")}
+            ${liveCategories.map((category) => renderCategoryCard(file, category)).join("")}
           </div>
         </div>
       </section>
@@ -447,12 +516,27 @@ function buildLandingPage() {
         eyebrow: "A favorite around the neighborhood",
         title: featuredIdea.title,
         copy:
-          "The first live idea is all about the walk up: the path, the glow at dusk, and the little touches that make a house feel friendlier before anyone reaches the door.",
+          "The first live story is all about the walk up: the glow at dusk, the mat, the planter, and the little pieces that make a house feel friendlier before anyone reaches the door.",
         image: featuredIdea.gallery[0]?.image || featuredIdea.heroImage,
         alt: featuredIdea.gallery[0]?.alt || featuredIdea.heroAlt,
         actionHref: ensureRelativeHref(file, `ideas/${featuredIdea.slug}/index.html`),
         actionLabel: "Read the featured idea",
       })}
+
+      <section class="ideas-section">
+        <div class="ideas-container">
+          <div class="ideas-section-heading">
+            <p class="ideas-eyebrow">What people are saving</p>
+            <h2>The sweet little ideas and finds that keep pulling people back in.</h2>
+            <p class="ideas-lede ideas-lede-compact">
+              The three live stories are meant to feel like a good saved folder: pretty, doable, and easy to imagine trying this weekend.
+            </p>
+          </div>
+          <div class="ideas-grid ideas-grid-ideas-featured">
+            ${trendingIdeaCards.map((idea) => renderIdeaCard(file, idea)).join("")}
+          </div>
+        </div>
+      </section>
 
       <section class="ideas-section ideas-section-soft">
         <div class="ideas-container">
@@ -461,6 +545,7 @@ function buildLandingPage() {
             eyebrow: "Cute touches people keep choosing",
             title: "The little finds that make a home feel sweeter almost immediately.",
             productIds: cuteTouchesProducts,
+            variant: "lead",
           })}
           ${renderDisclosure(
             "These product links point to broad Amazon search pages so the feed stays easy to update later without locking everything to one exact listing.",
@@ -468,35 +553,29 @@ function buildLandingPage() {
         </div>
       </section>
 
-      <section class="ideas-section">
-        <div class="ideas-container">
-          <div class="ideas-section-heading">
-            <p class="ideas-eyebrow">Weekend little projects</p>
-            <h2>The easy little refreshes you can imagine doing this weekend.</h2>
-            <p class="ideas-lede ideas-lede-compact">
-              This is the satisfying lane: a basket trick, a hook corner, a sweet little swap that changes the feel of the house faster than you expected.
-            </p>
-          </div>
-          <div class="ideas-grid ideas-grid-ideas">
-            ${weekendIdeaCards.map((idea) => renderIdeaCard(file, idea)).join("")}
-          </div>
-        </div>
-      </section>
+      ${renderEditorialSplit({
+        fromFile: file,
+        eyebrow: "Seasonal sweetness",
+        title: "The softer side of the front of the house.",
+        copy:
+          "Flowers by the steps, porch moments with a little glow, and the kind of seasonal touches that make the whole place feel more alive without looking overdone.",
+        image: seasonalCategory?.heroImage,
+        alt: seasonalCategory?.coverAlt,
+        actionHref: ensureRelativeHref(file, `ideas/categories/${seasonalCategory.slug}/index.html`),
+        actionLabel: "Explore seasonal ideas",
+      })}
 
-      <section class="ideas-section ideas-section-soft">
-        <div class="ideas-container">
-          <div class="ideas-section-heading">
-            <p class="ideas-eyebrow">Seasonal sweetness</p>
-            <h2>Flowers, porch moments, and little rituals that make the house feel especially lovely.</h2>
-            <p class="ideas-lede ideas-lede-compact">
-              Some ideas live outside, some drift into hosting and home life, and all of them make the whole place feel softer and more welcoming.
-            </p>
-          </div>
-          <div class="ideas-grid ideas-grid-ideas">
-            ${seasonalIdeaCards.map((idea) => renderIdeaCard(file, idea)).join("")}
-          </div>
-        </div>
-      </section>
+      ${renderEditorialSplit({
+        fromFile: file,
+        eyebrow: "Cute finds worth saving",
+        title: "The little house details people always seem to notice.",
+        copy:
+          "A mailbox moment, sharper numbers, one lantern, one basket, one charming little accent. These are the low-lift pieces that make the front finally click.",
+        image: cuteFindsCategory?.heroImage,
+        alt: cuteFindsCategory?.coverAlt,
+        actionHref: ensureRelativeHref(file, `ideas/categories/${cuteFindsCategory.slug}/index.html`),
+        actionLabel: "Browse the cute finds",
+      })}
 
       <section class="ideas-section">
         <div class="ideas-container">
@@ -505,6 +584,7 @@ function buildLandingPage() {
             eyebrow: "Helpful extras",
             title: "Helpful extras if you want to finish it properly.",
             productIds: helpfulExtrasProducts,
+            variant: "extras",
           })}
           ${renderDisclosure(
             "The practical extras live lower on the page on purpose. They help keep the sweet part looking good without taking over the mood.",
@@ -559,7 +639,7 @@ function buildCategoryPage(category) {
             ? `
           <a class="ideas-button ideas-button-primary" href="${escapeHtml(
             ensureRelativeHref(file, `ideas/${featuredIdea.slug}/index.html`),
-          )}">Read the first idea</a>
+          )}">Read the featured story</a>
         `
             : "",
       })}
@@ -569,6 +649,9 @@ function buildCategoryPage(category) {
           <div class="ideas-section-heading">
             <p class="ideas-eyebrow">Ideas in this category</p>
             <h2>${escapeHtml(category.ideasHeading || "Warm little ideas built around the front of the home.")}</h2>
+            <p class="ideas-lede ideas-lede-compact">
+              Scroll the stories first, then shop the mood, then drop into the helpful extras only if you want the look to stay easy.
+            </p>
           </div>
           <div class="ideas-grid ideas-grid-ideas">
             ${liveIdeasForCategory.map((idea) => renderIdeaCard(file, idea)).join("")}
@@ -589,6 +672,7 @@ function buildCategoryPage(category) {
               category.productsHeading ||
               "The little pieces that make the front feel nicer fast.",
             productIds: leadProductIds,
+            variant: "lead",
           })}
           ${renderDisclosure(
             "These product links point to broad Amazon search pages chosen to stay stable, easy to update, and secondary to the mood of the page itself.",
@@ -611,6 +695,7 @@ function buildCategoryPage(category) {
               category.extraProductsHeading ||
               "Helpful extras if you want to finish it properly.",
             productIds: extraProductIds,
+            variant: "extras",
           })}
           ${!leadProductIds.length
             ? renderDisclosure(
@@ -658,6 +743,8 @@ function buildIdeaPage(idea) {
         </div>
       </section>
 
+      ${renderStoryUtility({ idea })}
+
       ${renderIdeasHero({
         fromFile: file,
         kicker: idea.badge || category.name,
@@ -669,11 +756,11 @@ function buildIdeaPage(idea) {
           <a class="ideas-button ideas-button-primary" href="${escapeHtml(
             ensureRelativeHref(file, `ideas/categories/${category.slug}/index.html`),
           )}">More in ${escapeHtml(category.name)}</a>
-          <a class="ideas-button ideas-button-secondary" href="${escapeHtml(
-            ensureRelativeHref(file, "index.html"),
-          )}#recognition">Back to recognition</a>
+          <span class="ideas-button ideas-button-secondary is-disabled">Amazon list opens here later</span>
         `,
       })}
+
+      ${renderGalleryStrip(file, idea)}
 
       <section class="ideas-section">
         <div class="ideas-container ideas-article-grid">
@@ -718,13 +805,13 @@ function buildIdeaPage(idea) {
       <section class="ideas-section">
         <div class="ideas-container ideas-two-column-notes">
           <article class="ideas-note-card">
-            <p class="ideas-eyebrow">Care notes</p>
+            <p class="ideas-eyebrow">Keep it looking sweet</p>
             <ul class="ideas-note-list">
               ${idea.careNotes.map((note) => `<li>${escapeHtml(note)}</li>`).join("")}
             </ul>
           </article>
           <article class="ideas-note-card">
-            <p class="ideas-eyebrow">Seasonal notes</p>
+            <p class="ideas-eyebrow">Swap with the season</p>
             <ul class="ideas-note-list">
               ${idea.seasonalNotes.map((note) => `<li>${escapeHtml(note)}</li>`).join("")}
             </ul>
@@ -744,6 +831,7 @@ function buildIdeaPage(idea) {
               idea.leadProductsHeading ||
               "The little pieces that make this idea feel especially good.",
             productIds: leadProductIds,
+            variant: "lead",
           })}
           ${renderDisclosure(
             "These product links point to broad Amazon search pages chosen to stay stable, easy to update, and secondary to the mood of the idea itself.",
@@ -766,6 +854,7 @@ function buildIdeaPage(idea) {
               idea.extraProductsHeading ||
               "Helpful extras if you want to finish it properly.",
             productIds: extraProductIds,
+            variant: "extras",
           })}
           ${!leadProductIds.length
             ? renderDisclosure(
@@ -782,7 +871,7 @@ function buildIdeaPage(idea) {
         <div class="ideas-container">
           <div class="ideas-section-heading">
             <p class="ideas-eyebrow">More in ${escapeHtml(category.name)}</p>
-            <h2>More sweet little ideas are on the way.</h2>
+            <h2>You would probably save these too.</h2>
           </div>
           <div class="ideas-grid ideas-grid-ideas">
             ${relatedIdeas.map((relatedIdea) => renderIdeaCard(file, relatedIdea)).join("")}
