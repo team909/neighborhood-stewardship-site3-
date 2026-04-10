@@ -23,6 +23,252 @@
   --ideas-section-space: clamp(3rem, 5vw, 5rem);
 }
 
+:root {
+  --ideas-surface: rgba(255, 251, 244, 0.92);
+  --ideas-surface-strong: rgba(255, 251, 244, 0.97);
+  --ideas-surface-muted: rgba(248, 242, 232, 0.9);
+  --ideas-border: rgba(122, 105, 78, 0.14);
+  --ideas-border-strong: rgba(122, 105, 78, 0.22);
+  --ideas-shadow: 0 18px 42px rgba(39, 42, 27, 0.07);
+  --ideas-shadow-soft: 0 10px 24px rgba(39, 42, 27, 0.05);
+  --ideas-radius-xl: 24px;
+  --ideas-radius-lg: 20px;
+  --ideas-radius-md: 16px;
+}
+
+.ideas-site-shell::before {
+  background: radial-gradient(circle at 20% 0%, rgba(111, 137, 104, 0.05), transparent 26%);
+}
+
+.ideas-site-header {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(247, 243, 236, 0.9);
+}
+
+.ideas-section-soft {
+  background: linear-gradient(180deg, rgba(255, 252, 246, 0.55), rgba(242, 234, 221, 0.62));
+}
+
+.ideas-breadcrumbs {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.ideas-affiliate-note {
+  margin: 0.75rem 0 1.25rem;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(122, 105, 78, 0.14);
+  background: rgba(255, 249, 240, 0.8);
+}
+
+.ideas-affiliate-note p {
+  margin: 0;
+  color: var(--ideas-text-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.ideas-save-feed {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  column-count: unset;
+}
+
+.ideas-feed-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  background: var(--ideas-surface-strong);
+  border: 1px solid var(--ideas-border);
+  border-radius: var(--ideas-radius-lg);
+  box-shadow: var(--ideas-shadow-soft);
+  text-decoration: none;
+  color: inherit;
+  break-inside: auto;
+  min-height: 100%;
+}
+
+.ideas-feed-media {
+  border-radius: 0;
+}
+
+.ideas-feed-ratio {
+  aspect-ratio: 4 / 3;
+}
+
+.ideas-feed-overlay {
+  position: static;
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem 1.05rem 1.15rem;
+  background: transparent;
+  min-height: 0;
+}
+
+.ideas-feed-head {
+  display: none;
+}
+
+.ideas-feed-eyebrow {
+  margin: 0;
+  color: var(--ideas-gold);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.ideas-feed-body h3 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 2.3vw, 2.35rem);
+  line-height: 0.98;
+}
+
+.ideas-feed-body p {
+  margin: 0;
+  color: var(--ideas-text-soft);
+  font-size: 0.97rem;
+  line-height: 1.68;
+}
+
+.ideas-feed-cta {
+  display: inline-flex;
+  margin-top: 0.15rem;
+  color: var(--ideas-green);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.ideas-grid-products,
+.ideas-grid-products-extras {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.ideas-grid-products {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ideas-grid-products-extras {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ideas-grid-products .ideas-product-card.is-featured {
+  grid-column: auto;
+}
+
+.ideas-product-card {
+  overflow: hidden;
+  background: var(--ideas-surface-strong);
+  border: 1px solid var(--ideas-border);
+  border-radius: var(--ideas-radius-lg);
+  box-shadow: var(--ideas-shadow-soft);
+}
+
+.ideas-product-media-link {
+  display: block;
+}
+
+.ideas-product-media {
+  border-radius: 0;
+}
+
+.ideas-product-media-overlay {
+  display: none;
+}
+
+.ideas-product-copy {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1rem 1.05rem 1.15rem;
+}
+
+.ideas-product-topline {
+  gap: 0.45rem;
+}
+
+.ideas-product-badge,
+.ideas-product-popularity {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: 0 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(122, 105, 78, 0.14);
+  background: rgba(247, 239, 229, 0.92);
+  color: var(--ideas-green);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.ideas-product-popularity {
+  color: var(--ideas-gold);
+}
+
+.ideas-product-copy h3 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.7rem, 2vw, 2.1rem);
+  line-height: 1.02;
+}
+
+.ideas-editor-note {
+  color: var(--ideas-text-soft);
+  line-height: 1.68;
+}
+
+.ideas-product-actions {
+  margin-top: 0.15rem;
+}
+
+.ideas-products-group-extras .ideas-product-card {
+  background: rgba(252, 247, 239, 0.92);
+}
+
+.ideas-products-group-extras .ideas-product-copy h3 {
+  font-size: clamp(1.42rem, 1.7vw, 1.7rem);
+}
+
+.ideas-products-group-extras .ideas-product-badge {
+  background: rgba(244, 235, 223, 0.85);
+}
+
+.ideas-site-footer {
+  background: rgba(245, 239, 229, 0.78);
+  border-top: 1px solid rgba(122, 105, 78, 0.12);
+}
+
+@media (max-width: 1100px) {
+  .ideas-save-feed,
+  .ideas-grid-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ideas-grid-products-extras {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .ideas-save-feed,
+  .ideas-grid-products,
+  .ideas-grid-products-extras {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ideas-affiliate-note {
+    margin-bottom: 1rem;
+  }
+}
+
 *,
 *::before,
 *::after {
