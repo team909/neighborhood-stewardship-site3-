@@ -1,62 +1,49 @@
 export const IDEAS_IMAGE_ASSETS = {
   categories: {
-    frontDoorPorchCharm:
-      "assets/Ideas-Placeholders/front-door-porch-charm-category.svg",
+    frontDoorPorchCharm: "assets/Ideas-Custom/front-door-and-porch-charm.png",
     cozyHomeTouches: "assets/Ideas-Placeholders/cozy-home-touches-category.svg",
     weekendLittleProjects:
       "assets/Ideas-Placeholders/weekend-little-projects-category.svg",
-    seasonalSweetness:
-      "assets/Ideas-Placeholders/seasonal-sweetness-category.svg",
+    seasonalSweetness: "assets/Ideas-Custom/flowers-and-porch-moments.png",
     hostingHomeLife: "assets/Ideas-Placeholders/hosting-home-life-category.svg",
     cuteFindsWorthSaving:
-      "assets/Ideas-Placeholders/cute-finds-worth-saving-category.svg",
+      "assets/Ideas-Custom/little-house-details-people-notice-right-away.png",
   },
   ideas: {
-    frontDoorCharmHero: "assets/Ideas-Placeholders/front-door-charm-hero.svg",
+    frontDoorCharmFeatured: "assets/Ideas-Custom/cute-front-door-ideas.png",
+    frontDoorCharmHero:
+      "assets/Ideas-Custom/cute-front-door-ideas-that-feel-warm-right-away.png",
     frontDoorCharmGalleryGlow:
-      "assets/Ideas-Placeholders/front-door-glow-gallery.svg",
-    frontDoorCharmGalleryPorch:
-      "assets/Ideas-Placeholders/front-door-porch-gallery.svg",
+      "assets/Editorial/longmeadow-porch-light-story-card.png",
+    frontDoorCharmGalleryPorch: "assets/Editorial/around-the-block.png",
     frontStepFlowersHero:
-      "assets/Ideas-Placeholders/front-step-flowers-hero.svg",
-    frontStepFlowersGalleryBed:
-      "assets/Ideas-Placeholders/front-step-bed-gallery.svg",
-    frontStepFlowersGalleryYard:
-      "assets/Ideas-Placeholders/front-step-yard-gallery.svg",
-    littleDetailsHero: "assets/Ideas-Placeholders/little-details-hero.svg",
+      "assets/Ideas-Custom/pretty-front-step-flowers-that-make-everything-feel-sweeter.png",
+    frontStepFlowersGalleryBed: "assets/Editorial/why-it-matters.png",
+    frontStepFlowersGalleryYard: "assets/Editorial/wilbraham-story-card.png",
+    littleDetailsHero:
+      "assets/Ideas-Custom/little-house-details-people-notice-right-away.png",
     littleDetailsGalleryPorch:
-      "assets/Ideas-Placeholders/little-details-porch-gallery.svg",
-    littleDetailsGalleryDrive:
-      "assets/Ideas-Placeholders/little-details-drive-gallery.svg",
+      "assets/Editorial/longmeadow-porch-light-story-card.png",
+    littleDetailsGalleryDrive: "assets/Editorial/around-the-block.png",
   },
   products: {
-    weatherReadyDoormat:
-      "assets/Ideas-Placeholders/weather-ready-doormat-illustrated.svg",
-    warmEntryLight:
-      "assets/Ideas-Placeholders/warm-entry-light-illustrated.svg",
-    darkEntryPlanter:
-      "assets/Ideas-Placeholders/dark-entry-planter-illustrated.svg",
-    stoneEdgeBedShovel:
-      "assets/Ideas-Placeholders/stone-edge-bed-shovel-illustrated.svg",
-    darkBarkMulch:
-      "assets/Ideas-Placeholders/dark-bark-mulch-illustrated.svg",
-    entryWateringWand:
-      "assets/Ideas-Placeholders/entry-watering-wand-illustrated.svg",
-    matteBlackHouseNumbers:
-      "assets/Ideas-Placeholders/matte-black-house-numbers-illustrated.svg",
+    weatherReadyDoormat: "assets/Ideas-Custom/weather-ready-coir-mat.png",
+    warmEntryLight: "assets/Products/warm-entry-light.png",
+    darkEntryPlanter: "assets/Ideas-Custom/dark-olive-porch-planter.png",
+    stoneEdgeBedShovel: "assets/Products/stone-edge-bed-shovel.png",
+    darkBarkMulch: "assets/Products/hydrangea-friendly-mulch.png",
+    entryWateringWand: "assets/Products/entry-watering-wand.png",
+    matteBlackHouseNumbers: "assets/Ideas-Custom/matte-black-house-numbers.png",
     classicMailboxPostRefresh:
-      "assets/Ideas-Placeholders/classic-mailbox-post-refresh-illustrated.svg",
-    wideOutdoorBroom:
-      "assets/Ideas-Placeholders/wide-outdoor-broom-illustrated.svg",
-    softFrontDoorWreath: "assets/Ideas-Placeholders/soft-front-door-wreath.svg",
+      "assets/Ideas-Custom/little-house-details-people-notice-right-away.png",
+    wideOutdoorBroom: "assets/Products/wide-outdoor-broom.png",
+    softFrontDoorWreath: "assets/Ideas-Custom/soft-front-door-wreath.png",
     simpleWreathHanger: "assets/Ideas-Placeholders/simple-wreath-hanger.svg",
-    frontStepFlowerBasket:
-      "assets/Ideas-Placeholders/front-step-flower-basket.svg",
-    softGreeneryPot: "assets/Ideas-Placeholders/soft-greenery-pot.svg",
+    frontStepFlowerBasket: "assets/Ideas-Custom/flowers-and-porch-moments.png",
+    softGreeneryPot: "assets/Ideas-Custom/dark-olive-porch-planter.png",
     wovenFrontDoorBasket:
       "assets/Ideas-Placeholders/woven-front-door-basket.svg",
-    blackOutdoorLantern:
-      "assets/Ideas-Placeholders/black-outdoor-lantern.svg",
+    blackOutdoorLantern: "assets/Ideas-Custom/simple-black-lantern.png",
     seasonalDoorAccent:
       "assets/Ideas-Placeholders/seasonal-door-accent.svg",
   },
@@ -340,6 +327,9 @@ export const ideaPages = [
     title: "Cute Front Door Ideas That Feel Warm Right Away",
     dek:
       "A better mat, a warm glow, a pretty planter, and one or two sweet little details can make the whole front of a house feel friendlier almost immediately.",
+    cardImage: IDEAS_IMAGE_ASSETS.ideas.frontDoorCharmFeatured,
+    cardAlt:
+      "A warm front-door composition with a mat, planters, light, lantern, and sweet little details.",
     heroImage: IDEAS_IMAGE_ASSETS.ideas.frontDoorCharmHero,
     heroAlt:
       "A welcoming front door with a softly lit porch, flowers by the steps, and a clear path.",

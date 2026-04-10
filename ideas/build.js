@@ -282,12 +282,14 @@ function renderIdeaCard(fromFile, idea) {
   const href = idea.live
     ? ensureRelativeHref(fromFile, `ideas/${idea.slug}/index.html`)
     : null;
+  const cardImage = idea.cardImage || idea.heroImage;
+  const cardAlt = idea.cardAlt || idea.heroAlt;
 
   const cardInner = `
     ${renderMedia({
       fromFile,
-      image: idea.heroImage,
-      alt: idea.heroAlt,
+      image: cardImage,
+      alt: cardAlt,
       className: "ideas-card-media",
       ratioClass: "ideas-ratio-card",
       fallbackLabel: idea.title,
@@ -538,6 +540,8 @@ function buildLandingPage() {
   const file = "ideas/index.html";
   const featuredCategory = liveCategories[0];
   const featuredIdea = liveIdeas[0];
+  const featuredIdeaCardImage = featuredIdea.cardImage || featuredIdea.heroImage;
+  const featuredIdeaCardAlt = featuredIdea.cardAlt || featuredIdea.heroAlt;
   const cuteTouchesProducts = [
     "weather-ready-doormat",
     "soft-front-door-wreath",
@@ -605,8 +609,8 @@ function buildLandingPage() {
       fromFile: file,
       kind: "story",
       size: "wide",
-      image: featuredIdea.heroImage,
-      alt: featuredIdea.heroAlt,
+      image: featuredIdeaCardImage,
+      alt: featuredIdeaCardAlt,
       href: ensureRelativeHref(file, `ideas/${featuredIdea.slug}/index.html`),
       eyebrow: "Featured story",
       badge: "Popular around the neighborhood",
@@ -657,8 +661,12 @@ function buildLandingPage() {
       fromFile: file,
       kind: "story",
       size: "tall",
-      image: getIdeaBySlug("pretty-front-step-flowers-that-make-everything-feel-sweeter")?.heroImage,
-      alt: getIdeaBySlug("pretty-front-step-flowers-that-make-everything-feel-sweeter")?.heroAlt,
+      image:
+        getIdeaBySlug("pretty-front-step-flowers-that-make-everything-feel-sweeter")?.cardImage ||
+        getIdeaBySlug("pretty-front-step-flowers-that-make-everything-feel-sweeter")?.heroImage,
+      alt:
+        getIdeaBySlug("pretty-front-step-flowers-that-make-everything-feel-sweeter")?.cardAlt ||
+        getIdeaBySlug("pretty-front-step-flowers-that-make-everything-feel-sweeter")?.heroAlt,
       href: ensureRelativeHref(file, "ideas/pretty-front-step-flowers-that-make-everything-feel-sweeter/index.html"),
       eyebrow: "Seasonal favorite",
       badge: "Read story",
@@ -709,8 +717,12 @@ function buildLandingPage() {
       fromFile: file,
       kind: "story",
       size: "tall",
-      image: getIdeaBySlug("little-house-details-people-notice-right-away")?.heroImage,
-      alt: getIdeaBySlug("little-house-details-people-notice-right-away")?.heroAlt,
+      image:
+        getIdeaBySlug("little-house-details-people-notice-right-away")?.cardImage ||
+        getIdeaBySlug("little-house-details-people-notice-right-away")?.heroImage,
+      alt:
+        getIdeaBySlug("little-house-details-people-notice-right-away")?.cardAlt ||
+        getIdeaBySlug("little-house-details-people-notice-right-away")?.heroAlt,
       href: ensureRelativeHref(file, "ideas/little-house-details-people-notice-right-away/index.html"),
       eyebrow: "Cute finds story",
       badge: "Read story",
