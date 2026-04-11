@@ -1,20 +1,26 @@
+document.documentElement.classList.add("js-ready");
+
 const revealNodes = document.querySelectorAll(".reveal");
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
 
-      entry.target.classList.add("is-visible");
-      revealObserver.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.16 },
-);
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.16 },
+  );
 
-revealNodes.forEach((node) => revealObserver.observe(node));
+  revealNodes.forEach((node) => revealObserver.observe(node));
+} else {
+  revealNodes.forEach((node) => node.classList.add("is-visible"));
+}
 
 const storyModal = document.getElementById("story-modal");
 const storyTitle = document.getElementById("story-modal-title");
@@ -50,9 +56,9 @@ const shareData = {
 const flowContent = {
   mailed: {
     kicker: "Official mailed recognition",
-    title: "Request the Official Mailed Certificate",
+    title: "Get the Official Certificate",
     copy:
-      "The mailed option for people who want the recognition to arrive in print and feel more complete from the start.",
+      "Use the formal mailed path when you want the recognition to arrive in print and feel complete from the start.",
   },
   digital: {
     kicker: "Digital recognition",
