@@ -3,6 +3,13 @@ import { resolve, relative } from "node:path";
 import { defineConfig } from "vite";
 
 const rootDir = __dirname;
+const excludedHtmlInputs = new Set([
+  "ideas/categories/front-door-porch-charm/index.html",
+  "ideas/categories/seasonal-sweetness/index.html",
+  "ideas/cute-front-door-ideas-that-feel-warm-right-away/index.html",
+  "ideas/little-house-details-people-notice-right-away/index.html",
+  "ideas/pretty-front-step-flowers-that-make-everything-feel-sweeter/index.html",
+]);
 
 function collectHtmlInputs(startDir) {
   const entries = readdirSync(startDir, { withFileTypes: true });
@@ -20,7 +27,13 @@ function collectHtmlInputs(startDir) {
       continue;
     }
 
-    const key = relative(rootDir, absolutePath)
+    const relativePath = relative(rootDir, absolutePath).replace(/\\/g, "/");
+
+    if (excludedHtmlInputs.has(relativePath)) {
+      continue;
+    }
+
+    const key = relativePath
       .replace(/\\/g, "/")
       .replace(/\/index\.html$/, "")
       .replace(/[^a-zA-Z0-9/_-]/g, "")

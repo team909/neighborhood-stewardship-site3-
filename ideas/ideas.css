@@ -724,6 +724,10 @@ body.ideas-page {
   column-gap: 1.35rem;
 }
 
+.ideas-save-feed-compact {
+  column-count: 2;
+}
+
 .ideas-feed-tile {
   position: relative;
   display: block;

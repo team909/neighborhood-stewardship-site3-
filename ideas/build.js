@@ -77,7 +77,6 @@ function renderMedia({
 
 function renderHeader(fromFile, active = "ideas") {
   const homeHref = ensureRelativeHref(fromFile, "index.html");
-  const ideasHref = ensureRelativeHref(fromFile, "ideas/index.html");
   const liveCategoryLinks = liveCategories
     .map(
       (category) => `
@@ -98,9 +97,8 @@ function renderHeader(fromFile, active = "ideas") {
             <span class="ideas-brand-name">Project</span>
           </span>
         </a>
-        <nav class="ideas-site-nav" aria-label="Ideas navigation">
+        <nav class="ideas-site-nav" aria-label="Home Finds navigation">
           <a class="${active === "home" ? "is-active" : ""}" href="${escapeHtml(homeHref)}">Home</a>
-          <a class="${active === "ideas" ? "is-active" : ""}" href="${escapeHtml(ideasHref)}">Neighborhood Ideas</a>
           ${liveCategoryLinks}
         </nav>
       </div>
@@ -115,14 +113,14 @@ function renderFooter(fromFile) {
     <footer class="ideas-site-footer">
       <div class="ideas-container ideas-footer-row">
         <div>
-          <p class="ideas-footer-kicker">Neighborhood Ideas</p>
+          <p class="ideas-footer-kicker">Home Finds</p>
           <p class="ideas-footer-copy">
-            A warm little feed of porch charm, cozy home touches, weekend projects, seasonal sweetness, and cute finds people actually want to save.
+            A small edit of cute, useful, saveable finds for making home feel sweeter and more put together.
           </p>
         </div>
         <div class="ideas-footer-links">
           <a href="${escapeHtml(homeHref)}">Back to home</a>
-          <a href="${escapeHtml(ideasHref)}">Ideas landing</a>
+          <a href="${escapeHtml(ideasHref)}">Home Finds</a>
         </div>
       </div>
     </footer>
@@ -132,7 +130,7 @@ function renderFooter(fromFile) {
 function renderAffiliateDisclosure() {
   return `
     <div class="ideas-affiliate-note" aria-label="Affiliate disclosure">
-      <p>Some Neighborhood Ideas links are affiliate links. As an Amazon Associate, Neighborhood Stewardship Project may earn from qualifying purchases.</p>
+      <p>Some Home Finds links are affiliate links. As an Amazon Associate, Neighborhood Stewardship Project may earn from qualifying purchases.</p>
     </div>
   `;
 }
@@ -165,6 +163,25 @@ function renderIdeasShell({ fromFile, title, description, body, active = "ideas"
 </html>`;
 }
 
+function buildRedirectPage(fromFile, targetFile) {
+  const targetHref = ensureRelativeHref(fromFile, targetFile);
+
+  return `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Finds | Neighborhood Stewardship Project</title>
+    <meta http-equiv="refresh" content="0; url=${escapeHtml(targetHref)}" />
+    <link rel="canonical" href="${escapeHtml(targetHref)}" />
+  </head>
+  <body>
+    <p>This page has moved to <a href="${escapeHtml(targetHref)}">Home Finds</a>.</p>
+    <script>window.location.replace(${JSON.stringify(targetHref)});</script>
+  </body>
+</html>`;
+}
+
 function renderIdeasHero({ fromFile, kicker, title, copy, image, alt, actions = "" }) {
   return `
     <section class="ideas-hero">
@@ -182,7 +199,7 @@ function renderIdeasHero({ fromFile, kicker, title, copy, image, alt, actions = 
             alt,
             className: "ideas-hero-frame",
             ratioClass: "ideas-ratio-hero",
-            fallbackLabel: "Neighborhood Ideas image",
+            fallbackLabel: "Home Finds image",
           })}
         </div>
       </div>
@@ -298,7 +315,7 @@ function renderProductCard(fromFile, product, variant = "lead", index = 0) {
     .filter(Boolean)
     .join(" ");
   const headlineNote = variant === "extras" ? product.whyItHelps : product.description;
-  const ctaLabel = "See the pick";
+  const ctaLabel = product.ctaLabel || "See pick";
 
   return `
     <article class="${cardClass}">
@@ -430,94 +447,28 @@ function renderEditorialSplit({
 
 function buildLandingPage() {
   const file = "ideas/index.html";
-  const featuredCategory = liveCategories[0];
-  const featuredIdea = liveIdeas[0];
-  const seasonalCategory = getCategoryBySlug("seasonal-sweetness");
   const cuteFindsCategory = getCategoryBySlug("cute-finds-worth-saving");
-  const frontDoorIdea = getIdeaBySlug("cute-front-door-ideas-that-feel-warm-right-away");
-  const seasonalIdea = getIdeaBySlug("pretty-front-step-flowers-that-make-everything-feel-sweeter");
-  const cuteFindsIdea = getIdeaBySlug("little-house-details-people-notice-right-away");
-  const shopFeedTiles = [
-    renderLandingFeedTile({
-      fromFile: file,
-      image: featuredCategory.heroImage,
-      alt: featuredCategory.coverAlt,
-      href: ensureRelativeHref(file, `ideas/categories/${featuredCategory.slug}/index.html`),
-      eyebrow: "Front Door & Porch Charm",
-      title: "The little front-door touches people save first.",
-      copy: "Mat, glow, planter, wreath, and the sweet details that make a house feel friendlier.",
-    }),
-    renderLandingFeedTile({
-      fromFile: file,
-      image: frontDoorIdea.cardImage || frontDoorIdea.heroImage,
-      alt: frontDoorIdea.cardAlt || frontDoorIdea.heroAlt,
-      href: ensureRelativeHref(file, `ideas/${frontDoorIdea.slug}/index.html`),
-      eyebrow: "Featured story",
-      title: frontDoorIdea.title,
-      copy: "Warm light, a pretty mat, and the little details that make the whole house feel more welcoming.",
-    }),
-    renderLandingFeedTile({
-      fromFile: file,
-      image: getProductById("soft-front-door-wreath")?.image,
-      alt: getProductById("soft-front-door-wreath")?.imageAlt,
-      href: getProductById("soft-front-door-wreath")?.affiliateUrl,
-      eyebrow: "Cute touch people keep choosing",
-      title: "A soft front-door layer that changes the whole mood",
-      copy: "One sweet focal point can do more for the front than a pile of little decorations.",
-    }),
-    renderLandingFeedTile({
-      fromFile: file,
-      image: seasonalCategory?.heroImage,
-      alt: seasonalCategory?.coverAlt,
-      href: ensureRelativeHref(file, `ideas/categories/${seasonalCategory.slug}/index.html`),
-      eyebrow: "Seasonal Sweetness",
-      title: "Flowers and porch moments that make the steps feel sweeter.",
-      copy: "The softer side of the front of the house, with just enough seasonal color and shape.",
-    }),
-    renderLandingFeedTile({
-      fromFile: file,
-      image: seasonalIdea.heroImage,
-      alt: seasonalIdea.heroAlt,
-      href: ensureRelativeHref(file, `ideas/${seasonalIdea.slug}/index.html`),
-      eyebrow: "Seasonal favorite",
-      title: seasonalIdea.title,
-      copy: "The soft, fuller look that changes the mood before anyone notices the exact plants.",
-    }),
-    renderLandingFeedTile({
-      fromFile: file,
-      image: getProductById("front-step-flower-basket")?.image,
-      alt: getProductById("front-step-flower-basket")?.imageAlt,
-      href: getProductById("front-step-flower-basket")?.affiliateUrl,
-      eyebrow: "Soft layer people keep saving",
-      title: "The flower moment that makes the steps feel fuller",
-      copy: "A basket or porch-side floral layer usually changes the mood faster than a whole planting plan.",
-    }),
+  const practicalCategory = getCategoryBySlug("pretty-practical-finds");
+  const landingTiles = [
     renderLandingFeedTile({
       fromFile: file,
       image: cuteFindsCategory?.heroImage,
       alt: cuteFindsCategory?.coverAlt,
       href: ensureRelativeHref(file, `ideas/categories/${cuteFindsCategory.slug}/index.html`),
-      eyebrow: "Cute Finds Worth Saving",
-      title: "Cute home and porch finds that make a place feel more put together.",
-      copy: "Saveable little finds for bedrooms, living rooms, patios, and the sweeter corners of the house.",
+      eyebrow: "Cute Finds",
+      title: "Cute home finds worth saving.",
+      copy: "Warm, pretty pieces for bedrooms, living rooms, patios, and the corners people notice first.",
+      cta: "Browse Cute Finds",
     }),
     renderLandingFeedTile({
       fromFile: file,
-      image: cuteFindsIdea.heroImage,
-      alt: cuteFindsIdea.heroAlt,
-      href: ensureRelativeHref(file, `ideas/${cuteFindsIdea.slug}/index.html`),
-      eyebrow: "Cute finds story",
-      title: cuteFindsIdea.title,
-      copy: "The tiny upgrades that make the place feel more admired without starting a whole project.",
-    }),
-    renderLandingFeedTile({
-      fromFile: file,
-      image: getProductById("brooklyn-coffee-table")?.image,
-      alt: getProductById("brooklyn-coffee-table")?.imageAlt,
-      href: getProductById("brooklyn-coffee-table")?.affiliateUrl,
-      eyebrow: "Looks more expensive than it is",
-      title: "The coffee-table find that makes a room feel calmer",
-      copy: "One warm wood piece can settle a room more than a dozen tiny accessories.",
+      image: practicalCategory?.heroImage,
+      alt: practicalCategory?.coverAlt,
+      href: ensureRelativeHref(file, `ideas/categories/${practicalCategory.slug}/index.html`),
+      eyebrow: "Practical Finds",
+      title: "Useful little finds that still feel cute.",
+      copy: "Garden lights, cozy glow pieces, kitchen helpers, and tidy little organizers from the Amazon links.",
+      cta: "Browse Practical Finds",
     }),
   ].join("");
 
@@ -525,33 +476,33 @@ function buildLandingPage() {
     <main class="ideas-main">
       ${renderIdeasHero({
         fromFile: file,
-        kicker: "Neighborhood Ideas",
-        title: "Little home ideas that make life feel sweeter",
+        kicker: "Home Finds",
+        title: "Cute and useful finds for a sweeter home",
         copy:
-          "Browse front-door charm, soft seasonal updates, and cute home finds that make a place feel warmer, prettier, and more lived in.",
-        image: featuredIdea.heroImage,
-        alt: featuredIdea.heroAlt,
+          "A simplified edit of the two sections worth keeping right now: cute finds people want to save, and practical Amazon finds that still look good at home.",
+        image: practicalCategory?.heroImage,
+        alt: practicalCategory?.coverAlt,
         actions: `
           <a class="ideas-button ideas-button-primary" href="${escapeHtml(
-            ensureRelativeHref(file, `ideas/categories/${featuredCategory.slug}/index.html`),
-          )}">Start with ${escapeHtml(featuredCategory.name)}</a>
+            ensureRelativeHref(file, `ideas/categories/${cuteFindsCategory.slug}/index.html`),
+          )}">Browse Cute Finds</a>
           <a class="ideas-button ideas-button-secondary" href="${escapeHtml(
-            ensureRelativeHref(file, `ideas/${featuredIdea.slug}/index.html`),
-          )}">Read the featured story</a>
+            ensureRelativeHref(file, `ideas/categories/${practicalCategory.slug}/index.html`),
+          )}">See Practical Finds</a>
         `,
       })}
 
       <section class="ideas-section">
         <div class="ideas-container">
           <div class="ideas-section-heading">
-            <p class="ideas-eyebrow">Browse ideas</p>
-            <h2>Choose a mood and open something pretty.</h2>
+            <p class="ideas-eyebrow">Choose a lane</p>
+            <h2>Two simple paths, no extra clutter.</h2>
             <p class="ideas-lede ideas-lede-compact">
-              Start with the front door, a softer porch moment, or one cute find you can picture at home immediately.
+              Cute Finds stays as the polished saveable page. Practical Finds turns the Amazon links into a warm, shoppable home edit.
             </p>
           </div>
           ${renderAffiliateDisclosure()}
-          <div class="ideas-save-feed">${shopFeedTiles}</div>
+          <div class="ideas-save-feed ideas-save-feed-compact">${landingTiles}</div>
         </div>
       </section>
 
@@ -559,17 +510,18 @@ function buildLandingPage() {
         <div class="ideas-container">
           ${renderProductGroup({
             fromFile: file,
-            eyebrow: "Helpful extras",
-            title: "A few quiet helpers if you want the pretty part to stay easy.",
+            eyebrow: "Quick preview",
+            title: "A few finds from the simplified shop edit.",
             note:
-              "These are the low-glamour pieces that make the flowers, porch, and front walk easier to keep looking good.",
+              "The full pages keep the browsing experience focused, but this gives the landing page a little taste of what is inside.",
             productIds: [
-              "stone-edge-bed-shovel",
-              "hydrangea-friendly-mulch",
-              "entry-watering-wand",
-              "wide-outdoor-broom",
+              "brooklyn-coffee-table",
+              "kitten-candle-holder",
+              "plant-propagation-station",
+              "floral-soup-bowl",
+              "solar-globe-lights",
             ],
-            variant: "extras",
+            variant: "lead",
           })}
         </div>
       </section>
@@ -578,9 +530,9 @@ function buildLandingPage() {
 
   return renderIdeasShell({
     fromFile: file,
-    title: "Neighborhood Ideas | Neighborhood Stewardship Project",
+    title: "Home Finds | Neighborhood Stewardship Project",
     description:
-      "Browse porch charm, cozy home touches, weekend little projects, seasonal favorites, and cute finds that make life at home feel sweeter.",
+      "Browse cute finds and practical Amazon finds that make life at home feel sweeter, calmer, and more put together.",
     body,
     active: "ideas",
   });
@@ -590,6 +542,8 @@ function buildCategoryPage(category) {
   const file = `ideas/categories/${category.slug}/index.html`;
   const liveIdeasForCategory = category.ideaSlugs.map(getIdeaBySlug).filter(Boolean);
   const featuredIdea = liveIdeasForCategory[0];
+  const shouldShowFeaturedStory =
+    Boolean(featuredIdea) && category.showFeaturedStory !== false;
   const leadProductIds = Array.isArray(category.leadProductIds)
     ? category.leadProductIds
     : category.extraProductIds
@@ -602,7 +556,7 @@ function buildCategoryPage(category) {
         <div class="ideas-container">
           ${renderBreadcrumbs(file, [
             { label: "Home", href: "index.html" },
-            { label: "Neighborhood Ideas", href: "ideas/index.html" },
+            { label: "Home Finds", href: "ideas/index.html" },
             { label: category.name },
           ])}
         </div>
@@ -616,7 +570,7 @@ function buildCategoryPage(category) {
         image: category.heroImage,
         alt: category.coverAlt,
         actions:
-          featuredIdea
+          shouldShowFeaturedStory
             ? `
           <a class="ideas-button ideas-button-primary" href="${escapeHtml(
             ensureRelativeHref(file, `ideas/${featuredIdea.slug}/index.html`),
@@ -625,6 +579,9 @@ function buildCategoryPage(category) {
             : "",
       })}
 
+      ${
+        shouldShowFeaturedStory
+          ? `
       <section class="ideas-section">
         <div class="ideas-container">
           <div class="ideas-section-heading">
@@ -639,6 +596,9 @@ function buildCategoryPage(category) {
           </div>
         </div>
       </section>
+      `
+          : ""
+      }
 
       ${
         leadProductIds.length
@@ -714,7 +674,7 @@ function buildIdeaPage(idea) {
         <div class="ideas-container">
           ${renderBreadcrumbs(file, [
             { label: "Home", href: "index.html" },
-            { label: "Neighborhood Ideas", href: "ideas/index.html" },
+            { label: "Home Finds", href: "ideas/index.html" },
             { label: category.name, href: `ideas/categories/${category.slug}/index.html` },
             { label: idea.title },
           ])}
@@ -818,6 +778,9 @@ function buildIdeaPage(idea) {
           : ""
       }
 
+      ${
+        relatedIdeas.length
+          ? `
       <section class="ideas-section">
         <div class="ideas-container">
           <div class="ideas-section-heading">
@@ -829,6 +792,9 @@ function buildIdeaPage(idea) {
           </div>
         </div>
       </section>
+      `
+          : ""
+      }
     </main>
   `;
 
@@ -851,6 +817,16 @@ const outputPages = [
     file: `ideas/${idea.slug}/index.html`,
     html: buildIdeaPage(idea),
   })),
+  ...[
+    "ideas/categories/front-door-porch-charm/index.html",
+    "ideas/categories/seasonal-sweetness/index.html",
+    "ideas/cute-front-door-ideas-that-feel-warm-right-away/index.html",
+    "ideas/little-house-details-people-notice-right-away/index.html",
+    "ideas/pretty-front-step-flowers-that-make-everything-feel-sweeter/index.html",
+  ].map((file) => ({
+    file,
+    html: buildRedirectPage(file, "ideas/index.html"),
+  })),
 ];
 
 await Promise.all(
@@ -861,4 +837,4 @@ await Promise.all(
   }),
 );
 
-console.log(`Generated ${outputPages.length} Neighborhood Ideas pages.`);
+console.log(`Generated ${outputPages.length} Home Finds pages.`);

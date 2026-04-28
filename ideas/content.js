@@ -7,6 +7,8 @@ export const IDEAS_IMAGE_ASSETS = {
     seasonalSweetness: "assets/Ideas-Custom/flowers-and-porch-moments.png",
     hostingHomeLife: "assets/Ideas-Placeholders/hosting-home-life-category.svg",
     cuteFindsWorthSaving: "assets/Ideas-Custom/dresser.png",
+    prettyPracticalFinds:
+      "assets/Ideas-Custom/practical-plant-propagation-station.png",
   },
   ideas: {
     frontDoorCharmFeatured: "assets/Ideas-Custom/cute-front-door-ideas.png",
@@ -51,6 +53,21 @@ export const IDEAS_IMAGE_ASSETS = {
     candleMakingSet: "assets/Ideas-Custom/candle-making-set.jpeg",
     firePit: "assets/Ideas-Custom/fire-pit.png",
     eggChair: "assets/Ideas-Custom/egg-chair.png",
+    carRegistrationHolder: "assets/Ideas-Custom/practical-car-registration-holder.png",
+    kittenCandleHolder: "assets/Ideas-Custom/practical-kitten-candle-holder.png",
+    solarGardenLights: "assets/Ideas-Custom/practical-solar-garden-lights.png",
+    plantPropagationStation:
+      "assets/Ideas-Custom/practical-plant-propagation-station.png",
+    plugInNightLights: "assets/Ideas-Custom/practical-plug-in-night-lights.png",
+    underSinkOrganizer: "assets/Ideas-Custom/practical-under-sink-organizer.png",
+    forestNightLight: "assets/Ideas-Custom/practical-forest-night-light.png",
+    floralSoupBowl: "assets/Ideas-Custom/practical-floral-soup-bowl.png",
+    solarGlobeLights: "assets/Ideas-Custom/practical-solar-globe-lights.png",
+    flowerFrogGrid: "assets/Ideas-Custom/practical-flower-frog-grid.svg",
+    siliconeStoveCover: "assets/Ideas-Custom/practical-silicone-stove-cover.png",
+    sinkTopper: "assets/Ideas-Custom/practical-sink-topper.png",
+    enamelFlowerMug: "assets/Ideas-Custom/practical-enamel-flower-mug.svg",
+    flowerGlassMug: "assets/Ideas-Custom/practical-flower-glass-mug.svg",
   },
 };
 
@@ -132,6 +149,22 @@ export const PRODUCT_LINKS = {
     eggChair: "https://amzn.to/41YFXHD",
     wideOutdoorBroom: "https://amzn.to/41sesGh",
   },
+  prettyPracticalFinds: {
+    carRegistrationHolder: "https://amzn.to/4mOpHm2",
+    solarGardenLights: "https://amzn.to/41VzgpS",
+    plantPropagationStation: "https://amzn.to/4ufT83b",
+    plugInNightLights: "https://amzn.to/4cKV24J",
+    underSinkOrganizer: "https://amzn.to/48kcg7B",
+    forestNightLight: "https://amzn.to/48ngTha",
+    floralSoupBowl: "https://amzn.to/4naTwOd",
+    solarGlobeLights: "https://amzn.to/4efRaLv",
+    flowerFrogGrid: "https://amzn.to/4vSFgNR",
+    siliconeStoveCover: "https://amzn.to/4mOiMt7",
+    sinkTopper: "https://amzn.to/48kcknR",
+    kittenCandleHolder: "https://amzn.to/3R2Isq0",
+    enamelFlowerMug: "https://amzn.to/48kcknR",
+    flowerGlassMug: "https://amzn.to/3R2Isq0",
+  },
 };
 
 export const categories = [
@@ -170,7 +203,7 @@ export const categories = [
     seoTitle: "Front Door & Porch Charm | Neighborhood Ideas",
     seoDescription:
       "Browse sweet little front-door and porch ideas built around doormats, lights, planters, wreaths, and the details that make a house feel instantly warmer.",
-    live: true,
+    live: false,
   },
   {
     slug: "cozy-home-touches",
@@ -252,7 +285,7 @@ export const categories = [
     seoTitle: "Seasonal Sweetness | Neighborhood Ideas",
     seoDescription:
       "Browse floral, seasonal, and porch-side ideas that make the steps and front beds feel softer and sweeter.",
-    live: true,
+    live: false,
   },
   {
     slug: "hosting-home-life",
@@ -277,9 +310,9 @@ export const categories = [
   },
   {
     slug: "cute-finds-worth-saving",
-    name: "Cute Finds Worth Saving",
+    name: "Cute Finds",
     navLabel: "Cute Finds",
-    kicker: "Neighborhood Ideas",
+    kicker: "Home Finds",
     description:
       "Saveable little home and porch finds that make a room, corner, or patio feel prettier fast.",
     heroImage: IDEAS_IMAGE_ASSETS.categories.cuteFindsWorthSaving,
@@ -288,6 +321,7 @@ export const categories = [
     intro:
       "This lane mixes porch charm with warm indoor finds: the kind of pieces that make a bedroom feel cozier, a living room feel calmer, or a patio feel like somewhere you actually want to linger.",
     ideaSlugs: ["little-house-details-people-notice-right-away"],
+    showFeaturedStory: false,
     featuredProductIds: [
       "mirror",
       "velvet-quilt",
@@ -317,9 +351,64 @@ export const categories = [
       "A couple of smaller pieces that make home feel more personal.",
     extraProductsNote:
       "These are the easy extras that add memory, scent, and a little homemade energy.",
-    seoTitle: "Cute Finds Worth Saving | Neighborhood Ideas",
+    seoTitle: "Cute Finds | Home Finds",
     seoDescription:
-      "Browse charming Amazon finds and little house details that make the front of a home feel more finished and loved.",
+      "Browse charming Amazon finds and little house details that make a room, patio, or front step feel more finished and loved.",
+    live: true,
+  },
+  {
+    slug: "pretty-practical-finds",
+    name: "Practical Finds",
+    navLabel: "Practical Finds",
+    kicker: "Home Finds",
+    description:
+      "Useful little home, garden, bath, and kitchen finds that still feel cute enough to save.",
+    heroImage: IDEAS_IMAGE_ASSETS.categories.prettyPracticalFinds,
+    coverAlt:
+      "A plant propagation station glowing warmly on a wood dresser with leafy cuttings in glass tubes.",
+    intro:
+      "This is the useful side of Home Finds: little helpers for the garden, bathroom, kitchen, car, and evening corners that still look sweet enough to save.",
+    ideaSlugs: [],
+    featuredProductIds: [
+      "kitten-candle-holder",
+      "plant-propagation-station",
+      "forest-night-light",
+      "floral-soup-bowl",
+      "solar-globe-lights",
+      "solar-garden-lights",
+      "plug-in-night-lights",
+      "under-sink-organizer",
+      "car-registration-holder",
+      "sink-topper",
+      "silicone-stove-cover",
+    ],
+    leadProductIds: [
+      "kitten-candle-holder",
+      "plant-propagation-station",
+      "forest-night-light",
+      "floral-soup-bowl",
+      "solar-globe-lights",
+      "solar-garden-lights",
+    ],
+    extraProductIds: [
+      "plug-in-night-lights",
+      "under-sink-organizer",
+      "silicone-stove-cover",
+      "sink-topper",
+      "car-registration-holder",
+    ],
+    ideasHeading: "Useful finds that still feel pretty enough to save.",
+    leadProductsEyebrow: "Practical finds",
+    leadProductsHeading:
+      "Small home helpers with enough charm to earn a spot in the feed.",
+    extraProductsEyebrow: "Quiet little helpers",
+    extraProductsHeading:
+      "The useful extras that make ordinary routines feel more put together.",
+    extraProductsNote:
+      "These are the quieter pieces: cabinet calm, cleaner counters, softer hallways, and one very tidy glove box.",
+    seoTitle: "Practical Finds | Home Finds",
+    seoDescription:
+      "Browse useful Amazon finds for the garden, kitchen, bathroom, car, and cozy corners of home.",
     live: true,
   },
 ];
@@ -413,7 +502,7 @@ export const ideaPages = [
     popularityLabel: null,
     editorNote:
       "The best front doors usually come down to three things: clear lighting, one focal point, and less visual noise.",
-    live: true,
+    live: false,
   },
   {
     slug: "pretty-front-step-flowers-that-make-everything-feel-sweeter",
@@ -501,7 +590,7 @@ export const ideaPages = [
     popularityLabel: null,
     editorNote:
       "The best step plantings make the entry feel fuller without turning the path into a garden bed.",
-    live: true,
+    live: false,
   },
   {
     slug: "little-house-details-people-notice-right-away",
@@ -573,19 +662,16 @@ export const ideaPages = [
     leadProductsEyebrow: "Small details",
     leadProductsHeading:
       "The little pieces that make the front feel more considered.",
-    relatedIdeaSlugs: [
-      "cute-front-door-ideas-that-feel-warm-right-away",
-      "pretty-front-step-flowers-that-make-everything-feel-sweeter",
-    ],
+    relatedIdeaSlugs: [],
     seoTitle:
-      "Little House Details People Notice Right Away | Neighborhood Ideas",
+      "Little House Details People Notice Right Away | Home Finds",
     seoDescription:
       "A warm, saveable page of little house details and cute finds that make the front of a home feel more admired right away.",
     badge: "Cute Finds",
     popularityLabel: null,
     editorNote:
       "The best exterior details are the ones that read cleanly from the curb and hold up at close range.",
-    live: true,
+    live: false,
   },
   {
     slug: "the-porch-basket-trick-that-always-looks-good",
@@ -1348,6 +1434,248 @@ export const productCards = [
     popularityLabel: "Popular Around the Neighborhood",
     editorNote:
       "A single standout piece like this makes the rest of the patio styling feel easier.",
+  },
+  {
+    id: "kitten-candle-holder",
+    name: "The tiny kitten candle holder for a soft little glow",
+    brand: "Practical finds",
+    image: IDEAS_IMAGE_ASSETS.products.kittenCandleHolder,
+    imageAlt: "A small white kitten candle holder glowing on a warm wood shelf.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.prettyPracticalFinds.kittenCandleHolder,
+    description:
+      "A tiny table companion for the corners that need a little glow and a little personality. It makes an evening shelf feel softer, like someone left the sweetest light on just for you.",
+    whyItHelps:
+      "It brings warm light and a small bit of charm to a shelf, nightstand, or quiet corner.",
+    tags: ["Glow", "Shelf", "Cute find"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "See pick",
+    badge: "Cozy Glow",
+    popularityLabel: "Cute Touch People Keep Choosing",
+    editorNote:
+      "This is the kind of small glow piece that makes a room feel more personal at night.",
+  },
+  {
+    id: "plant-propagation-station",
+    name: "The little plant station that turns cuttings into decor",
+    brand: "Practical finds",
+    image: IDEAS_IMAGE_ASSETS.products.plantPropagationStation,
+    imageAlt: "A wooden plant propagation station with glass tubes and warm light under leafy cuttings.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.prettyPracticalFinds.plantPropagationStation,
+    description:
+      "A small window-garden moment for cuttings, stems, and the hopeful little leaves you keep checking on. The warm light makes it feel more like decor than a project waiting on the counter.",
+    whyItHelps:
+      "It keeps the useful plant-growing part neat enough to feel decorative.",
+    tags: ["Plants", "Windowsill", "Warm light"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "See pick",
+    badge: "Plant Baby Corner",
+    popularityLabel: "Easy Favorite",
+    editorNote:
+      "This is exactly the kind of useful piece that earns its place by looking sweet while it works.",
+  },
+  {
+    id: "forest-night-light",
+    name: "The forest night light with a tiny storybook mood",
+    brand: "Practical finds",
+    image: IDEAS_IMAGE_ASSETS.products.forestNightLight,
+    imageAlt: "A round forest-style night light glowing on a wooden nightstand.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.prettyPracticalFinds.forestNightLight,
+    description:
+      "This one feels like a miniature woodland scene tucked beside the bed. It adds a gentle, storybook kind of glow without taking over the room.",
+    whyItHelps:
+      "It makes the room feel cared for at night without adding clutter during the day.",
+    tags: ["Bedroom", "Night light", "Cozy"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "See pick",
+    badge: "Soft Evening Light",
+    popularityLabel: "Easy Favorite",
+    editorNote:
+      "A warm, low glow is the whole point here: soft enough to feel cozy, pretty enough to leave out.",
+  },
+  {
+    id: "floral-soup-bowl",
+    name: "The floral soup bowl that makes everyday meals sweeter",
+    brand: "Practical finds",
+    image: IDEAS_IMAGE_ASSETS.products.floralSoupBowl,
+    imageAlt: "A floral green soup bowl on a warm kitchen table.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.prettyPracticalFinds.floralSoupBowl,
+    description:
+      "The kind of bowl that makes soup, oatmeal, or a snack feel a little more cared for. The floral pattern brings that charming found-in-a-country-kitchen feeling to everyday meals.",
+    whyItHelps:
+      "It brings a little charm to something practical and ordinary.",
+    tags: ["Kitchen", "Bowl", "Everyday"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "See pick",
+    badge: "Kitchen Cute",
+    popularityLabel: "Easy Favorite",
+    editorNote:
+      "The best kitchen finds are useful enough to keep out and pretty enough that you do not mind seeing them.",
+  },
+  {
+    id: "solar-globe-lights",
+    name: "The solar globe lights that make the garden sparkle",
+    brand: "Practical finds",
+    image: IDEAS_IMAGE_ASSETS.products.solarGlobeLights,
+    imageAlt: "Round solar globe lights glowing softly along a garden path.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.prettyPracticalFinds.solarGlobeLights,
+    description:
+      "These give garden beds and patio edges a soft sparkle after dark. They feel a little magical without being fussy, especially tucked between flowers or along a walkway.",
+    whyItHelps:
+      "They make outdoor spaces feel intentional without wiring, fuss, or a big project.",
+    tags: ["Garden", "Solar", "Evening"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "See pick",
+    badge: "Garden Glow",
+    popularityLabel: "Popular Around the Neighborhood",
+    editorNote:
+      "A few soft globes can do more for the mood than a whole row of harsh path lights.",
+  },
+  {
+    id: "solar-garden-lights",
+    name: "The swaying garden lights with a firefly feeling",
+    brand: "Practical finds",
+    image: IDEAS_IMAGE_ASSETS.products.solarGardenLights,
+    imageAlt: "Warm solar garden lights glowing above leafy outdoor plants.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.prettyPracticalFinds.solarGardenLights,
+    description:
+      "These lights bring a gentle firefly feeling to outdoor plants and pathways. They add movement and glow without making the garden feel overly decorated.",
+    whyItHelps:
+      "They are practical lighting, but the real reason they work is the soft mood they add outside.",
+    tags: ["Garden", "Solar", "Outdoor glow"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "See pick",
+    badge: "Twinkle Yard",
+    popularityLabel: "Cute Touch People Keep Choosing",
+    editorNote:
+      "Outdoor lights work best when they feel warm and scattered instead of too bright or formal.",
+  },
+  {
+    id: "plug-in-night-lights",
+    name: "The tiny plug-in lights that soften late-night walks",
+    brand: "Practical finds",
+    image: IDEAS_IMAGE_ASSETS.products.plugInNightLights,
+    imageAlt: "Small plug-in night lights glowing warmly near an outlet.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.prettyPracticalFinds.plugInNightLights,
+    description:
+      "A simple little helper for hallways, kitchens, and sleepy late-night walks. It keeps the mood warm and low, like the house is quietly looking out for you.",
+    whyItHelps:
+      "It is one of those small comfort details people appreciate without really noticing why.",
+    tags: ["Night light", "Hallway", "Comfort"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "See pick",
+    badge: "Tiny House Helper",
+    popularityLabel: null,
+    editorNote:
+      "Warm and low is the goal; a night light should soften the room, not announce itself.",
+  },
+  {
+    id: "under-sink-organizer",
+    name: "The under-sink organizer that turns the cabinet calm",
+    brand: "Practical finds",
+    image: IDEAS_IMAGE_ASSETS.products.underSinkOrganizer,
+    imageAlt: "A two-tier under-sink organizer styled with tidy bathroom bottles and towels.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.prettyPracticalFinds.underSinkOrganizer,
+    description:
+      "A calm little reset for the cabinet that somehow collects everything. It gives bottles, towels, and extras a more intentional place to land.",
+    whyItHelps:
+      "It is not flashy, but it makes the daily-use stuff easier to reach and nicer to look at.",
+    tags: ["Bathroom", "Storage", "Kitchen"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "See pick",
+    badge: "Cabinet Calm",
+    popularityLabel: "Quietly Useful",
+    editorNote:
+      "A clean cabinet is one of those little wins you feel every time you open the door.",
+  },
+  {
+    id: "silicone-stove-cover",
+    name: "The stove cover that gives the kitchen a cleaner pause",
+    brand: "Practical finds",
+    image: IDEAS_IMAGE_ASSETS.products.siliconeStoveCover,
+    imageAlt: "A clean silicone stove cover arranged on a simple kitchen cooktop.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.prettyPracticalFinds.siliconeStoveCover,
+    description:
+      "A sleek way to let the stovetop rest when it is not in use. It gives the kitchen a cleaner, quieter look between meals and busy moments.",
+    whyItHelps:
+      "It protects the top and visually quiets the whole cooking zone when nothing is in use.",
+    tags: ["Kitchen", "Stove", "Helpful extra"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "See pick",
+    badge: "Kitchen Reset",
+    popularityLabel: "Quietly Useful",
+    editorNote:
+      "This belongs in the practical lane, but the calmer surface is the real visual payoff.",
+  },
+  {
+    id: "sink-topper",
+    name: "The sink topper that gives the vanity a little breathing room",
+    brand: "Practical finds",
+    image: IDEAS_IMAGE_ASSETS.products.sinkTopper,
+    imageAlt: "A bathroom sink topper holding makeup brushes, a hair dryer, and small vanity items.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.prettyPracticalFinds.sinkTopper,
+    description:
+      "A clever little surface for bathrooms that need just a bit more room during the morning rush. It makes brushes, makeup, and tools feel less scattered and more like part of the routine.",
+    whyItHelps:
+      "It creates a temporary landing zone when the counter is tiny or the routine has a lot of moving pieces.",
+    tags: ["Bathroom", "Vanity", "Routine"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "See pick",
+    badge: "Vanity Helper",
+    popularityLabel: null,
+    editorNote:
+      "This is a very practical find, but the visual payoff is a bathroom that feels less scattered.",
+  },
+  {
+    id: "car-registration-holder",
+    name: "The car document holder that makes the glove box tidy",
+    brand: "Practical finds",
+    image: IDEAS_IMAGE_ASSETS.products.carRegistrationHolder,
+    imageAlt: "A beige car registration and insurance holder styled beside a wood key bowl.",
+    merchant: "Amazon",
+    priceLabel: null,
+    affiliateUrl: PRODUCT_LINKS.prettyPracticalFinds.carRegistrationHolder,
+    description:
+      "A tidy place for the papers you always want easy to find but never want floating around the car. It turns a very practical thing into something clean, simple, and put-together.",
+    whyItHelps:
+      "It is the practical oddball from the list, but it fits the same idea: a small fix that makes life feel more put together.",
+    tags: ["Car", "Organizer", "Helpful extra"],
+    disclosure:
+      "This product link points to Amazon and is meant to support the idea without taking over the page.",
+    ctaLabel: "See pick",
+    badge: "Glovebox Tidy",
+    popularityLabel: null,
+    editorNote:
+      "Not every good find has to be decorative. Some just make the everyday smoother.",
   },
 ];
 
