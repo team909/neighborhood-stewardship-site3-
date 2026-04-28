@@ -252,6 +252,20 @@ h3 {
   color: var(--green);
 }
 
+.site-nav a.site-nav-featured {
+  padding: 0.48rem 0.86rem;
+  border: 1px solid rgba(24, 68, 42, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 250, 241, 0.82);
+  color: var(--green);
+  box-shadow: 0 10px 24px rgba(24, 55, 34, 0.08);
+}
+
+.site-nav a.site-nav-featured:hover {
+  background: #fffaf1;
+  box-shadow: 0 14px 30px rgba(24, 55, 34, 0.12);
+}
+
 .button {
   min-height: 3.25rem;
   padding: 0 1.3rem;

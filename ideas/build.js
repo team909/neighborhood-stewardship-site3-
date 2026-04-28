@@ -10,6 +10,7 @@ import {
 } from "./content.js";
 
 const rootDir = "/Users/ilierosulschi/Documents/Playground";
+const homeFindsDefaultFile = "ideas/categories/cute-finds-worth-saving/index.html";
 const liveCategories = categories.filter((category) => category.live);
 const liveIdeas = ideaPages.filter((idea) => idea.live);
 
@@ -108,7 +109,7 @@ function renderHeader(fromFile, active = "ideas") {
 
 function renderFooter(fromFile) {
   const homeHref = ensureRelativeHref(fromFile, "index.html");
-  const ideasHref = ensureRelativeHref(fromFile, "ideas/index.html");
+  const homeFindsHref = ensureRelativeHref(fromFile, homeFindsDefaultFile);
   return `
     <footer class="ideas-site-footer">
       <div class="ideas-container ideas-footer-row">
@@ -120,7 +121,7 @@ function renderFooter(fromFile) {
         </div>
         <div class="ideas-footer-links">
           <a href="${escapeHtml(homeHref)}">Back to home</a>
-          <a href="${escapeHtml(ideasHref)}">Home Finds</a>
+          <a href="${escapeHtml(homeFindsHref)}">Home Finds</a>
         </div>
       </div>
     </footer>
@@ -171,12 +172,12 @@ function buildRedirectPage(fromFile, targetFile) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Finds | Neighborhood Stewardship Project</title>
+    <title>Cute Finds | Home Finds</title>
     <meta http-equiv="refresh" content="0; url=${escapeHtml(targetHref)}" />
     <link rel="canonical" href="${escapeHtml(targetHref)}" />
   </head>
   <body>
-    <p>This page has moved to <a href="${escapeHtml(targetHref)}">Home Finds</a>.</p>
+    <p>This page has moved to <a href="${escapeHtml(targetHref)}">Cute Finds</a>.</p>
     <script>window.location.replace(${JSON.stringify(targetHref)});</script>
   </body>
 </html>`;
@@ -556,7 +557,7 @@ function buildCategoryPage(category) {
         <div class="ideas-container">
           ${renderBreadcrumbs(file, [
             { label: "Home", href: "index.html" },
-            { label: "Home Finds", href: "ideas/index.html" },
+            { label: "Home Finds", href: homeFindsDefaultFile },
             { label: category.name },
           ])}
         </div>
@@ -674,7 +675,7 @@ function buildIdeaPage(idea) {
         <div class="ideas-container">
           ${renderBreadcrumbs(file, [
             { label: "Home", href: "index.html" },
-            { label: "Home Finds", href: "ideas/index.html" },
+            { label: "Home Finds", href: homeFindsDefaultFile },
             { label: category.name, href: `ideas/categories/${category.slug}/index.html` },
             { label: idea.title },
           ])}
@@ -808,7 +809,7 @@ function buildIdeaPage(idea) {
 }
 
 const outputPages = [
-  { file: "ideas/index.html", html: buildLandingPage() },
+  { file: "ideas/index.html", html: buildRedirectPage("ideas/index.html", homeFindsDefaultFile) },
   ...liveCategories.map((category) => ({
     file: `ideas/categories/${category.slug}/index.html`,
     html: buildCategoryPage(category),
@@ -825,7 +826,7 @@ const outputPages = [
     "ideas/pretty-front-step-flowers-that-make-everything-feel-sweeter/index.html",
   ].map((file) => ({
     file,
-    html: buildRedirectPage(file, "ideas/index.html"),
+    html: buildRedirectPage(file, homeFindsDefaultFile),
   })),
 ];
 
