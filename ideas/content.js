@@ -329,7 +329,6 @@ export const categories = [
       "brooklyn-coffee-table",
       "fire-pit",
       "egg-chair",
-      "digital-picture-frame",
       "candle-making-set",
     ],
     leadProductIds: [
@@ -339,8 +338,9 @@ export const categories = [
       "brooklyn-coffee-table",
       "fire-pit",
       "egg-chair",
+      "candle-making-set",
     ],
-    extraProductIds: ["digital-picture-frame", "candle-making-set"],
+    extraProductIds: [],
     ideasHeading:
       "A mix of cute home finds, porch pieces, and the things people save first.",
     leadProductsEyebrow: "Cute finds",
@@ -381,6 +381,7 @@ export const categories = [
       "car-registration-holder",
       "sink-topper",
       "silicone-stove-cover",
+      "digital-picture-frame",
     ],
     leadProductIds: [
       "kitten-candle-holder",
@@ -389,14 +390,14 @@ export const categories = [
       "floral-soup-bowl",
       "solar-globe-lights",
       "solar-garden-lights",
-    ],
-    extraProductIds: [
       "plug-in-night-lights",
       "under-sink-organizer",
       "silicone-stove-cover",
       "sink-topper",
       "car-registration-holder",
+      "digital-picture-frame",
     ],
+    extraProductIds: [],
     ideasHeading: "Useful finds that still feel pretty enough to save.",
     leadProductsEyebrow: "Practical finds",
     leadProductsHeading:
@@ -1101,7 +1102,7 @@ export const productCards = [
   {
     id: "matte-black-house-numbers",
     name: "The crisp numbers that sharpen the whole front",
-    brand: "Cute finds",
+    brand: "Practical finds",
     image: IDEAS_IMAGE_ASSETS.products.matteBlackHouseNumbers,
     imageSlot: IDEAS_IMAGE_SLOTS.products.matteBlackHouseNumbers,
     imageAlt: "Simple matte black house numbers mounted near a front door.",

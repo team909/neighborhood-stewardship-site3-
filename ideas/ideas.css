@@ -434,7 +434,7 @@ body.ideas-page {
 .ideas-hero-layout,
 .ideas-editorial-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
   gap: 2.1rem;
   align-items: center;
 }
@@ -605,7 +605,7 @@ body.ideas-page {
 }
 
 .ideas-ratio-hero {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
 }
 
 .ideas-ratio-card,
