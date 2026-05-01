@@ -55,22 +55,22 @@ const shareData = {
 
 const flowContent = {
   mailed: {
-    kicker: "Official mailed recognition",
-    title: "Get the Official Certificate",
+    kicker: "Official certificate",
+    title: "Claim the Official Mailed Certificate",
     copy:
-      "Use the formal mailed path when you want the recognition to arrive in print and feel complete from the start.",
+      "Use this path to receive the formal printed certificate by mail.",
   },
   digital: {
-    kicker: "Digital recognition",
-    title: "Open the Digital Recognition form",
+    kicker: "Digital PDF",
+    title: "Get the Digital Recognition PDF",
     copy:
-      "A simpler online path when you want to recognize someone clearly without requesting the mailed version.",
+      "Request a digital PDF version of the recognition that can be saved, shared, or printed at home.",
   },
   nominate: {
     kicker: "Community nomination",
-    title: "Nominate someone from the community",
+    title: "Nominate Someone From the Community",
     copy:
-      "Share the story of a person, family, home, or local place whose care makes the street feel more looked after.",
+      "Share the story of a person, family, home, or local place that deserves to be recognized.",
   },
 };
 

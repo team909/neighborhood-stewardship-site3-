@@ -33,10 +33,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--text);
   font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color: #e8ede1;
@@ -351,6 +353,7 @@ h3 {
   position: relative;
   z-index: 1;
   width: 100%;
+  min-width: 0;
   padding-top: 6.2rem;
   padding-bottom: 3rem;
   display: grid;
@@ -361,6 +364,7 @@ h3 {
 
 .hero-copy {
   color: #f7f5ef;
+  min-width: 0;
   max-width: 34rem;
   padding-left: clamp(3rem, 8vw, 6.5rem);
 }
@@ -398,6 +402,7 @@ h3 {
 }
 
 .hero-path-card {
+  position: relative;
   display: grid;
   align-content: start;
   gap: 0.65rem;
@@ -412,18 +417,50 @@ h3 {
     0 1px 0 rgba(255, 255, 255, 0.14) inset,
     0 -1px 0 rgba(255, 255, 255, 0.05) inset;
   backdrop-filter: blur(18px) saturate(136%);
+  overflow: hidden;
 }
 
 .hero-path-card-featured {
   grid-column: 1 / -1;
+  min-height: 13rem;
+  padding-right: min(38%, 12.4rem);
   background:
-    radial-gradient(circle at top right, rgba(191, 156, 107, 0.18), transparent 32%),
-    linear-gradient(180deg, rgba(248, 244, 237, 0.26), rgba(235, 228, 217, 0.14));
-  border-color: rgba(255, 247, 236, 0.24);
+    radial-gradient(circle at 87% 21%, rgba(245, 224, 190, 0.14), transparent 32%),
+    linear-gradient(180deg, rgba(248, 244, 237, 0.22), rgba(235, 228, 217, 0.11));
+  border-color: rgba(255, 247, 236, 0.22);
   box-shadow:
-    0 22px 40px rgba(18, 20, 16, 0.13),
+    0 20px 38px rgba(18, 20, 16, 0.12),
     0 1px 0 rgba(255, 255, 255, 0.16) inset,
     0 -1px 0 rgba(255, 255, 255, 0.06) inset;
+}
+
+.hero-certificate-preview {
+  position: absolute;
+  top: 1.05rem;
+  right: 1.05rem;
+  width: min(34%, 10.75rem);
+  aspect-ratio: 1.294 / 1;
+  margin: 0;
+  padding: 0.24rem;
+  border-radius: 0.78rem;
+  background:
+    linear-gradient(180deg, rgba(255, 251, 244, 0.7), rgba(238, 229, 215, 0.46));
+  border: 1px solid rgba(255, 251, 245, 0.28);
+  box-shadow:
+    0 16px 34px rgba(9, 17, 13, 0.16),
+    0 1px 0 rgba(255, 255, 255, 0.32) inset;
+  opacity: 0.92;
+  transform: rotate(0.6deg);
+  pointer-events: none;
+}
+
+.hero-certificate-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.56rem;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero-path-top {
@@ -1704,7 +1741,7 @@ h3 {
 
 @media (max-width: 760px) {
   .container {
-    width: min(calc(100% - 1rem), var(--max-width));
+    width: min(calc(100% - 1.35rem), var(--max-width));
   }
 
   .section {
@@ -1719,27 +1756,38 @@ h3 {
     min-height: auto;
   }
 
+  .hero-image-main {
+    background-position: 44% 50%;
+    background-size: auto 106%;
+    transform: none;
+  }
+
   .hero-content {
-    padding-top: 6.5rem;
-    padding-bottom: 2.2rem;
+    padding-top: 4.8rem;
+    padding-bottom: 1.3rem;
     gap: 1rem;
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.8rem, 11vw, 3.85rem);
-    max-width: 8.6ch;
-    line-height: 0.9;
+    width: min(100%, 11.7ch);
+    max-width: 100%;
+    font-size: clamp(2rem, 8.8vw, 2.58rem);
+    line-height: 1.02;
+    letter-spacing: 0;
+    overflow-wrap: break-word;
   }
 
   .hero-copy {
-    padding: 1.1rem 1rem 0;
+    padding: 0.7rem 0.7rem 0;
     max-width: none;
   }
 
   .hero-copy .hero-lede {
-    font-size: 1rem;
-    line-height: 1.65;
-    margin-bottom: 0.9rem;
+    max-width: 100%;
+    font-size: 0.94rem;
+    line-height: 1.56;
+    margin-bottom: 0.6rem;
+    overflow-wrap: break-word;
   }
 
   .hero-path-grid {
@@ -1757,15 +1805,43 @@ h3 {
   }
 
   .hero-path-card {
-    padding: 1.05rem 1rem 1rem;
+    padding: 0.95rem 1rem 1rem;
+  }
+
+  .hero-path-card-featured {
+    min-height: 0;
+    padding-right: 1rem;
+  }
+
+  .hero-certificate-preview {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: min(62%, 12.4rem);
+    justify-self: center;
+    order: 1;
+    transform: none;
+  }
+
+  .hero-path-card-featured .hero-path-top {
+    order: 0;
+  }
+
+  .hero-path-card-featured h3,
+  .hero-path-card-featured p,
+  .hero-path-card-featured .hero-path-button {
+    order: 2;
   }
 
   .hero-path-card h3 {
-    font-size: 1.45rem;
+    font-size: 1.32rem;
   }
 
   .hero-choice-panel {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-top: 0.25rem;
   }
 
   .activation-stats,
@@ -1909,5 +1985,40 @@ h3 {
 
   .footer-links {
     gap: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-row {
+    gap: 0.72rem;
+    min-height: 5rem;
+  }
+
+  .brand {
+    gap: 0.72rem;
+  }
+
+  .brand-mark {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.9rem;
+    font-size: 0.92rem;
+  }
+
+  .brand-kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .hero-copy {
+    padding-inline: 0.55rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.92rem, 8.6vw, 2.35rem);
   }
 }

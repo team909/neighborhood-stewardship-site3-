@@ -277,11 +277,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body.ideas-page {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   color: var(--ideas-text);
   font-family: "Manrope", sans-serif;
   background:
@@ -298,7 +300,7 @@ body.ideas-page {
 
 .ideas-site-shell {
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .ideas-site-shell::before {
@@ -450,6 +452,7 @@ body.ideas-page {
 .ideas-steps,
 .ideas-disclosure-wrap {
   position: relative;
+  min-width: 0;
 }
 
 .ideas-hero-copy,
@@ -1418,6 +1421,7 @@ body.ideas-page {
   display: grid;
   gap: 0.75rem;
   margin-bottom: 1.7rem;
+  min-width: 0;
   max-width: 50rem;
 }
 
@@ -1490,7 +1494,8 @@ body.ideas-page {
 
 @media (max-width: 720px) {
   .ideas-container {
-    width: min(calc(100% - 1.2rem), var(--ideas-max));
+    width: min(calc(100% - 1.4rem), var(--ideas-max));
+    max-width: 100%;
   }
 
   .ideas-nav-row,
@@ -1499,26 +1504,68 @@ body.ideas-page {
     flex-direction: column;
   }
 
+  .ideas-nav-row {
+    min-height: auto;
+    padding: 0.85rem 0;
+    gap: 0.65rem;
+  }
+
   .ideas-site-nav {
     width: 100%;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    row-gap: 0.45rem;
+    gap: 0.4rem;
   }
 
   .ideas-site-nav a {
-    padding-inline: 0;
-    background: none;
+    padding: 0.42rem 0.62rem;
+    background: rgba(255, 251, 244, 0.48);
+    font-size: 0.88rem;
+  }
+
+  .ideas-brand {
+    gap: 0.72rem;
+  }
+
+  .ideas-brand-kicker {
+    font-size: 0.76rem;
+    letter-spacing: 0.15em;
+  }
+
+  .ideas-brand-name {
+    font-size: 1.45rem;
   }
 
   .ideas-section,
   .ideas-editorial,
   .ideas-hero {
-    padding: 2.5rem 0;
+    padding: 2rem 0;
   }
 
   .ideas-section-first {
-    padding-top: 1.35rem;
-    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .ideas-hero-layout,
+  .ideas-editorial-layout {
+    gap: 1.15rem;
+    min-width: 0;
+  }
+
+  .ideas-hero-copy,
+  .ideas-section-heading,
+  .ideas-products-group,
+  .ideas-grid,
+  .ideas-product-card,
+  .ideas-product-copy {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .ideas-ratio-hero {
+    aspect-ratio: 16 / 10;
   }
 
   .ideas-grid-categories,
@@ -1612,7 +1659,16 @@ body.ideas-page {
   .ideas-editorial h2,
   .ideas-category-header h1,
   .ideas-idea-hero h1 {
-    font-size: clamp(2.1rem, 11vw, 3.2rem);
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    font-size: clamp(1.9rem, 8.7vw, 2.45rem);
+    line-height: 1.02;
+    letter-spacing: 0;
+  }
+
+  .ideas-hero h1 {
+    font-size: clamp(2.15rem, 9.6vw, 2.7rem);
   }
 
   .ideas-card-copy h3 {
@@ -1623,6 +1679,7 @@ body.ideas-page {
   .ideas-step h3,
   .ideas-step-card h3 {
     font-size: clamp(1.45rem, 7vw, 1.8rem);
+    letter-spacing: 0;
   }
 
   .ideas-lede,
@@ -1634,7 +1691,65 @@ body.ideas-page {
   .ideas-article-paragraph,
   .ideas-step-card p,
   .ideas-disclosure {
-    font-size: 0.99rem;
-    line-height: 1.72;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    font-size: 0.96rem;
+    line-height: 1.62;
+  }
+
+  .ideas-eyebrow,
+  .ideas-card-kicker,
+  .ideas-mini-kicker,
+  .ideas-footer-kicker {
+    margin-bottom: 0.55rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+  }
+
+  .ideas-breadcrumbs {
+    max-width: 100%;
+    padding: 0.55rem 0.75rem;
+    overflow-wrap: break-word;
+  }
+
+  .ideas-grid {
+    gap: 1rem;
+  }
+
+  .ideas-ratio-product,
+  .ideas-ratio-product-featured {
+    aspect-ratio: 4 / 3;
+  }
+
+  .ideas-product-copy,
+  .ideas-card-copy {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .ideas-container {
+    width: min(calc(100% - 1.1rem), var(--ideas-max));
+  }
+
+  .ideas-brand-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 15px;
+    font-size: 1.16rem;
+  }
+
+  .ideas-brand-kicker {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  .ideas-site-nav a {
+    padding: 0.4rem 0.55rem;
+    font-size: 0.84rem;
+  }
+
+  .ideas-breadcrumbs {
+    border-radius: 1rem;
   }
 }
