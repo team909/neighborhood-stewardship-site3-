@@ -38,6 +38,8 @@ const pathCards = document.querySelectorAll("[data-path-card]");
 const flowButtons = document.querySelectorAll(".js-open-flow");
 const flowCloseButtons = document.querySelectorAll(".flow-modal-close");
 const flowBackdrops = document.querySelectorAll(".flow-modal-backdrop");
+const mailedCertificateForm = document.getElementById("mailed-certificate-form");
+const mailedCertificateStatus = document.getElementById("mailed-certificate-status");
 const shareButtons = document.querySelectorAll(".js-share-project");
 const shareModal = document.getElementById("share-modal");
 const shareStatus = document.getElementById("share-status");
@@ -221,6 +223,69 @@ function openTownsModal() {
   setBodyLock(true);
 }
 
+async function handleMailedCertificateSubmit(event) {
+  const form = event.currentTarget;
+  const paymentUrl = form.dataset.paymentUrl;
+
+  if (!paymentUrl || !window.fetch) {
+    return;
+  }
+
+  event.preventDefault();
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  const submitButton = form.querySelector("[type='submit']");
+  const originalButtonText = submitButton?.textContent || "Continue to Payment";
+  const formData = new FormData(form);
+  formData.set("submitted_at", new Date().toISOString());
+
+  if (mailedCertificateStatus) {
+    mailedCertificateStatus.textContent = "Saving your certificate request before payment...";
+    mailedCertificateStatus.dataset.state = "working";
+  }
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = "Saving request...";
+  }
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Formspree did not accept the mailed certificate request.");
+    }
+
+    if (mailedCertificateStatus) {
+      mailedCertificateStatus.textContent = "Request saved. Opening secure payment...";
+      mailedCertificateStatus.dataset.state = "success";
+    }
+
+    window.location.assign(paymentUrl);
+  } catch (error) {
+    if (mailedCertificateStatus) {
+      mailedCertificateStatus.textContent =
+        "We could not save the certificate request yet. Please try again before continuing to payment.";
+      mailedCertificateStatus.dataset.state = "error";
+    }
+
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+    }
+  }
+}
+
 async function handleShare() {
   if (navigator.share) {
     try {
@@ -269,6 +334,10 @@ flowTabs.forEach((tab) => {
     setFlow(path);
   });
 });
+
+if (mailedCertificateForm) {
+  mailedCertificateForm.addEventListener("submit", handleMailedCertificateSubmit);
+}
 
 flowCloseButtons.forEach((button) => {
   button.addEventListener("click", (event) => {

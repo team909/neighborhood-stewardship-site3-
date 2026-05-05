@@ -1634,6 +1634,31 @@ h3 {
   width: 100%;
 }
 
+.flow-submit-status {
+  min-height: 1.35rem;
+  margin: -0.25rem 0 0;
+  color: rgba(255, 248, 240, 0.9);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.flow-submit-status[data-state="success"] {
+  color: rgba(232, 255, 239, 0.96);
+}
+
+.flow-submit-status[data-state="error"] {
+  color: rgba(255, 225, 212, 0.98);
+}
+
+.flow-submit-status[data-state="working"] {
+  color: rgba(255, 250, 242, 0.92);
+}
+
+.flow-form .form-button:disabled {
+  cursor: progress;
+  opacity: 0.78;
+}
+
 .share-actions {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

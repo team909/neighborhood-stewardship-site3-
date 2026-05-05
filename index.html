@@ -660,9 +660,16 @@
             <strong>Official mailed certificate</strong>
             <span>$25 covers certificate preparation, handling, packaging, and mailing.</span>
           </div>
-          <form class="flow-form" action="https://formspree.io/f/mzdjjqad" method="POST">
+          <form
+            class="flow-form"
+            id="mailed-certificate-form"
+            action="https://formspree.io/f/mzdjjqad"
+            method="POST"
+            data-payment-url="https://buy.stripe.com/5kQ5kE4Mx5Nl9yg30bdAk00"
+          >
             <input type="hidden" name="recognition_path" value="Official Mailed Certificate" />
             <input type="hidden" name="submission_source" value="Website Flow Modal" />
+            <input type="hidden" name="_subject" value="New official mailed certificate request" />
             <div class="flow-form-intro">
               <p>Confirm the certificate name and mailing address, then continue to payment.</p>
             </div>
@@ -709,15 +716,14 @@
               </label>
             </div>
             <div class="flow-actions">
-              <a
+              <button
                 class="button button-primary form-button"
-                href="https://buy.stripe.com/5kQ5kE4Mx5Nl9yg30bdAk00"
-                target="_blank"
-                rel="noreferrer"
+                type="submit"
               >
                 Continue to Payment
-              </a>
+              </button>
             </div>
+            <p class="flow-submit-status" id="mailed-certificate-status" aria-live="polite"></p>
           </form>
         </section>
 
